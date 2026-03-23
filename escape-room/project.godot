@@ -15,6 +15,13 @@ run/main_scene="uid://du5210badle1l"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[file_customization]
+
+folder_colors={
+"res://main/": "blue",
+"res://puzzle_ui/": "green"
+}
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
