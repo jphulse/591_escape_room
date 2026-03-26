@@ -7,3 +7,25 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=693627851]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="." unique_id=792102085]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Panel" unique_id=1589245245]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="Panel/SubViewportContainer" unique_id=984192817]
+
+[node name="CloseButton" type="Button" parent="Panel" unique_id=1503745707]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
