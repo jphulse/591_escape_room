@@ -21,7 +21,8 @@ folder_colors={
 "res://interactable/": "blue",
 "res://main/": "blue",
 "res://player/": "blue",
-"res://puzzle_ui/": "green"
+"res://puzzle_ui/": "green",
+"res://puzzles/": "gray"
 }
 
 [input]

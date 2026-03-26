@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dd6bduf4brlk4"]
+
+[ext_resource type="Script" uid="uid://dc2f6gf80707h" path="res://puzzles/puzzle.gd" id="1_2k45h"]
+[ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="2_tm3k3"]
+
+[node name="Puzzle" type="Node" unique_id=482639192]
+script = ExtResource("1_2k45h")
+metadata/_custom_type_script = "uid://dc2f6gf80707h"
+
+[node name="Node2D" type="Node2D" parent="." unique_id=575876062]
+
+[node name="Icon" type="Sprite2D" parent="Node2D" unique_id=516771024]
+modulate = Color(0, 1, 0, 1)
+position = Vector2(244, 157)
+texture = ExtResource("2_tm3k3")

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bbqemvy0opfhg"]
+
+[ext_resource type="Script" uid="uid://be4iddkkbsp6r" path="res://interactable/test_objects/test_interactable.gd" id="1_0e4n4"]
+[ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="2_0e4n4"]
+[ext_resource type="PackedScene" uid="uid://dd6bduf4brlk4" path="res://puzzles/puzzle.tscn" id="2_2lj2u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_juh87"]
+radius = 87.0
+
+[node name="TestInteractable" type="Area2D" unique_id=848038532]
+script = ExtResource("1_0e4n4")
+puzzle_scene = ExtResource("2_2lj2u")
+metadata/_custom_type_script = "uid://b4glxx16mvlcp"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=607155606]
+shape = SubResource("CircleShape2D_juh87")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=956446760]
+texture = ExtResource("2_0e4n4")

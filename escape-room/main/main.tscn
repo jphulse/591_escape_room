@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cmehyiqrmfbce" path="res://main/main.gd" id="1_53q0u"]
 [ext_resource type="PackedScene" uid="uid://q17ochxfw2t" path="res://player/player.tscn" id="2_pjrb6"]
+[ext_resource type="PackedScene" uid="uid://bbqemvy0opfhg" path="res://interactable/test_objects/test_interactable.tscn" id="3_c651c"]
 [ext_resource type="PackedScene" uid="uid://k7vkl1c7cfhu" path="res://puzzle_ui/puzzle_ui.tscn" id="3_xwkvk"]
+[ext_resource type="PackedScene" uid="uid://dd6bduf4brlk4" path="res://puzzles/puzzle.tscn" id="4_3wy1v"]
 
 [node name="Main" type="Node2D" unique_id=1037393617]
 script = ExtResource("1_53q0u")
@@ -10,7 +12,14 @@ script = ExtResource("1_53q0u")
 [node name="World" type="Node2D" parent="." unique_id=564951816]
 
 [node name="Player" parent="World" unique_id=413969756 instance=ExtResource("2_pjrb6")]
+position = Vector2(401, 188)
+
+[node name="TestInteractable" parent="World" unique_id=848038532 instance=ExtResource("3_c651c")]
+puzzle_scene = ExtResource("4_3wy1v")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1678019845]
 
 [node name="PuzzleUi" parent="CanvasLayer" unique_id=261160131 instance=ExtResource("3_xwkvk")]
+visible = false
+
+[connection signal="interact" from="World/TestInteractable" to="." method="_on_interaction"]

@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://k7vkl1c7cfhu"]
 
+[ext_resource type="Script" uid="uid://b7q5aq11xp2oy" path="res://puzzle_ui/puzzle_ui.gd" id="1_8mcjl"]
+
 [node name="PuzzleUi" type="Control" unique_id=261160131]
 process_mode = 2
 layout_mode = 3
@@ -8,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8mcjl")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=693627851]
 layout_mode = 0
