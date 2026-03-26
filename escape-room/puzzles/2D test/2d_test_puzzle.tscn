@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://d0fkbdo3jjdlc"]
+
+[ext_resource type="Script" uid="uid://bd03rpyagpeul" path="res://puzzles/2D test/2d_test_puzzle.gd" id="1_8bubx"]
+[ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="2_8bubx"]
+
+[node name="2dTestPuzzle" type="Node" unique_id=931225483]
+script = ExtResource("1_8bubx")
+metadata/_custom_type_script = "uid://dc2f6gf80707h"
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1043308064]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=385332669]
+texture = ExtResource("2_8bubx")
