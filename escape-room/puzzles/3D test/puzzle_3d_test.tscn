@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://ccpaa00ecxin8"]
+
+[ext_resource type="Script" uid="uid://dc2f6gf80707h" path="res://puzzles/puzzle.gd" id="1_kqpe1"]
+[ext_resource type="Script" uid="uid://dyyj37xnslbgo" path="res://puzzles/3D test/test_instance.gd" id="2_er3n2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kqpe1"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_kqpe1"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kqpe1"]
+
+[sub_resource type="Sky" id="Sky_er3n2"]
+sky_material = SubResource("ProceduralSkyMaterial_kqpe1")
+
+[sub_resource type="Environment" id="Environment_j6js0"]
+background_mode = 2
+sky = SubResource("Sky_er3n2")
+
+[node name="Puzzle3dTest" type="Node" unique_id=264884776]
+script = ExtResource("1_kqpe1")
+metadata/_custom_type_script = "uid://dc2f6gf80707h"
+
+[node name="Node3D" type="Node3D" parent="." unique_id=873008243]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D" unique_id=917254616]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D" unique_id=776662047]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.030634642, -0.037332177)
+shape = SubResource("SphereShape3D_kqpe1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/StaticBody3D" unique_id=1144561580]
+mesh = SubResource("SphereMesh_kqpe1")
+script = ExtResource("2_er3n2")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D/StaticBody3D" unique_id=589650975]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.297477, 0.109595776, -1.9956267)
+mesh = SubResource("SphereMesh_kqpe1")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D/StaticBody3D" unique_id=1551324057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.813993, 0.109595776, -1.1388524)
+mesh = SubResource("SphereMesh_kqpe1")
+
+[node name="Camera3D" type="Camera3D" parent="Node3D" unique_id=948315318]
+transform = Transform3D(1, 0, 0, 0, 0.90956277, 0.41556653, 0, -0.41556653, 0.90956277, 0, 1.0915036, 1.5775106)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node3D" unique_id=10147575]
+transform = Transform3D(1, 0, 0, 0, 0.9591018, -0.28306136, 0, 0.28306136, 0.9591018, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D" unique_id=1914135777]
+environment = SubResource("Environment_j6js0")

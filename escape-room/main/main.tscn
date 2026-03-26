@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://q17ochxfw2t" path="res://player/player.tscn" id="2_pjrb6"]
 [ext_resource type="PackedScene" uid="uid://bbqemvy0opfhg" path="res://interactable/test_objects/test_interactable.tscn" id="3_c651c"]
 [ext_resource type="PackedScene" uid="uid://k7vkl1c7cfhu" path="res://puzzle_ui/puzzle_ui.tscn" id="3_xwkvk"]
-[ext_resource type="PackedScene" uid="uid://dd6bduf4brlk4" path="res://puzzles/puzzle.tscn" id="4_3wy1v"]
+[ext_resource type="PackedScene" uid="uid://ccpaa00ecxin8" path="res://puzzles/3D test/puzzle_3d_test.tscn" id="4_3wy1v"]
 
 [node name="Main" type="Node2D" unique_id=1037393617]
 script = ExtResource("1_53q0u")
