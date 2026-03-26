@@ -11,6 +11,7 @@ var current_source : Interactable = null
 func _ready() -> void:
 	visible = false
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
+	viewport.size = viewport_container.size
 
 
 func open_puzzle(scene : PackedScene, source : Interactable = null) -> void:
