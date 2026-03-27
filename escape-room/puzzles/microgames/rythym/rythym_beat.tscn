@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dya4t7ndmlhal"]
+
+[ext_resource type="Script" uid="uid://b21xtuvl6iw41" path="res://puzzles/microgames/rythym/rythym_beat.gd" id="1_85m7c"]
+[ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="2_m7ps6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q423o"]
+
+[node name="RythymBeat" type="Area2D" unique_id=844733660]
+script = ExtResource("1_85m7c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=864087996]
+shape = SubResource("RectangleShape2D_q423o")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1903692805]
+scale = Vector2(0.15625, 0.1640625)
+texture = ExtResource("2_m7ps6")

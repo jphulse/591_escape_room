@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b6crsbekpturc"]
+
+[ext_resource type="Script" uid="uid://cxipaxun4hjpu" path="res://puzzles/microgames/rythym/rytym_lane.gd" id="1_spnm4"]
+
+[node name="RytymLane" type="Node2D" unique_id=685777846]
+script = ExtResource("1_spnm4")
+
+[node name="MissTimer" type="Timer" parent="." unique_id=526345347]
+one_shot = true
+
+[connection signal="timeout" from="MissTimer" to="." method="_on_miss_timer_timeout"]

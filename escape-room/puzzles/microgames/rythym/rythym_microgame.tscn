@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bqgusgsppdeby"]
+
+[ext_resource type="Script" uid="uid://uw1k6e6ud6l7" path="res://puzzles/microgames/rythym/rythym_microgame.gd" id="1_j4vdc"]
+[ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="2_opkrq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j4vdc"]
+size = Vector2(1164, 84)
+
+[node name="RythymMicrogame" type="Node" unique_id=1413308969]
+script = ExtResource("1_j4vdc")
+bpm = 120.0
+input_actions = Array[String](["move_left", "move_up", "move_right"])
+beat_velocity = Vector2(0, 400)
+metadata/_custom_type_script = "uid://dc2f6gf80707h"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=380885059]
+position = Vector2(0, 631)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1120951273]
+position = Vector2(572, -32)
+shape = SubResource("RectangleShape2D_j4vdc")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=298532607]
+position = Vector2(563, -27.500002)
+scale = Vector2(8.953125, 0.69531256)
+texture = ExtResource("2_opkrq")
+
+[node name="DeathBarrier" type="Area2D" parent="." unique_id=989160243]
+position = Vector2(0, 701)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBarrier" unique_id=1655016386]
+position = Vector2(572, 0)
+shape = SubResource("RectangleShape2D_j4vdc")
+
+[node name="Sprite2D" type="Sprite2D" parent="DeathBarrier" unique_id=1548133026]
+position = Vector2(540.5, -2.499977)
+scale = Vector2(9.4453125, 0.21093786)
+texture = ExtResource("2_opkrq")
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1592754660]
+
+[node name="Markers" type="Node2D" parent="." unique_id=1550401263]
+
+[node name="LeftMarker" type="Marker2D" parent="Markers" unique_id=713064222]
+position = Vector2(20, 0)
+gizmo_extents = 50.0
+
+[node name="RightMarker" type="Marker2D" parent="Markers" unique_id=132779989]
+position = Vector2(1112, 0)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="DeathBarrier" to="." method="_on_death_barrier_area_entered"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
