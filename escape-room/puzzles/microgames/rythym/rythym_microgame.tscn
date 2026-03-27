@@ -48,6 +48,20 @@ gizmo_extents = 50.0
 [node name="RightMarker" type="Marker2D" parent="Markers" unique_id=132779989]
 position = Vector2(1112, 0)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1808718259]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=2011332057]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 150.0
+offset_bottom = 33.0
+
+[node name="ScoreTracker" type="Label" parent="CanvasLayer/Control" unique_id=1151262218]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="area_entered" from="DeathBarrier" to="." method="_on_death_barrier_area_entered"]

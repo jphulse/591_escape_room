@@ -22,4 +22,26 @@ puzzle_scene = ExtResource("4_3wy1v")
 [node name="PuzzleUi" parent="CanvasLayer" unique_id=261160131 instance=ExtResource("3_xwkvk")]
 visible = false
 
+[node name="WorldUI" type="Control" parent="CanvasLayer" unique_id=146645376]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1148.0
+offset_bottom = 644.0
+
+[node name="TimeClock" type="Label" parent="CanvasLayer/WorldUI" unique_id=1195528305]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1098.0
+offset_top = 618.0
+offset_right = 1138.0
+offset_bottom = 641.0
+
+[node name="AlwaysActive" type="Node" parent="." unique_id=2124439931]
+process_mode = 3
+editor_description = "The children of this node are active during pause mode or unpaused"
+
+[node name="CountdownTimer" type="Timer" parent="AlwaysActive" unique_id=69641188]
+autostart = true
+
 [connection signal="interact" from="World/TestInteractable" to="." method="_on_interaction"]
+[connection signal="timeout" from="AlwaysActive/CountdownTimer" to="." method="_on_countdown_timer_timeout"]

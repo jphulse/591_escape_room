@@ -11,13 +11,20 @@ extends Puzzle
 @onready var spawn_timer : Timer = $SpawnTimer
 @onready var left_ednpoint : Marker2D = $Markers/LeftMarker
 @onready var right_endpoint : Marker2D = $Markers/RightMarker
+@onready var score_label : Label = %ScoreTracker
 
 var score : int = 0
 var lanes : Array[RythymLane] = []
 var seconds_per_beat : float
 
+const score_label_format : String = "%02d / %02d"
+
+func update_score_label() -> void:
+	score_label.text = score_label_format % [score, required_score]
+
 func give_score(amount : int)-> void:
 	score += amount
+	update_score_label()
 	print("SCORE is %d" % score)
 	if score >= required_score:
 		solve()
@@ -25,6 +32,7 @@ func give_score(amount : int)-> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super._ready()
+	update_score_label()
 	right_endpoint.position.x = SubviewportInfo.viewport_dimensions.x - left_ednpoint.position.x
 	assert(len(input_actions) >= 1, "Did not set any input actions for this scene, set these in inspector")
 	var delta := (right_endpoint.position.x - left_ednpoint.position.x) / (len(input_actions) + 1)
