@@ -15,9 +15,14 @@ run/main_scene="uid://du5210badle1l"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SubviewportInfo="*uid://pgr6pr0lirvk"
+
 [file_customization]
 
 folder_colors={
+"res://autoloads/": "teal",
 "res://interactable/": "blue",
 "res://main/": "blue",
 "res://player/": "blue",

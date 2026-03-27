@@ -17,6 +17,7 @@ func _ready() -> void:
 func open_puzzle(scene : PackedScene, source : Interactable = null) -> void:
 	if current_puzzle != null:
 		return
+	SubviewportInfo.viewport_dimensions = viewport_container.size
 	current_source = source
 	visible = true
 	get_tree().paused = true

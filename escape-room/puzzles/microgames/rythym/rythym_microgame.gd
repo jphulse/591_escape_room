@@ -25,6 +25,7 @@ func give_score(amount : int)-> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super._ready()
+	right_endpoint.position.x = SubviewportInfo.viewport_dimensions.x - left_ednpoint.position.x
 	assert(len(input_actions) >= 1, "Did not set any input actions for this scene, set these in inspector")
 	var delta := (right_endpoint.position.x - left_ednpoint.position.x) / (len(input_actions) + 1)
 	var delta_mult := 1
