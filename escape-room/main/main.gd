@@ -7,8 +7,11 @@ class_name Main extends Node2D
 
 
 func update_time_label() -> void:
-	@warning_ignore("integer_division")
-	time_label.text = "%02d:%02d" % [total_time / 60, total_time % 60]
+	if total_time > 0:
+		@warning_ignore("integer_division")
+		time_label.text = "%02d:%02d" % [total_time / 60, total_time % 60]
+	else:
+		time_label.text = "00:00"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	update_time_label()
@@ -22,7 +25,7 @@ func _process(_delta: float) -> void:
 func _on_interaction(puzzle_scene: PackedScene, caller: Interactable) -> void:
 	puzzle_manager.open_puzzle(puzzle_scene, caller)
 
-
+# TODO add lose logic for hitting 0 on the timer
 func _on_countdown_timer_timeout() -> void:
 	total_time -= 1
 	update_time_label()
