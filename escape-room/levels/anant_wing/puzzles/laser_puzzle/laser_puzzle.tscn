@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dim041h5jq58v"]
+
+[ext_resource type="Script" uid="uid://dtvonlwm04ndb" path="res://levels/anant_wing/puzzles/laser_puzzle/laser_puzzle.gd" id="1_hikqw"]
+[ext_resource type="Script" uid="uid://bprnk7qmwxfp5" path="res://levels/anant_wing/puzzles/laser_puzzle/laser.gd" id="2_kyfax"]
+[ext_resource type="Script" uid="uid://5x8jrw7lq2qf" path="res://levels/anant_wing/puzzles/laser_puzzle/laser_start.gd" id="3_jlr1w"]
+[ext_resource type="Script" uid="uid://dg0qttoguifeo" path="res://levels/anant_wing/puzzles/laser_puzzle/mirror.gd" id="4_x73l0"]
+[ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="5_drd3t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqpwo"]
+size = Vector2(32, 32)
+
+[node name="LaserPuzzle" type="Node" unique_id=1811537675]
+script = ExtResource("1_hikqw")
+metadata/_custom_type_script = "uid://dc2f6gf80707h"
+
+[node name="Laser" type="Node2D" parent="." unique_id=1121096263]
+script = ExtResource("2_kyfax")
+
+[node name="Sprite2D" type="Sprite2D" parent="Laser" unique_id=626793480]
+
+[node name="LaserStart" type="RayCast2D" parent="Laser" unique_id=1968402293]
+script = ExtResource("3_jlr1w")
+
+[node name="Line2D" type="Line2D" parent="Laser" unique_id=2122267385]
+modulate = Color(0, 1, 1, 1)
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="LaserEnd" type="GPUParticles2D" parent="Laser" unique_id=2119254580]
+
+[node name="Mirror" type="StaticBody2D" parent="." unique_id=1207122484]
+input_pickable = true
+script = ExtResource("4_x73l0")
+facing_direction = null
+
+[node name="Sprite2D" type="Sprite2D" parent="Mirror" unique_id=1204619775]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_drd3t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mirror" unique_id=1157818487]
+shape = SubResource("RectangleShape2D_aqpwo")
+
+[connection signal="input_event" from="Mirror" to="Mirror" method="_on_input_event"]
