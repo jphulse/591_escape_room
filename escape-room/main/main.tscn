@@ -19,14 +19,13 @@ puzzle_scene = ExtResource("4_3wy1v")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1678019845]
 
-[node name="PuzzleUi" parent="CanvasLayer" unique_id=261160131 instance=ExtResource("3_xwkvk")]
-visible = false
-
 [node name="WorldUI" type="Control" parent="CanvasLayer" unique_id=146645376]
 layout_mode = 3
 anchors_preset = 0
+offset_top = 2.0
 offset_right = 1148.0
-offset_bottom = 644.0
+offset_bottom = 646.0
+mouse_filter = 2
 
 [node name="TimeClock" type="Label" parent="CanvasLayer/WorldUI" unique_id=1195528305]
 unique_name_in_owner = true
@@ -35,6 +34,9 @@ offset_left = 1098.0
 offset_top = 618.0
 offset_right = 1138.0
 offset_bottom = 641.0
+
+[node name="PuzzleUi" parent="CanvasLayer" unique_id=261160131 instance=ExtResource("3_xwkvk")]
+visible = false
 
 [node name="AlwaysActive" type="Node" parent="." unique_id=2124439931]
 process_mode = 3

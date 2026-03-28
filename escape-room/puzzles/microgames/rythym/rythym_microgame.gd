@@ -73,3 +73,7 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 
 func _on_spawn_timer_timeout() -> void:
 	lanes.pick_random().spawn_beat(beat_value, beat_velocity)
+
+
+func _on_area_2d_mouse_entered() -> void:
+	print("MOUSE ENTERED ")

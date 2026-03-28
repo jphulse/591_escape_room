@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cle72ed8duxt1"]
+
+[ext_resource type="Script" uid="uid://bmitifymtk0wu" path="res://puzzles/microgames/safe Cracking/safe_cracking.gd" id="1_8rpge"]
+
+[node name="SafeCracking" type="Node" unique_id=1857508922]
+script = ExtResource("1_8rpge")
+metadata/_custom_type_script = "uid://dc2f6gf80707h"
