@@ -1,39 +1,53 @@
-extends Node2D
+class_name Laser extends Node2D
 
-@export var max_bounces := 100.0
-@export var max_length  := 1000.0
+#@onready var ray = $LaserStart
+@onready var line = $LaserLine
+@onready var particles = $LaserParticle
+
+@export var max_bounces := 50
+@export var max_length  := 300.0
 @export var cast_speed  := 100.0
 @export var start_dir   := Vector2.UP
 
-@onready var ray = $LaserStart
-@onready var line = $Line2D
-var max_cast_to
-var starting_rotation = 0.0 # Laser should point upwards in one direction
-var lasers := [] # list of the bouncing lasers
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
 	var screen_dim = get_viewport_rect()
 	global_position = Vector2(screen_dim.size[0] / 2, screen_dim.size[1] / 2)
-	
-	#lasers.append($LaserStart)
-	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	line.clear_points()
-	
-	line.add_point(Vector2.ZERO)
-	ray.global_position = line.global_position
-	var line_to_mouse = get_global_mouse_position() - line.global_position
-	#ray.target_position = (get_global_mouse_position() - line.global_position).normalized() * max_length
-	ray.target_position = (line_to_mouse).normalized() * line_to_mouse.length()
-	ray.force_raycast_update()
-	
-	while true:
-		if not ray.is_colliding():
-			var end_point = ray.global_position + ray.target_position
-			line.add_point(line.to_local(end_point))
+func _process(_delta: float) -> void:
+	_cast_laser()
+
+func _cast_laser() -> void:
+	var space_state := get_world_2d().direct_space_state
+	var origin := global_position
+	var direction = get_global_mouse_position() - line.global_position
+	var line_points := [to_local(origin)]
+
+	# Limit the ray to a maximum number of bounces
+	for i in range(max_bounces + 1):
+		# Create a ray from the specified origin and vector
+		var query := PhysicsRayQueryParameters2D.create(origin, origin + direction * max_length)
+		# Get the result of the ray and check to see that it intersects with
+		var result := space_state.intersect_ray(query)
+
+		# If the ray does not intersect, break to cancel additional bounces
+		if result.is_empty():
+			line_points.append(to_local(origin + direction * max_length))
 			break
+
+		# Otherwise, add the collision point to the list of points
+		line_points.append(to_local(result.position))
+
+		# If the collision is not a mirror, then we stop the laser
+		if not result.collider is Mirror:
+			particles.global_position = result.position
+			particles.emitting = true
+			break
+
+		# Assign the direction and origin of the next ray
+		direction = direction.bounce(result.normal)
+		origin = result.position + direction * 0.0001
+
+	# Give the line the list of points
+	line.points = line_points

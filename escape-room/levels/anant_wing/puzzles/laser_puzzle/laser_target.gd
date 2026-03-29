@@ -1,11 +1,8 @@
-class_name LaserPuzzle extends Puzzle
+class_name LaserTarget extends StaticBody2D
 
-@export var game_is_completed = false
-@export var starting_angle = Vector2.UP
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	super._ready()
 	pass # Replace with function body.
 
 

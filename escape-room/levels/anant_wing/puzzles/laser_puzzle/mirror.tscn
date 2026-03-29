@@ -1,17 +1,14 @@
 [gd_scene format=3 uid="uid://chmxswe4bk615"]
 
-[ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="1_5h8n0"]
 [ext_resource type="Script" uid="uid://dg0qttoguifeo" path="res://levels/anant_wing/puzzles/laser_puzzle/mirror.gd" id="1_cx0y1"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cx0y1"]
-size = Vector2(128, 128)
+[ext_resource type="Texture2D" uid="uid://cdsieeo4gwwv3" path="res://levels/anant_wing/puzzles/laser_puzzle/assets/simple_mirror.png" id="2_cx0y1"]
 
 [node name="Mirror" type="StaticBody2D" unique_id=1171681840]
 input_pickable = true
 script = ExtResource("1_cx0y1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1698130656]
-texture = ExtResource("1_5h8n0")
+texture = ExtResource("2_cx0y1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=470084381]
-shape = SubResource("RectangleShape2D_cx0y1")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=929724105]
+polygon = PackedVector2Array(-64, -64, -64, 64, 64, 64)

@@ -2,12 +2,22 @@
 
 [ext_resource type="Script" uid="uid://dtvonlwm04ndb" path="res://levels/anant_wing/puzzles/laser_puzzle/laser_puzzle.gd" id="1_hikqw"]
 [ext_resource type="Script" uid="uid://bprnk7qmwxfp5" path="res://levels/anant_wing/puzzles/laser_puzzle/laser.gd" id="2_kyfax"]
-[ext_resource type="Script" uid="uid://5x8jrw7lq2qf" path="res://levels/anant_wing/puzzles/laser_puzzle/laser_start.gd" id="3_jlr1w"]
-[ext_resource type="Script" uid="uid://dg0qttoguifeo" path="res://levels/anant_wing/puzzles/laser_puzzle/mirror.gd" id="4_x73l0"]
+[ext_resource type="Script" uid="uid://ddrpn1u75c17e" path="res://levels/anant_wing/puzzles/laser_puzzle/laser_target.gd" id="3_x73l0"]
+[ext_resource type="PackedScene" uid="uid://chmxswe4bk615" path="res://levels/anant_wing/puzzles/laser_puzzle/mirror.tscn" id="4_g35p0"]
 [ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="5_drd3t"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqpwo"]
-size = Vector2(32, 32)
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jlr1w"]
+particle_flag_disable_z = true
+angle_min = -19.99999
+angle_max = 20.000011
+initial_velocity_min = 2.0
+initial_velocity_max = 10.0
+angular_velocity_min = -10.000016
+angular_velocity_max = 9.999984
+gravity = Vector3(0, 90, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x73l0"]
+size = Vector2(128, 128)
 
 [node name="LaserPuzzle" type="Node" unique_id=1811537675]
 script = ExtResource("1_hikqw")
@@ -18,26 +28,30 @@ script = ExtResource("2_kyfax")
 
 [node name="Sprite2D" type="Sprite2D" parent="Laser" unique_id=626793480]
 
-[node name="LaserStart" type="RayCast2D" parent="Laser" unique_id=1968402293]
-script = ExtResource("3_jlr1w")
-
-[node name="Line2D" type="Line2D" parent="Laser" unique_id=2122267385]
+[node name="LaserLine" type="Line2D" parent="Laser" unique_id=2122267385]
 modulate = Color(0, 1, 1, 1)
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="LaserEnd" type="GPUParticles2D" parent="Laser" unique_id=2119254580]
+[node name="LaserParticle" type="GPUParticles2D" parent="Laser" unique_id=2119254580]
+emitting = false
+lifetime = 0.09999999999999999
+process_material = SubResource("ParticleProcessMaterial_jlr1w")
 
-[node name="Mirror" type="StaticBody2D" parent="." unique_id=1207122484]
-input_pickable = true
-script = ExtResource("4_x73l0")
-facing_direction = null
+[node name="LaserTarget" type="StaticBody2D" parent="." unique_id=1169517454]
+position = Vector2(918, 117)
+script = ExtResource("3_x73l0")
 
-[node name="Sprite2D" type="Sprite2D" parent="Mirror" unique_id=1204619775]
-scale = Vector2(0.25, 0.25)
+[node name="Sprite2D" type="Sprite2D" parent="LaserTarget" unique_id=870513734]
 texture = ExtResource("5_drd3t")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mirror" unique_id=1157818487]
-shape = SubResource("RectangleShape2D_aqpwo")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LaserTarget" unique_id=424776923]
+shape = SubResource("RectangleShape2D_x73l0")
 
-[connection signal="input_event" from="Mirror" to="Mirror" method="_on_input_event"]
+[node name="Mirror" parent="." unique_id=1171681840 instance=ExtResource("4_g35p0")]
+position = Vector2(312, 99)
+rotation = 3.047345
+
+[node name="Mirror2" parent="." unique_id=476908431 instance=ExtResource("4_g35p0")]
+position = Vector2(94, 209)
+rotation = 0.6091199
