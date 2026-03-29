@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://dpfe7tpm8axqx"]
+
+[ext_resource type="Script" uid="uid://bb0u7gtc2l2ev" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/keypad.gd" id="1_6a6rq"]
+
+[node name="Keypad" type="Node" unique_id=1084274704]
+script = ExtResource("1_6a6rq")
+metadata/_custom_type_script = "uid://dc2f6gf80707h"
+
+[node name="UI" type="Control" parent="." unique_id=319229679]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="UI" unique_id=943423848]
+custom_minimum_size = Vector2(500, 700)
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 700.0
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Panel" unique_id=1442034708]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Panel/MarginContainer" unique_id=1849516635]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/Panel/MarginContainer/VBoxContainer" unique_id=464709283]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "----
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="UI/Panel/MarginContainer/VBoxContainer" unique_id=207143829]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 3
+
+[node name="Button1" type="Button" parent="UI/Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=642551410]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "1"
+
+[node name="Button2" type="Button" parent="UI/Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=656446506]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "2"
+
+[node name="Button3" type="Button" parent="UI/Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=1049175786]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "3"
+
+[node name="Button4" type="Button" parent="UI/Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=2011325413]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "4"
+
+[node name="Button5" type="Button" parent="UI/Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=487165388]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "5"
+
+[node name="Button6" type="Button" parent="UI/Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=1474898030]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "6"
+
+[node name="Button7" type="Button" parent="UI/Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=53909932]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "7"
+
+[node name="Button8" type="Button" parent="UI/Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=1253156638]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "8"
+
+[node name="Button9" type="Button" parent="UI/Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=628429258]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "9"
+
+[node name="Clear" type="Button" parent="UI/Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=1936304879]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "CE"
+
+[node name="Button0" type="Button" parent="UI/Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=988939861]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "0"
+
+[node name="Enter" type="Button" parent="UI/Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=674515635]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Enter"

@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://k0o1knc8lp0t"]
+
+[ext_resource type="Script" uid="uid://b4glxx16mvlcp" path="res://interactable/interactable.gd" id="1_f1t50"]
+[ext_resource type="Script" uid="uid://cmehyiqrmfbce" path="res://main/main.gd" id="1_vslcf"]
+[ext_resource type="PackedScene" uid="uid://b1smcxeuq6qs" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/SlidingPicturePuzzle.tscn" id="2_c0ily"]
+[ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="3_vslcf"]
+[ext_resource type="Script" uid="uid://b3gv51lygjn3a" path="res://player/player.gd" id="4_kwryc"]
+[ext_resource type="PackedScene" uid="uid://k7vkl1c7cfhu" path="res://puzzle_ui/puzzle_ui.tscn" id="5_c0ily"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hhtcd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b8rv5"]
+
+[node name="SlidingPuzzleRoom" type="Node2D" unique_id=628861520]
+script = ExtResource("1_vslcf")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1783599910]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=75668026]
+script = ExtResource("1_f1t50")
+puzzle_scene = ExtResource("2_c0ily")
+metadata/_custom_type_script = "uid://b4glxx16mvlcp"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1465784847]
+shape = SubResource("CircleShape2D_hhtcd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=598460743]
+position = Vector2(2.3841858e-07, -4.7683716e-07)
+scale = Vector2(0.1308594, 0.12516986)
+texture = ExtResource("3_vslcf")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=413670198]
+script = ExtResource("4_kwryc")
+metadata/_custom_type_script = "uid://b3gv51lygjn3a"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1398582812]
+position = Vector2(26, 1)
+shape = SubResource("CircleShape2D_b8rv5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1943138042]
+position = Vector2(26, 1.0000007)
+scale = Vector2(0.11718755, 0.11718755)
+texture = ExtResource("3_vslcf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1313949267]
+
+[node name="PuzzleUi" parent="CanvasLayer" unique_id=261160131 instance=ExtResource("5_c0ily")]
+visible = false
+
+[node name="WorldUI" type="Control" parent="CanvasLayer" unique_id=1948118377]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1148.0
+offset_bottom = 644.0
+
+[node name="TimeClock" type="Label" parent="CanvasLayer/WorldUI" unique_id=1445896634]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1098.0
+offset_top = 618.0
+offset_right = 1138.0
+offset_bottom = 641.0
+
+[connection signal="interact" from="Area2D" to="." method="_on_interaction"]

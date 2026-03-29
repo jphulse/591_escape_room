@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://k0o1knc8lp0t"]
+
+[ext_resource type="PackedScene" uid="uid://bbqemvy0opfhg" path="res://interactable/test_objects/test_interactable.tscn" id="1_hs0nt"]
+[ext_resource type="Script" uid="uid://dcmnjm81tsfxx" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/sliding_picture_puzzle.gd" id="2_0kd1v"]
+[ext_resource type="Script" uid="uid://bb0u7gtc2l2ev" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/keypad.gd" id="3_0kd1v"]
+[ext_resource type="Texture2D" uid="uid://bnvflbygg8oe1" path="res://levels/charlie_wing/rooms/Images/FirstHint.png" id="3_kwryc"]
+[ext_resource type="Texture2D" uid="uid://0cdm87esxomv" path="res://levels/charlie_wing/rooms/Images/SecondHint.png" id="4_hhtcd"]
+[ext_resource type="Texture2D" uid="uid://dcf7f65637ywd" path="res://levels/charlie_wing/rooms/Images/ThirdHint.png" id="5_b8rv5"]
+[ext_resource type="Texture2D" uid="uid://nh2lys2v5jgi" path="res://levels/charlie_wing/rooms/Images/FourthHint.png" id="6_r4i0n"]
+
+[node name="SlidingPuzzleRoom" type="Node2D" unique_id=628861520]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1783599910]
+
+[node name="SlidingPuzzle1" parent="." unique_id=848038532 instance=ExtResource("1_hs0nt")]
+script = ExtResource("2_0kd1v")
+source_image = ExtResource("3_kwryc")
+grid_size = 3
+tile_size = Vector2i(120, 120)
+shuffle_moves = 150
+two_dimensional = true
+
+[node name="Sprite2D" parent="SlidingPuzzle1" index="1" unique_id=956446760]
+modulate = Color(1, 0, 0, 1)
+
+[node name="SlidingPuzzle2" parent="." unique_id=239721538 instance=ExtResource("1_hs0nt")]
+script = ExtResource("2_0kd1v")
+source_image = ExtResource("4_hhtcd")
+grid_size = 3
+tile_size = Vector2i(120, 120)
+shuffle_moves = 150
+two_dimensional = true
+
+[node name="Sprite2D" parent="SlidingPuzzle2" index="1" unique_id=956446760]
+modulate = Color(1, 0.64705884, 0, 1)
+
+[node name="SlidingPuzzle3" parent="." unique_id=548557537 instance=ExtResource("1_hs0nt")]
+script = ExtResource("2_0kd1v")
+source_image = ExtResource("5_b8rv5")
+grid_size = 3
+tile_size = Vector2i(120, 120)
+shuffle_moves = 150
+two_dimensional = true
+
+[node name="Sprite2D" parent="SlidingPuzzle3" index="1" unique_id=956446760]
+modulate = Color(1, 1, 0, 1)
+
+[node name="SlidingPuzzle4" parent="." unique_id=1465185029 instance=ExtResource("1_hs0nt")]
+script = ExtResource("2_0kd1v")
+source_image = ExtResource("6_r4i0n")
+grid_size = 3
+tile_size = Vector2i(120, 120)
+shuffle_moves = 150
+two_dimensional = true
+
+[node name="Sprite2D" parent="SlidingPuzzle4" index="1" unique_id=956446760]
+modulate = Color(0, 1, 0, 1)
+
+[node name="Keypad" parent="." unique_id=1416669148 instance=ExtResource("1_hs0nt")]
+script = ExtResource("3_0kd1v")
+correct_code = "4312"
+max_length = 4
+two_dimensional = true
+
+[node name="Sprite2D" parent="Keypad" index="1" unique_id=956446760]
+modulate = Color(0, 0, 1, 1)
+
+[editable path="SlidingPuzzle1"]
+[editable path="SlidingPuzzle2"]
+[editable path="SlidingPuzzle3"]
+[editable path="SlidingPuzzle4"]
+[editable path="Keypad"]

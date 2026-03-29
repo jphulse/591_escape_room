@@ -4,7 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://q17ochxfw2t" path="res://player/player.tscn" id="2_pjrb6"]
 [ext_resource type="PackedScene" uid="uid://bbqemvy0opfhg" path="res://interactable/test_objects/test_interactable.tscn" id="3_c651c"]
 [ext_resource type="PackedScene" uid="uid://k7vkl1c7cfhu" path="res://puzzle_ui/puzzle_ui.tscn" id="3_xwkvk"]
-[ext_resource type="PackedScene" uid="uid://bqgusgsppdeby" path="res://puzzles/microgames/rythym/rythym_microgame.tscn" id="4_3wy1v"]
+[ext_resource type="PackedScene" uid="uid://b1smcxeuq6qs" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/SlidingPicturePuzzle1.tscn" id="4_3wy1v"]
+[ext_resource type="PackedScene" uid="uid://k0o1knc8lp0t" path="res://levels/charlie_wing/rooms/SlidingPuzzleRoom.tscn" id="5_kfbq2"]
+[ext_resource type="Script" uid="uid://be4iddkkbsp6r" path="res://interactable/test_objects/test_interactable.gd" id="6_4dugh"]
+[ext_resource type="PackedScene" uid="uid://c2owxr0q4tj1c" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/SlidingPicturePuzzle2.tscn" id="7_bsumw"]
+[ext_resource type="PackedScene" uid="uid://poj2g6o73xeu" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/SlidingPicturePuzzle3.tscn" id="8_fwcvl"]
+[ext_resource type="PackedScene" uid="uid://bntkspokkj7au" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/SlidingPicturePuzzle4.tscn" id="9_na0o7"]
+[ext_resource type="PackedScene" uid="uid://dpfe7tpm8axqx" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/Keypad.tscn" id="10_73k8k"]
 
 [node name="Main" type="Node2D" unique_id=1037393617]
 script = ExtResource("1_53q0u")
@@ -17,14 +23,68 @@ position = Vector2(401, 188)
 [node name="TestInteractable" parent="World" unique_id=848038532 instance=ExtResource("3_c651c")]
 puzzle_scene = ExtResource("4_3wy1v")
 
+[node name="SlidingPuzzleRoom" parent="World" unique_id=628861520 instance=ExtResource("5_kfbq2")]
+position = Vector2(402, 374)
+
+[node name="SlidingPuzzle1" parent="World/SlidingPuzzleRoom" index="1" unique_id=848038532]
+script = ExtResource("6_4dugh")
+puzzle_scene = ExtResource("4_3wy1v")
+
+[node name="SlidingPuzzle2" parent="World/SlidingPuzzleRoom" index="2" unique_id=239721538]
+position = Vector2(219, -1)
+script = ExtResource("6_4dugh")
+puzzle_scene = ExtResource("7_bsumw")
+
+[node name="CollisionShape2D" parent="World/SlidingPuzzleRoom/SlidingPuzzle2" index="0" unique_id=607155606]
+position = Vector2(2, 6)
+
+[node name="Sprite2D" parent="World/SlidingPuzzleRoom/SlidingPuzzle2" index="1" unique_id=956446760]
+position = Vector2(2, 2)
+
+[node name="SlidingPuzzle3" parent="World/SlidingPuzzleRoom" index="3" unique_id=548557537]
+position = Vector2(-311, -119)
+script = ExtResource("6_4dugh")
+puzzle_scene = ExtResource("8_fwcvl")
+
+[node name="CollisionShape2D" parent="World/SlidingPuzzleRoom/SlidingPuzzle3" index="0" unique_id=607155606]
+position = Vector2(-2, 4)
+
+[node name="Sprite2D" parent="World/SlidingPuzzleRoom/SlidingPuzzle3" index="1" unique_id=956446760]
+position = Vector2(-2, 2)
+
+[node name="SlidingPuzzle4" parent="World/SlidingPuzzleRoom" index="4" unique_id=1465185029]
+position = Vector2(290, -160)
+script = ExtResource("6_4dugh")
+puzzle_scene = ExtResource("9_na0o7")
+
+[node name="CollisionShape2D" parent="World/SlidingPuzzleRoom/SlidingPuzzle4" index="0" unique_id=607155606]
+position = Vector2(0, 3)
+
+[node name="Sprite2D" parent="World/SlidingPuzzleRoom/SlidingPuzzle4" index="1" unique_id=956446760]
+position = Vector2(2, 1)
+
+[node name="Keypad" parent="World/SlidingPuzzleRoom" index="5" unique_id=1416669148]
+position = Vector2(-134, -3)
+script = ExtResource("6_4dugh")
+puzzle_scene = ExtResource("10_73k8k")
+
+[node name="CollisionShape2D" parent="World/SlidingPuzzleRoom/Keypad" index="0" unique_id=607155606]
+position = Vector2(-2, 4)
+
+[node name="Sprite2D" parent="World/SlidingPuzzleRoom/Keypad" index="1" unique_id=956446760]
+modulate = Color(0.9999998, 0.4149523, 0.13033834, 1)
+position = Vector2(-2, 4)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1678019845]
 
 [node name="WorldUI" type="Control" parent="CanvasLayer" unique_id=146645376]
+visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_top = 2.0
-offset_right = 1148.0
-offset_bottom = 646.0
+offset_left = -113.0
+offset_top = -30.0
+offset_right = 1035.0
+offset_bottom = 614.0
 mouse_filter = 2
 
 [node name="TimeClock" type="Label" parent="CanvasLayer/WorldUI" unique_id=1195528305]
@@ -46,4 +106,16 @@ editor_description = "The children of this node are active during pause mode or 
 autostart = true
 
 [connection signal="interact" from="World/TestInteractable" to="." method="_on_interaction"]
+[connection signal="interact" from="World/SlidingPuzzleRoom/SlidingPuzzle1" to="." method="_on_interaction"]
+[connection signal="interact" from="World/SlidingPuzzleRoom/SlidingPuzzle2" to="." method="_on_interaction"]
+[connection signal="interact" from="World/SlidingPuzzleRoom/SlidingPuzzle3" to="." method="_on_interaction"]
+[connection signal="interact" from="World/SlidingPuzzleRoom/SlidingPuzzle4" to="." method="_on_interaction"]
+[connection signal="interact" from="World/SlidingPuzzleRoom/Keypad" to="." method="_on_interaction"]
 [connection signal="timeout" from="AlwaysActive/CountdownTimer" to="." method="_on_countdown_timer_timeout"]
+
+[editable path="World/SlidingPuzzleRoom"]
+[editable path="World/SlidingPuzzleRoom/SlidingPuzzle1"]
+[editable path="World/SlidingPuzzleRoom/SlidingPuzzle2"]
+[editable path="World/SlidingPuzzleRoom/SlidingPuzzle3"]
+[editable path="World/SlidingPuzzleRoom/SlidingPuzzle4"]
+[editable path="World/SlidingPuzzleRoom/Keypad"]
