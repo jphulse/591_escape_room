@@ -24,13 +24,9 @@ script = ExtResource("1_hikqw")
 metadata/_custom_type_script = "uid://dc2f6gf80707h"
 
 [node name="Laser" type="Node2D" parent="." unique_id=1121096263]
-position = Vector2(576, 448)
 script = ExtResource("2_kyfax")
 
 [node name="Sprite2D" type="Sprite2D" parent="Laser" unique_id=626793480]
-modulate = Color(0, 1, 1, 1)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("5_drd3t")
 
 [node name="LaserLine" type="Line2D" parent="Laser" unique_id=2122267385]
 modulate = Color(0, 1, 1, 1)
@@ -43,8 +39,7 @@ lifetime = 0.1
 process_material = SubResource("ParticleProcessMaterial_jlr1w")
 
 [node name="LaserTarget" type="Area2D" parent="." unique_id=111695338]
-position = Vector2(736, 544)
-scale = Vector2(0.25, 0.25)
+position = Vector2(139, 469)
 script = ExtResource("3_x73l0")
 
 [node name="Sprite2D" type="Sprite2D" parent="LaserTarget" unique_id=870513734]
@@ -53,28 +48,10 @@ texture = ExtResource("5_drd3t")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LaserTarget" unique_id=424776923]
 shape = SubResource("RectangleShape2D_x73l0")
 
-[node name="Mirrors" type="Node" parent="." unique_id=116326942]
+[node name="Mirror" parent="." unique_id=1171681840 instance=ExtResource("4_g35p0")]
+position = Vector2(312, 99)
+rotation = 3.047345
 
-[node name="Mirror" parent="Mirrors" unique_id=1171681840 instance=ExtResource("4_g35p0")]
-position = Vector2(576, 224)
-
-[node name="Mirror2" parent="Mirrors" unique_id=476908431 instance=ExtResource("4_g35p0")]
-position = Vector2(352, 224)
-
-[node name="Mirror3" parent="Mirrors" unique_id=789748620 instance=ExtResource("4_g35p0")]
-position = Vector2(928, 224)
-
-[node name="Mirror4" parent="Mirrors" unique_id=1292229952 instance=ExtResource("4_g35p0")]
-position = Vector2(352, 96)
-
-[node name="Mirror5" parent="Mirrors" unique_id=1971619976 instance=ExtResource("4_g35p0")]
-position = Vector2(800, 96)
-
-[node name="Mirror6" parent="Mirrors" unique_id=621802157 instance=ExtResource("4_g35p0")]
-position = Vector2(800, 352)
-
-[node name="Mirror7" parent="Mirrors" unique_id=1388647521 instance=ExtResource("4_g35p0")]
-position = Vector2(352, 352)
-
-[node name="Mirror8" parent="Mirrors" unique_id=546428270 instance=ExtResource("4_g35p0")]
-position = Vector2(352, 544)
+[node name="Mirror2" parent="." unique_id=476908431 instance=ExtResource("4_g35p0")]
+position = Vector2(94, 209)
+rotation = 0.6091199

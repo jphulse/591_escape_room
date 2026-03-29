@@ -3,12 +3,39 @@
 [ext_resource type="Script" uid="uid://dg0qttoguifeo" path="res://levels/anant_wing/puzzles/laser_puzzle/mirror.gd" id="1_cx0y1"]
 [ext_resource type="Texture2D" uid="uid://cdsieeo4gwwv3" path="res://levels/anant_wing/puzzles/laser_puzzle/assets/simple_mirror.png" id="2_cx0y1"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cx0y1"]
+size = Vector2(128.00002, 0.47532272)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wjwxv"]
+size = Vector2(0.5, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0a8ex"]
+size = Vector2(0.5, 0.5)
+
 [node name="Mirror" type="StaticBody2D" unique_id=1171681840]
+scale = Vector2(0.5, 0.5)
 input_pickable = true
 script = ExtResource("1_cx0y1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1698130656]
 texture = ExtResource("2_cx0y1")
 
+[node name="ReflectiveArea" type="Area2D" parent="." unique_id=1883842616]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ReflectiveArea" unique_id=278949858]
+position = Vector2(0, 64.23766)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_cx0y1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ReflectiveArea" unique_id=982222308]
+position = Vector2(-64.25, 0)
+shape = SubResource("RectangleShape2D_wjwxv")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ReflectiveArea" unique_id=23984106]
+position = Vector2(-64.25, 64.25)
+shape = SubResource("RectangleShape2D_0a8ex")
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=929724105]
 polygon = PackedVector2Array(-64, -64, -64, 64, 64, 64)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

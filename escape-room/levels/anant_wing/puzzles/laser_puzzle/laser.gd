@@ -1,33 +1,36 @@
 class_name Laser extends Node2D
 
-#@onready var ray = $LaserStart
 @onready var line = $LaserLine
 @onready var particles = $LaserParticle
 
 @export var max_bounces := 50
-@export var max_length  := 300.0
-@export var cast_speed  := 100.0
-@export var start_dir   := Vector2.UP
+@export var max_length := 5000.0
+@export var cast_speed := 100.0
+@export var start_dir := Vector2.UP
+@export var collision_threshold := 0.001
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var screen_dim = get_viewport_rect()
-	global_position = Vector2(screen_dim.size[0] / 2, screen_dim.size[1] / 2)
+	var screen_dim := get_viewport_rect()
+	global_position = Vector2(screen_dim.size[0] / 2, screen_dim.size[1] * 0.75)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	_cast_laser()
 
 func _cast_laser() -> void:
+	#var _mouse_dir = get_global_mouse_position() - line.global_position
+	# Grab state space and set starting variables
 	var space_state := get_world_2d().direct_space_state
 	var origin := global_position
-	var direction = get_global_mouse_position() - line.global_position
+	var direction := start_dir
 	var line_points := [to_local(origin)]
 
 	# Limit the ray to a maximum number of bounces
 	for i in range(max_bounces + 1):
 		# Create a ray from the specified origin and vector
 		var query := PhysicsRayQueryParameters2D.create(origin, origin + direction * max_length)
+		query.collide_with_areas = true
 		# Get the result of the ray and check to see that it intersects with
 		var result := space_state.intersect_ray(query)
 
@@ -43,11 +46,14 @@ func _cast_laser() -> void:
 		if not result.collider is Mirror:
 			particles.global_position = result.position
 			particles.emitting = true
+			particles.visible = true
+			if result.collider is LaserTarget:
+				result.collider.notify_hit()
 			break
 
 		# Assign the direction and origin of the next ray
 		direction = direction.bounce(result.normal)
-		origin = result.position + direction * 0.0001
+		origin = result.position + direction * collision_threshold
 
 	# Give the line the list of points
 	line.points = line_points
