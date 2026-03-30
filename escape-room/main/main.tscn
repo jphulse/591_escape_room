@@ -13,10 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://poj2g6o73xeu" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/SlidingPicturePuzzle3.tscn" id="8_fwcvl"]
 [ext_resource type="PackedScene" uid="uid://bntkspokkj7au" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/SlidingPicturePuzzle4.tscn" id="9_na0o7"]
 [ext_resource type="PackedScene" uid="uid://wyd1pr4b4q35" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/SolvedSlidingPictureScene3.tscn" id="10_5xyti"]
-[ext_resource type="PackedScene" uid="uid://dpfe7tpm8axqx" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/Keypad.tscn" id="10_73k8k"]
 [ext_resource type="PackedScene" uid="uid://c1su7or0lwt6m" path="res://levels/anant_wing/rooms/anant_wing.tscn" id="11_fwcvl"]
 [ext_resource type="PackedScene" uid="uid://dho3xa5tbdjoo" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/SolvedSlidingPictureScene4.tscn" id="12_n3o0a"]
 [ext_resource type="PackedScene" uid="uid://dim041h5jq58v" path="res://levels/anant_wing/puzzles/laser_puzzle/laser_puzzle.tscn" id="12_na0o7"]
+[ext_resource type="PackedScene" uid="uid://dpfe7tpm8axqx" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/Keypad.tscn" id="14_s758e"]
 
 [node name="Main" type="Node2D" unique_id=1037393617]
 script = ExtResource("1_53q0u")
@@ -81,9 +81,7 @@ position = Vector2(2, 1)
 
 [node name="Keypad" parent="World/SlidingPuzzleRoom" index="5" unique_id=1416669148]
 position = Vector2(44, 89)
-script = ExtResource("6_4dugh")
-solved_picture_scene = ExtResource("10_73k8k")
-puzzle_scene = ExtResource("10_73k8k")
+puzzle_scene = ExtResource("14_s758e")
 
 [node name="CollisionShape2D" parent="World/SlidingPuzzleRoom/Keypad" index="0" unique_id=607155606]
 position = Vector2(-2, 4)
