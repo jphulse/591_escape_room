@@ -7,6 +7,7 @@
 size = Vector2(120, 107)
 
 [node name="Player" type="CharacterBody2D" unique_id=413969756]
+z_index = 99
 script = ExtResource("1_rkbax")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2079453721]
