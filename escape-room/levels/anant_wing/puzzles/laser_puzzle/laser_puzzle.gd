@@ -15,6 +15,5 @@ func _process(_delta: float) -> void:
 func _on_laser_target_hit():
 	if puzzle_completed:
 		return
-	print("Laser Puzzle Completed!")
 	puzzle_completed = true
-	emit_signal("puzzle_solved")
+	solve()

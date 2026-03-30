@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://poj2g6o73xeu" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/SlidingPicturePuzzle3.tscn" id="8_fwcvl"]
 [ext_resource type="PackedScene" uid="uid://bntkspokkj7au" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/SlidingPicturePuzzle4.tscn" id="9_na0o7"]
 [ext_resource type="PackedScene" uid="uid://dpfe7tpm8axqx" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/Keypad.tscn" id="10_73k8k"]
+[ext_resource type="PackedScene" uid="uid://c1su7or0lwt6m" path="res://levels/anant_wing/rooms/anant_wing.tscn" id="11_fwcvl"]
 
 [node name="Main" type="Node2D" unique_id=1037393617]
 script = ExtResource("1_53q0u")
@@ -75,6 +76,9 @@ position = Vector2(-2, 4)
 modulate = Color(0.9999998, 0.4149523, 0.13033834, 1)
 position = Vector2(-2, 4)
 
+[node name="AnantWing" parent="World" unique_id=1908345394 instance=ExtResource("11_fwcvl")]
+position = Vector2(408, -265)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1678019845]
 
 [node name="WorldUI" type="Control" parent="CanvasLayer" unique_id=146645376]
@@ -111,6 +115,7 @@ autostart = true
 [connection signal="interact" from="World/SlidingPuzzleRoom/SlidingPuzzle3" to="." method="_on_interaction"]
 [connection signal="interact" from="World/SlidingPuzzleRoom/SlidingPuzzle4" to="." method="_on_interaction"]
 [connection signal="interact" from="World/SlidingPuzzleRoom/Keypad" to="." method="_on_interaction"]
+[connection signal="interact" from="World/AnantWing/Puzzles/LaserPuzzle" to="." method="_on_interaction"]
 [connection signal="timeout" from="AlwaysActive/CountdownTimer" to="." method="_on_countdown_timer_timeout"]
 
 [editable path="World/SlidingPuzzleRoom"]
@@ -119,3 +124,5 @@ autostart = true
 [editable path="World/SlidingPuzzleRoom/SlidingPuzzle3"]
 [editable path="World/SlidingPuzzleRoom/SlidingPuzzle4"]
 [editable path="World/SlidingPuzzleRoom/Keypad"]
+[editable path="World/AnantWing"]
+[editable path="World/AnantWing/Puzzles/LaserPuzzle"]

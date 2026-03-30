@@ -1,0 +1,6 @@
+For my wing, I am thinking of making a theme where the player has to turn on some sort of generator.
+To turn it on they have to to the following:
+	1. Fill up the reactor with a specific amount of liquid/fuel (Water Jug Puzzle)
+	2. Input the correct startup sequence (Memory Game)
+	3. Align the reactor beam to a target to start up the generator (Laser Puzzle)
+	

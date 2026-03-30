@@ -11,8 +11,9 @@ class_name Laser extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var screen_dim := get_viewport_rect()
-	global_position = Vector2(screen_dim.size[0] / 2, screen_dim.size[1] * 0.75)
+	#var screen_dim := get_viewport_rect()
+	#global_position = Vector2(screen_dim.size[0] / 2, screen_dim.size[1] * 0.75)
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
