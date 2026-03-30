@@ -138,8 +138,10 @@ func _check_if_solved() -> void:
 		solve()
 
 func _is_adjacent(a : int, b : int) -> bool:
+	@warning_ignore("integer_division")
 	var a_row := a / grid_size
 	var a_col := a % grid_size
+	@warning_ignore("integer_division")
 	var b_row := b / grid_size
 	var b_col := b % grid_size
 	
@@ -147,6 +149,7 @@ func _is_adjacent(a : int, b : int) -> bool:
 
 func _get_adjacent_indices(index : int) -> Array[int]:
 	var result : Array[int] = []
+	@warning_ignore("integer_division")
 	var row := index / grid_size
 	var col := index % grid_size
 	

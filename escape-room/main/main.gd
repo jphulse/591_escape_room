@@ -1,6 +1,7 @@
 class_name Main extends Node2D
 
 @export var total_time := 600
+@export var critical_puzzles := 2
 
 @onready var puzzle_manager : PuzzleUI = $CanvasLayer/PuzzleUi
 @onready var time_label : Label = %TimeClock
@@ -30,3 +31,9 @@ func _on_countdown_timer_timeout() -> void:
 	total_time -= 1
 	update_time_label()
 	
+
+func _on_critical_puzzle_solved(_interactable : Interactable) -> void:
+	critical_puzzles -= 1
+	print("Critical puzzle solved: [%d] remain" % critical_puzzles)
+	if critical_puzzles <= 0 :
+		print("TODO OPEN SECOND HALF")

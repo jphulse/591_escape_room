@@ -8,45 +8,36 @@
 [ext_resource type="PackedScene" uid="uid://k0o1knc8lp0t" path="res://levels/charlie_wing/rooms/SlidingPuzzleRoom.tscn" id="5_kfbq2"]
 [ext_resource type="Script" uid="uid://be4iddkkbsp6r" path="res://interactable/test_objects/test_interactable.gd" id="6_4dugh"]
 [ext_resource type="PackedScene" uid="uid://c2owxr0q4tj1c" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/SlidingPicturePuzzle2.tscn" id="7_bsumw"]
-[ext_resource type="PackedScene" uid="uid://de4xtpkiyduvg" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/SolvedSlidingPictureScene1.tscn" id="7_na0o7"]
-[ext_resource type="PackedScene" uid="uid://cd667tr1y6iy7" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/SolvedSlidingPictureScene2.tscn" id="8_73k8k"]
 [ext_resource type="PackedScene" uid="uid://poj2g6o73xeu" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/SlidingPicturePuzzle3.tscn" id="8_fwcvl"]
 [ext_resource type="PackedScene" uid="uid://bntkspokkj7au" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/SlidingPicturePuzzle4.tscn" id="9_na0o7"]
-[ext_resource type="PackedScene" uid="uid://wyd1pr4b4q35" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/SolvedSlidingPictureScene3.tscn" id="10_5xyti"]
 [ext_resource type="PackedScene" uid="uid://dpfe7tpm8axqx" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/Keypad.tscn" id="10_73k8k"]
 [ext_resource type="PackedScene" uid="uid://c1su7or0lwt6m" path="res://levels/anant_wing/rooms/anant_wing.tscn" id="11_fwcvl"]
-[ext_resource type="PackedScene" uid="uid://dho3xa5tbdjoo" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/SolvedSlidingPictureScene4.tscn" id="12_n3o0a"]
 [ext_resource type="PackedScene" uid="uid://dim041h5jq58v" path="res://levels/anant_wing/puzzles/laser_puzzle/laser_puzzle.tscn" id="12_na0o7"]
 
 [node name="Main" type="Node2D" unique_id=1037393617]
 script = ExtResource("1_53q0u")
 
 [node name="World" type="Node2D" parent="." unique_id=564951816]
-position = Vector2(16, -3)
 
 [node name="Player" parent="World" unique_id=413969756 instance=ExtResource("2_pjrb6")]
 position = Vector2(401, 188)
 
 [node name="TestInteractable" parent="World" unique_id=848038532 instance=ExtResource("3_c651c")]
-position = Vector2(-636, -99)
 puzzle_scene = ExtResource("4_3wy1v")
 
 [node name="SlidingPuzzleRoom" parent="World" unique_id=628861520 instance=ExtResource("5_kfbq2")]
-position = Vector2(327, 415)
+position = Vector2(402, 374)
 
 [node name="TileMapLayer" parent="World/SlidingPuzzleRoom" index="0" unique_id=1783599910]
 tile_map_data = PackedByteArray("AAD5//n/AAAJAAEAAAD5//r/AAAJAAEAAAD5//v/AAAJAAEAAAD5//z/AAAJAAEAAAD5//3/AAAJAAEAAAD5//7/AAAJAAEAAAD5////AAAJAAEAAAD5/wAAAAAJAAEAAAD5/wEAAAAJAAEAAAD6//n/AAAJAAEAAAD6//r/AAAJAAEAAAD6//v/AAAJAAEAAAD6//z/AAAJAAEAAAD6//3/AAAJAAEAAAD6//7/AAAJAAEAAAD6////AAAJAAEAAAD6/wAAAAAJAAEAAAD6/wEAAAAJAAEAAAD7//n/AAAJAAEAAAD7//r/AAAJAAEAAAD7//v/AAAJAAEAAAD7//z/AAAJAAEAAAD7//3/AAAJAAEAAAD7//7/AAAJAAEAAAD7////AAAJAAEAAAD7/wAAAAAJAAEAAAD7/wEAAAAJAAEAAAD8//n/AAAJAAEAAAD8//r/AAAJAAEAAAD8//v/AAAJAAEAAAD8//z/AAAJAAEAAAD8//3/AAAJAAEAAAD8//7/AAAJAAEAAAD8////AAAJAAEAAAD8/wAAAAAJAAEAAAD8/wEAAAAJAAEAAAD9//n/AAAJAAEAAAD9//r/AAAJAAEAAAD9//v/AAAJAAEAAAD9//z/AAAJAAEAAAD9//3/AAAJAAEAAAD9//7/AAAJAAEAAAD9////AAAJAAEAAAD9/wAAAAAJAAEAAAD9/wEAAAAJAAEAAAD+//n/AAAJAAEAAAD+//r/AAAJAAEAAAD+//v/AAAJAAEAAAD+//z/AAAJAAEAAAD+//3/AAAJAAEAAAD+//7/AAAJAAEAAAD+////AAAJAAEAAAD+/wAAAAAJAAEAAAD+/wEAAAAJAAEAAAD///n/AAAJAAEAAAD///r/AAAJAAEAAAD///v/AAAJAAEAAAD///z/AAAJAAEAAAD///3/AAAJAAEAAAD///7/AAAJAAEAAAD/////AAAJAAEAAAD//wAAAAAJAAEAAAD//wEAAAAJAAEAAAAAAPn/AAAJAAEAAAAAAPr/AAAJAAEAAAAAAPv/AAAJAAEAAAAAAPz/AAAJAAEAAAAAAP3/AAAJAAEAAAAAAP7/AAAJAAEAAAAAAP//AAAJAAEAAAAAAAAAAAAJAAEAAAAAAAEAAAAJAAEAAAABAPn/AAAJAAEAAAABAPr/AAAJAAEAAAABAPv/AAAJAAEAAAABAPz/AAAJAAEAAAABAP3/AAAJAAEAAAABAP7/AAAJAAEAAAABAP//AAAJAAEAAAABAAAAAAAJAAEAAAABAAEAAAAJAAEAAAACAPn/AAAJAAEAAAACAPr/AAAJAAEAAAACAPv/AAAJAAEAAAACAPz/AAAJAAEAAAACAP3/AAAJAAEAAAACAP7/AAAJAAEAAAACAP//AAAJAAEAAAACAAAAAAAJAAEAAAACAAEAAAAJAAEAAAADAPn/AAAJAAEAAAADAPr/AAAJAAEAAAADAPv/AAAJAAEAAAADAPz/AAAJAAEAAAADAP3/AAAJAAEAAAADAP7/AAAJAAEAAAADAP//AAAJAAEAAAADAAAAAAAJAAEAAAADAAEAAAAJAAEAAAAEAPn/AAAJAAEAAAAEAPr/AAAJAAEAAAAEAPv/AAAJAAEAAAAEAPz/AAAJAAEAAAAEAP3/AAAJAAEAAAAEAP7/AAAJAAEAAAAEAP//AAAJAAEAAAAEAAAAAAAJAAEAAAAEAAEAAAAJAAEAAAAFAPn/AAAJAAEAAAAFAPr/AAAJAAEAAAAFAPv/AAAJAAEAAAAFAPz/AAAJAAEAAAAFAP3/AAAJAAEAAAAFAP7/AAAJAAEAAAAFAP//AAAJAAEAAAAFAAAAAAAJAAEAAAAFAAEAAAAJAAEAAAAGAPn/AAAJAAEAAAAGAPr/AAAJAAEAAAAGAPv/AAAJAAEAAAAGAPz/AAAJAAEAAAAGAP3/AAAJAAEAAAAGAP7/AAAJAAEAAAAGAP//AAAJAAEAAAAGAAAAAAAJAAEAAAAGAAEAAAAJAAEAAAD4//j/AAACAAQAAAAHAPj/AAABAAQAAAD4/wIAAAACAAMAAAD5//j/AAADAAQAAAD6//j/AAADAAQAAAD7//j/AAADAAQAAAD8//j/AAADAAQAAAD9//j/AAADAAQAAAABAPj/AAADAAQAAAACAPj/AAADAAQAAAADAPj/AAADAAQAAAAEAPj/AAADAAQAAAAFAPj/AAADAAQAAAAGAPj/AAADAAQAAAAHAPn/AAABAAUAAAAHAPr/AAABAAUAAAAHAPv/AAABAAUAAAAHAPz/AAABAAUAAAAHAP3/AAABAAUAAAAHAP7/AAABAAUAAAAHAP//AAABAAUAAAAHAAAAAAABAAUAAAAHAAEAAAABAAUAAAAHAAIAAAABAAMAAAD4//n/AAACAAIAAAD4//r/AAACAAIAAAD4//v/AAACAAIAAAD4//z/AAACAAIAAAD4//3/AAACAAIAAAD4//7/AAACAAIAAAD4////AAACAAIAAAD4/wAAAAACAAIAAAD4/wEAAAACAAIAAAD5/wIAAAAAAAMAAAD6/wIAAAAAAAMAAAD7/wIAAAAAAAMAAAD8/wIAAAAAAAMAAAD9/wIAAAAAAAMAAAD+/wIAAAAAAAMAAAD//wIAAAAAAAMAAAAAAAIAAAAAAAMAAAABAAIAAAAAAAMAAAACAAIAAAAAAAMAAAADAAIAAAAAAAMAAAAEAAIAAAAAAAMAAAAFAAIAAAAAAAMAAAAGAAIAAAAAAAMAAAA=")
 
 [node name="SlidingPuzzle1" parent="World/SlidingPuzzleRoom" index="1" unique_id=848038532]
-position = Vector2(-458, -468)
 script = ExtResource("6_4dugh")
-solved_picture_scene = ExtResource("7_na0o7")
 puzzle_scene = ExtResource("4_3wy1v")
 
 [node name="SlidingPuzzle2" parent="World/SlidingPuzzleRoom" index="2" unique_id=239721538]
-position = Vector2(466, 69)
+position = Vector2(219, -1)
 script = ExtResource("6_4dugh")
-solved_picture_scene = ExtResource("8_73k8k")
 puzzle_scene = ExtResource("7_bsumw")
 
 [node name="CollisionShape2D" parent="World/SlidingPuzzleRoom/SlidingPuzzle2" index="0" unique_id=607155606]
@@ -56,9 +47,8 @@ position = Vector2(2, 6)
 position = Vector2(2, 2)
 
 [node name="SlidingPuzzle3" parent="World/SlidingPuzzleRoom" index="3" unique_id=548557537]
-position = Vector2(-460, 55)
+position = Vector2(-311, -119)
 script = ExtResource("6_4dugh")
-solved_picture_scene = ExtResource("10_5xyti")
 puzzle_scene = ExtResource("8_fwcvl")
 
 [node name="CollisionShape2D" parent="World/SlidingPuzzleRoom/SlidingPuzzle3" index="0" unique_id=607155606]
@@ -68,9 +58,8 @@ position = Vector2(-2, 4)
 position = Vector2(-2, 2)
 
 [node name="SlidingPuzzle4" parent="World/SlidingPuzzleRoom" index="4" unique_id=1465185029]
-position = Vector2(450, -462)
+position = Vector2(290, -160)
 script = ExtResource("6_4dugh")
-solved_picture_scene = ExtResource("12_n3o0a")
 puzzle_scene = ExtResource("9_na0o7")
 
 [node name="CollisionShape2D" parent="World/SlidingPuzzleRoom/SlidingPuzzle4" index="0" unique_id=607155606]
@@ -80,9 +69,7 @@ position = Vector2(0, 3)
 position = Vector2(2, 1)
 
 [node name="Keypad" parent="World/SlidingPuzzleRoom" index="5" unique_id=1416669148]
-position = Vector2(44, 89)
-script = ExtResource("6_4dugh")
-solved_picture_scene = ExtResource("10_73k8k")
+position = Vector2(-134, -3)
 puzzle_scene = ExtResource("10_73k8k")
 
 [node name="CollisionShape2D" parent="World/SlidingPuzzleRoom/Keypad" index="0" unique_id=607155606]

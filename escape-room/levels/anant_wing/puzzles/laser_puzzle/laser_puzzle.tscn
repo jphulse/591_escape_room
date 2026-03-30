@@ -78,3 +78,7 @@ position = Vector2(352, 352)
 
 [node name="Mirror8" parent="Mirrors" unique_id=546428270 instance=ExtResource("4_g35p0")]
 position = Vector2(352, 544)
+
+[node name="AdmirePuzzleTimer" type="Timer" parent="." unique_id=472985866]
+
+[connection signal="timeout" from="AdmirePuzzleTimer" to="." method="_on_admire_puzzle_timer_timeout"]

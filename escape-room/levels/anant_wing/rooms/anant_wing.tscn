@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dc5r6gcms47wn" path="res://levels/tilemaps/placeholder_tilemap.tscn" id="1_3hwot"]
 [ext_resource type="PackedScene" uid="uid://bbqemvy0opfhg" path="res://interactable/test_objects/test_interactable.tscn" id="3_ea3ei"]
 [ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="3_ipkjx"]
-[ext_resource type="PackedScene" uid="uid://dim041h5jq58v" path="res://levels/anant_wing/puzzles/laser_puzzle/laser_puzzle.tscn" id="4_svpj5"]
+[ext_resource type="Script" uid="uid://do032p2b8idtx" path="res://interactable/critical_interactable.gd" id="4_3hwot"]
 
 [node name="AnantWing" type="Node2D" unique_id=1908345394]
 
@@ -20,7 +20,8 @@ texture = ExtResource("3_ipkjx")
 
 [node name="LaserPuzzle" parent="Puzzles" unique_id=848038532 instance=ExtResource("3_ea3ei")]
 position = Vector2(-1146, -444)
-puzzle_scene = ExtResource("4_svpj5")
+script = ExtResource("4_3hwot")
+puzzle_scene = null
 
 [node name="Sprite2D" parent="Puzzles/LaserPuzzle" index="1" unique_id=956446760]
 modulate = Color(1, 1, 0, 1)
