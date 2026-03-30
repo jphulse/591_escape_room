@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://de4xtpkiyduvg"]
+
+[ext_resource type="Script" uid="uid://d01oas8o7akvu" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/solved_sliding_picture_scene.gd" id="1_nks1a"]
+[ext_resource type="Texture2D" uid="uid://bnvflbygg8oe1" path="res://levels/charlie_wing/rooms/Images/FirstHint.png" id="2_7g5fo"]
+
+[node name="SolvedSlidingPictureScene" type="Node" unique_id=1143374251]
+script = ExtResource("1_nks1a")
+solved_image = ExtResource("2_7g5fo")
+metadata/_custom_type_script = "uid://dc2f6gf80707h"
+
+[node name="Control" type="Control" parent="." unique_id=389587528]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control" unique_id=293254966]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Panel" unique_id=236143786]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Panel/MarginContainer" unique_id=1979279988]
+layout_mode = 2
+texture = ExtResource("2_7g5fo")
+expand_mode = 3
