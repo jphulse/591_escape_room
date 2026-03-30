@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dglx6p61qb0cm"]
+
+[ext_resource type="Script" uid="uid://b3xqgkjemyve8" path="res://main/Enemies/Enemy.gd" id="1_bufc3"]
+[ext_resource type="Texture2D" uid="uid://bjc7u0wu1yf6o" path="res://main/Sprites/Walker.png" id="1_sd1mc"]
+[ext_resource type="Texture2D" uid="uid://d13uj4w2gmeow" path="res://main/Sprites/walker_vision_cone.png" id="2_hxojc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hxojc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sd1mc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hxojc"]
+radius = 6.0
+height = 22.0
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_bufc3"]
+points = PackedVector2Array(0, 0, 60, 20, 60, -20)
+
+[node name="Walker" type="CharacterBody2D" unique_id=1094628956]
+scale = Vector2(4, 4)
+script = ExtResource("1_bufc3")
+waypoint = null
+speed = null
+waitTime = null
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=528247163]
+sprite_frames = SubResource("SpriteFrames_hxojc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1200249826]
+
+[node name="VisionCone" type="CollisionShape2D" parent="." unique_id=1695733537]
+shape = SubResource("CapsuleShape2D_hxojc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=311641770]
+position = Vector2(30, 0)
+texture = ExtResource("2_hxojc")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1403587738]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1812055560]
+shape = SubResource("ConvexPolygonShape2D_bufc3")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=283027304]
+
+[node name="WaitTimer" type="Timer" parent="." unique_id=1399516081]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="WaitTimer" to="." method="_on_wait_timer_timeout"]
