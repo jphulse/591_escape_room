@@ -99,7 +99,6 @@ puzzle_scene = ExtResource("12_na0o7")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1678019845]
 
 [node name="WorldUI" type="Control" parent="CanvasLayer" unique_id=146645376]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -113.0
