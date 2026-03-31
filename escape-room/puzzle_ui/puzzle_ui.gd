@@ -1,5 +1,7 @@
 class_name PuzzleUI extends Control
 
+signal enable_player
+
 @onready var panel : Panel = $Panel
 @onready var viewport_container : SubViewportContainer = $Panel/SubViewportContainer
 @onready var viewport : SubViewport = $Panel/SubViewportContainer/SubViewport
@@ -21,7 +23,11 @@ func open_puzzle(scene : PackedScene, source : Interactable = null) -> void:
 	current_source = source
 	visible = true
 	get_tree().paused = true
-	current_puzzle = scene.instantiate()
+	if scene:
+		current_puzzle = scene.instantiate()
+	else:
+		close_puzzle()
+		return
 	current_puzzle.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	viewport.add_child(current_puzzle)
 	
@@ -39,6 +45,7 @@ func close_puzzle() -> void:
 	current_source = null
 	visible = false
 	get_tree().paused = false
+	enable_player.emit()
 
 func _on_puzzle_solved() -> void:
 	if current_source and current_source.has_method("on_puzzle_solved"):

@@ -135,6 +135,7 @@ autostart = true
 [connection signal="interact" from="World/SlidingPuzzleRoom/Keypad" to="." method="_on_interaction"]
 [connection signal="critical_interactable_solved" from="World/AnantWing/Puzzles/LaserPuzzle" to="." method="_on_critical_puzzle_solved"]
 [connection signal="interact" from="World/AnantWing/Puzzles/LaserPuzzle" to="." method="_on_interaction"]
+[connection signal="enable_player" from="CanvasLayer/PuzzleUi" to="." method="_on_enable_player"]
 [connection signal="timeout" from="AlwaysActive/CountdownTimer" to="." method="_on_countdown_timer_timeout"]
 
 [editable path="World/SlidingPuzzleRoom"]

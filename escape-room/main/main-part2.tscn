@@ -5,7 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://dglx6p61qb0cm" path="res://main/Enemies/Walker.tscn" id="1_uwd5a"]
 [ext_resource type="PackedScene" uid="uid://q17ochxfw2t" path="res://player/player.tscn" id="2_lxu5r"]
 [ext_resource type="Texture2D" uid="uid://cavrgti0yfo2h" path="res://main/Sprites/placeholder_tilemap.png" id="2_uwd5a"]
-[ext_resource type="Script" uid="uid://wyst110h3hib" path="res://main/patrol_point.gd" id="5_5rkkr"]
+[ext_resource type="Script" path="res://main/patrol_point.gd" id="5_5rkkr"]
+[ext_resource type="PackedScene" uid="uid://bbqemvy0opfhg" path="res://interactable/test_objects/test_interactable.tscn" id="7_bp8ap"]
+[ext_resource type="PackedScene" uid="uid://bqgusgsppdeby" path="res://puzzles/microgames/rythym/rythym_microgame.tscn" id="8_uajbl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5rkkr"]
 texture = ExtResource("2_uwd5a")
@@ -249,3 +251,9 @@ markers = [NodePath("../PatrolPoints/Patrol_Point_4"), NodePath("../PatrolPoints
 waypoint = Array[bool]([false, true, true, false, true, true])
 speed = 200.0
 waitTime = 5.0
+
+[node name="Interactables" type="Node2D" parent="." unique_id=23042270]
+position = Vector2(-1862, -518)
+
+[node name="TestInteractable" parent="Interactables" unique_id=848038532 instance=ExtResource("7_bp8ap")]
+puzzle_scene = ExtResource("8_uajbl")
