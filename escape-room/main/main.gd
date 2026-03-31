@@ -5,7 +5,10 @@ class_name Main extends Node2D
 
 @onready var puzzle_manager : PuzzleUI = $CanvasLayer/PuzzleUi
 @onready var time_label : Label = %TimeClock
+@onready var always_active : Node = $AlwaysActive
 
+var part_two_scene : PackedScene = preload("res://main/main-part2.tscn")
+var part_two_inst : Node2D = null
 
 func update_time_label() -> void:
 	if total_time > 0:
@@ -24,16 +27,30 @@ func _process(_delta: float) -> void:
 
 
 func _on_interaction(puzzle_scene: PackedScene, caller: Interactable) -> void:
-	puzzle_manager.open_puzzle(puzzle_scene, caller)
+	if critical_puzzles >= 0:
+		puzzle_manager.open_puzzle(puzzle_scene, caller)
 
 # TODO add lose logic for hitting 0 on the timer
 func _on_countdown_timer_timeout() -> void:
 	total_time -= 1
 	update_time_label()
 	
+func _free_part_one() -> void:
+	$AlwaysActive/CountdownTimer.queue_free()
+	$CanvasLayer/WorldUI.queue_free()
+	$World.queue_free()
+
+func _start_part_2() -> void:
+	if part_two_inst:
+		part_two_inst.queue_free()
+	part_two_inst = part_two_scene.instantiate()
+	if part_two_inst.has_signal("resetScene"):
+		part_two_inst.resetScene.connect(_start_part_2)
+	always_active.add_child(part_two_inst)
 
 func _on_critical_puzzle_solved(_interactable : Interactable) -> void:
 	critical_puzzles -= 1
 	print("Critical puzzle solved: [%d] remain" % critical_puzzles)
 	if critical_puzzles <= 0 :
-		print("TODO OPEN SECOND HALF")
+		_free_part_one()
+		_start_part_2()
