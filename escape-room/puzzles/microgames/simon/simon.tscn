@@ -89,6 +89,10 @@ one_shot = true
 [node name="SequenceTimer" type="Timer" parent="." unique_id=1787674995]
 
 [node name="CycleTimer" type="Timer" parent="." unique_id=364116121]
+one_shot = true
+
+[node name="SpriteHighlightTimer" type="Timer" parent="." unique_id=677583959]
+one_shot = true
 
 [connection signal="pressed" from="TopSprite" to="." method="_on_button_pressed"]
 [connection signal="mouse_entered" from="TopSprite/Area" to="TopSprite" method="_on_area_mouse_entered"]
@@ -108,3 +112,4 @@ one_shot = true
 [connection signal="timeout" from="LeftSprite/CooldownTimer" to="LeftSprite" method="_on_cooldown_timer_timeout"]
 [connection signal="timeout" from="SequenceTimer" to="." method="_on_sequence_timer_timeout"]
 [connection signal="timeout" from="CycleTimer" to="." method="_on_cycle_timer_timeout"]
+[connection signal="timeout" from="SpriteHighlightTimer" to="." method="_on_sprite_highlight_timer_timeout"]
