@@ -86,15 +86,25 @@ shape = SubResource("RectangleShape2D_01lwq")
 [node name="CooldownTimer" type="Timer" parent="LeftSprite" unique_id=1575896090]
 one_shot = true
 
+[node name="SequenceTimer" type="Timer" parent="." unique_id=1787674995]
+
+[node name="CycleTimer" type="Timer" parent="." unique_id=364116121]
+
+[connection signal="pressed" from="TopSprite" to="." method="_on_button_pressed"]
 [connection signal="mouse_entered" from="TopSprite/Area" to="TopSprite" method="_on_area_mouse_entered"]
 [connection signal="mouse_exited" from="TopSprite/Area" to="TopSprite" method="_on_area_mouse_exited"]
 [connection signal="timeout" from="TopSprite/CooldownTimer" to="TopSprite" method="_on_cooldown_timer_timeout"]
+[connection signal="pressed" from="RightSprite" to="." method="_on_button_pressed"]
 [connection signal="mouse_entered" from="RightSprite/Area" to="RightSprite" method="_on_area_mouse_entered"]
 [connection signal="mouse_exited" from="RightSprite/Area" to="RightSprite" method="_on_area_mouse_exited"]
 [connection signal="timeout" from="RightSprite/CooldownTimer" to="RightSprite" method="_on_cooldown_timer_timeout"]
+[connection signal="pressed" from="BottomSprite" to="." method="_on_button_pressed"]
 [connection signal="mouse_entered" from="BottomSprite/Area" to="BottomSprite" method="_on_area_mouse_entered"]
 [connection signal="mouse_exited" from="BottomSprite/Area" to="BottomSprite" method="_on_area_mouse_exited"]
 [connection signal="timeout" from="BottomSprite/CooldownTimer" to="BottomSprite" method="_on_cooldown_timer_timeout"]
+[connection signal="pressed" from="LeftSprite" to="." method="_on_button_pressed"]
 [connection signal="mouse_entered" from="LeftSprite/Area" to="LeftSprite" method="_on_area_mouse_entered"]
 [connection signal="mouse_exited" from="LeftSprite/Area" to="LeftSprite" method="_on_area_mouse_exited"]
 [connection signal="timeout" from="LeftSprite/CooldownTimer" to="LeftSprite" method="_on_cooldown_timer_timeout"]
+[connection signal="timeout" from="SequenceTimer" to="." method="_on_sequence_timer_timeout"]
+[connection signal="timeout" from="CycleTimer" to="." method="_on_cycle_timer_timeout"]
