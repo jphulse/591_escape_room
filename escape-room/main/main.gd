@@ -15,6 +15,7 @@ func update_time_label() -> void:
 		@warning_ignore("integer_division")
 		time_label.text = "%02d:%02d" % [total_time / 60, total_time % 60]
 	else:
+		get_tree().reload_current_scene()
 		time_label.text = "00:00"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

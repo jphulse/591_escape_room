@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://bm7si8dt6f3pn"]
+
+[ext_resource type="Script" uid="uid://2d17p27ibgq4" path="res://puzzles/microgames/simon/simon.gd" id="1_n8sgl"]
+[ext_resource type="Shader" uid="uid://cq0xd4mobju2y" path="res://puzzles/microgames/simon/simon.gdshader" id="2_01lwq"]
+[ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="2_cq33o"]
+[ext_resource type="Script" uid="uid://durwoir37s2oi" path="res://puzzles/microgames/simon/simon_button.gd" id="4_77vvc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_77vvc"]
+shader = ExtResource("2_01lwq")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_01lwq"]
+size = Vector2(123, 125)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_01lwq"]
+shader = ExtResource("2_01lwq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v5v58"]
+shader = ExtResource("2_01lwq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_won0y"]
+shader = ExtResource("2_01lwq")
+
+[node name="Simon" type="Node" unique_id=985988121]
+script = ExtResource("1_n8sgl")
+metadata/_custom_type_script = "uid://dc2f6gf80707h"
+
+[node name="TopSprite" type="Sprite2D" parent="." unique_id=1262587972]
+self_modulate = Color(0, 0, 1, 1)
+material = SubResource("ShaderMaterial_77vvc")
+instance_shader_parameters/darkness_mult = 0.5
+position = Vector2(532, 104)
+texture = ExtResource("2_cq33o")
+script = ExtResource("4_77vvc")
+
+[node name="Area" type="Area2D" parent="TopSprite" unique_id=130741741]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopSprite/Area" unique_id=1254574610]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_01lwq")
+
+[node name="CooldownTimer" type="Timer" parent="TopSprite" unique_id=128132270]
+one_shot = true
+
+[node name="RightSprite" type="Sprite2D" parent="." unique_id=906733752]
+material = SubResource("ShaderMaterial_01lwq")
+position = Vector2(788, 294)
+texture = ExtResource("2_cq33o")
+script = ExtResource("4_77vvc")
+
+[node name="Area" type="Area2D" parent="RightSprite" unique_id=306396193]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightSprite/Area" unique_id=800418065]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_01lwq")
+
+[node name="CooldownTimer" type="Timer" parent="RightSprite" unique_id=698506321]
+one_shot = true
+
+[node name="BottomSprite" type="Sprite2D" parent="." unique_id=2145034746]
+material = SubResource("ShaderMaterial_v5v58")
+position = Vector2(524, 480)
+texture = ExtResource("2_cq33o")
+script = ExtResource("4_77vvc")
+
+[node name="Area" type="Area2D" parent="BottomSprite" unique_id=2040639933]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomSprite/Area" unique_id=517749990]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_01lwq")
+
+[node name="CooldownTimer" type="Timer" parent="BottomSprite" unique_id=1373320612]
+one_shot = true
+
+[node name="LeftSprite" type="Sprite2D" parent="." unique_id=1070550385]
+material = SubResource("ShaderMaterial_won0y")
+position = Vector2(208, 240)
+texture = ExtResource("2_cq33o")
+script = ExtResource("4_77vvc")
+
+[node name="Area" type="Area2D" parent="LeftSprite" unique_id=467777121]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftSprite/Area" unique_id=1817337388]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_01lwq")
+
+[node name="CooldownTimer" type="Timer" parent="LeftSprite" unique_id=1575896090]
+one_shot = true
+
+[connection signal="mouse_entered" from="TopSprite/Area" to="TopSprite" method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="TopSprite/Area" to="TopSprite" method="_on_area_mouse_exited"]
+[connection signal="timeout" from="TopSprite/CooldownTimer" to="TopSprite" method="_on_cooldown_timer_timeout"]
+[connection signal="mouse_entered" from="RightSprite/Area" to="RightSprite" method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="RightSprite/Area" to="RightSprite" method="_on_area_mouse_exited"]
+[connection signal="timeout" from="RightSprite/CooldownTimer" to="RightSprite" method="_on_cooldown_timer_timeout"]
+[connection signal="mouse_entered" from="BottomSprite/Area" to="BottomSprite" method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="BottomSprite/Area" to="BottomSprite" method="_on_area_mouse_exited"]
+[connection signal="timeout" from="BottomSprite/CooldownTimer" to="BottomSprite" method="_on_cooldown_timer_timeout"]
+[connection signal="mouse_entered" from="LeftSprite/Area" to="LeftSprite" method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="LeftSprite/Area" to="LeftSprite" method="_on_area_mouse_exited"]
+[connection signal="timeout" from="LeftSprite/CooldownTimer" to="LeftSprite" method="_on_cooldown_timer_timeout"]
