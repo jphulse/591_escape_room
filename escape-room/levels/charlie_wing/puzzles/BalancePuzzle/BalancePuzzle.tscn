@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://ch7w5hijgyrvc"]
+
+[ext_resource type="Script" uid="uid://c7m7nhokctg1q" path="res://levels/charlie_wing/puzzles/BalancePuzzle/balance_puzzle.gd" id="1_58jlb"]
+[ext_resource type="Texture2D" uid="uid://dcn6lj4x1bvgr" path="res://main/Sprites/Pan.png" id="2_58jlb"]
+[ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="2_fj5r4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_58jlb"]
+size = Vector2(259, 61)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_58jlb"]
+radius = 85.02353
+
+[node name="BalancePuzzle" type="Node" unique_id=1869013271]
+script = ExtResource("1_58jlb")
+metadata/_custom_type_script = "uid://dc2f6gf80707h"
+
+[node name="Label" type="Label" parent="." unique_id=2087957258]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="RightPan" type="Area2D" parent="." unique_id=1338345197]
+position = Vector2(911, 219)
+
+[node name="PanSprite" type="Sprite2D" parent="RightPan" unique_id=1210068701]
+texture = ExtResource("2_58jlb")
+
+[node name="Slot1" type="Marker2D" parent="RightPan/PanSprite" unique_id=1692912279]
+position = Vector2(-79, -23)
+
+[node name="Slot2" type="Marker2D" parent="RightPan/PanSprite" unique_id=541124815]
+position = Vector2(0, -25)
+
+[node name="Slot3" type="Marker2D" parent="RightPan/PanSprite" unique_id=1562682631]
+position = Vector2(80, -26)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightPan" unique_id=1875619374]
+position = Vector2(-2, -22)
+shape = SubResource("RectangleShape2D_58jlb")
+
+[node name="LeftPan" type="Area2D" parent="." unique_id=1426146206]
+position = Vector2(250, 218)
+
+[node name="PanSprite" type="Sprite2D" parent="LeftPan" unique_id=830559607]
+texture = ExtResource("2_58jlb")
+
+[node name="Slot1" type="Marker2D" parent="LeftPan/PanSprite" unique_id=1041417807]
+position = Vector2(-75, -27)
+
+[node name="Slot2" type="Marker2D" parent="LeftPan/PanSprite" unique_id=628319771]
+position = Vector2(-28, -26)
+
+[node name="Slot3" type="Marker2D" parent="LeftPan/PanSprite" unique_id=353511979]
+position = Vector2(57, -25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftPan" unique_id=763443831]
+position = Vector2(-2.5, -24.5)
+shape = SubResource("RectangleShape2D_58jlb")
+
+[node name="ShapePool" type="Node2D" parent="." unique_id=654818941]
+position = Vector2(595, 363)
+
+[node name="Shape1" type="Area2D" parent="ShapePool" unique_id=1063030045]
+position = Vector2(-280, -4)
+
+[node name="Sprite2D" type="Sprite2D" parent="ShapePool/Shape1" unique_id=1993734351]
+texture = ExtResource("2_fj5r4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShapePool/Shape1" unique_id=1381606051]
+shape = SubResource("CircleShape2D_58jlb")
+
+[node name="Shape2" type="Area2D" parent="ShapePool" unique_id=1538237063]
+position = Vector2(329, -9)
+
+[node name="Sprite2D" type="Sprite2D" parent="ShapePool/Shape2" unique_id=269611937]
+texture = ExtResource("2_fj5r4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShapePool/Shape2" unique_id=1252661508]
+shape = SubResource("CircleShape2D_58jlb")
+
+[node name="Shape3" type="Area2D" parent="ShapePool" unique_id=1336848639]
+position = Vector2(-8, -187)
+
+[node name="Sprite2D" type="Sprite2D" parent="ShapePool/Shape3" unique_id=383121876]
+texture = ExtResource("2_fj5r4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShapePool/Shape3" unique_id=2032749774]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_58jlb")
+
+[node name="Shape4" type="Area2D" parent="ShapePool" unique_id=1734000505]
+
+[node name="Sprite2D" type="Sprite2D" parent="ShapePool/Shape4" unique_id=1287106439]
+texture = ExtResource("2_fj5r4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShapePool/Shape4" unique_id=998245267]
+shape = SubResource("CircleShape2D_58jlb")

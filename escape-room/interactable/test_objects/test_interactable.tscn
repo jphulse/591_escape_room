@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bbqemvy0opfhg"]
 
-[ext_resource type="Script" uid="uid://be4iddkkbsp6r" path="res://interactable/test_objects/test_interactable.gd" id="1_0e4n4"]
+[ext_resource type="Script" uid="uid://be4iddkkbsp6r" path="res://levels/charlie_wing/picture_interactable.gd" id="1_0e4n4"]
 [ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="2_0e4n4"]
 [ext_resource type="PackedScene" uid="uid://dd6bduf4brlk4" path="res://puzzles/puzzle.tscn" id="2_2lj2u"]
 

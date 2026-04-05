@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://tlb6dk72cm76"]
+
+[ext_resource type="Script" uid="uid://cwh27qypfn2jh" path="res://levels/charlie_wing/puzzles/PatternPuzzle/patternpuzzle.gd" id="1_xsjqr"]
+[ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="2_co0ua"]
+
+[node name="SymbolPanelPuzzle" type="Node" unique_id=436246070]
+script = ExtResource("1_xsjqr")
+symbol_1 = ExtResource("2_co0ua")
+symbol_2 = ExtResource("2_co0ua")
+symbol_3 = ExtResource("2_co0ua")
+riddle = "Blah Blah"
+metadata/_custom_type_script = "uid://dc2f6gf80707h"
+
+[node name="UI" type="Control" parent="." unique_id=524354689]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="UI" unique_id=725168091]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Panel" unique_id=891546146]
+layout_mode = 0
+offset_right = 608.0
+offset_bottom = 227.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Panel/MarginContainer" unique_id=739106955]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/Panel/MarginContainer/VBoxContainer" unique_id=1766482739]
+layout_mode = 2
+
+[node name="Symbols" type="HBoxContainer" parent="UI/Panel/MarginContainer/VBoxContainer" unique_id=1964923668]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="Symbol1" type="TextureRect" parent="UI/Panel/MarginContainer/VBoxContainer/Symbols" unique_id=1811744497]
+layout_mode = 2
+texture = ExtResource("2_co0ua")
+expand_mode = 2
+stretch_mode = 3
+
+[node name="Symbol2" type="TextureRect" parent="UI/Panel/MarginContainer/VBoxContainer/Symbols" unique_id=1773010186]
+layout_mode = 2
+texture = ExtResource("2_co0ua")
+expand_mode = 2
+stretch_mode = 3
+
+[node name="Symbol3" type="TextureRect" parent="UI/Panel/MarginContainer/VBoxContainer/Symbols" unique_id=761208679]
+layout_mode = 2
+texture = ExtResource("2_co0ua")
+expand_mode = 2
+stretch_mode = 3
