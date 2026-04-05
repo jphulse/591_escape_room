@@ -328,7 +328,7 @@ lookPoints = Array[Vector2]([Vector2(0, 1)])
 waitTime = 2.5
 
 [node name="Walker4" parent="." unique_id=873304956 node_paths=PackedStringArray("markers") groups=["Enemies"] instance=ExtResource("1_uwd5a")]
-position = Vector2(-1378, 644)
+position = Vector2(-1373, 624)
 markers = [NodePath("../PatrolPoints/Patrol_Point_13"), NodePath("../PatrolPoints/Patrol_Point_14")]
 waypoint = Array[bool]([false, false])
 speed = 350.0
