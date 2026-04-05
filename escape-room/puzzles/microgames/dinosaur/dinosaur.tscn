@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://ckcem601romlw"]
+
+[ext_resource type="Script" uid="uid://44v7se835u1w" path="res://puzzles/microgames/dinosaur/dinosaur.gd" id="1_5x3nx"]
+[ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="2_ojcbf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5x3nx"]
+size = Vector2(117, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojcbf"]
+size = Vector2(315, 655)
+
+[node name="Dinosaur" type="Node" unique_id=1540238408]
+script = ExtResource("1_5x3nx")
+metadata/_custom_type_script = "uid://dc2f6gf80707h"
+
+[node name="Dino" type="Area2D" parent="." unique_id=2015502635]
+position = Vector2(72, 426)
+scale = Vector2(0.33, 0.33)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dino" unique_id=845427788]
+shape = SubResource("RectangleShape2D_5x3nx")
+
+[node name="Icon" type="Sprite2D" parent="Dino" unique_id=1550145291]
+texture = ExtResource("2_ojcbf")
+
+[node name="ObstacleSpawnTimer" type="Timer" parent="." unique_id=450233884]
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=376697104]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=731049165]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=2083780917]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "BLEH BLEH BLEH"
+
+[node name="DeathArea" type="Area2D" parent="." unique_id=178033569]
+position = Vector2(-207, 395)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathArea" unique_id=1519558295]
+position = Vector2(31.5, -78.5)
+shape = SubResource("RectangleShape2D_ojcbf")
+
+[connection signal="area_entered" from="Dino" to="." method="_on_dino_area_entered"]
+[connection signal="timeout" from="ObstacleSpawnTimer" to="." method="_on_obstacle_spawn_timer_timeout"]
+[connection signal="area_entered" from="DeathArea" to="." method="_on_death_area_area_entered"]

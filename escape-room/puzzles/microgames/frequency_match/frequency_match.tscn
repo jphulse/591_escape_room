@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://b4hn88opf6k2m"]
+
+[ext_resource type="Script" uid="uid://7uwplfff4gxm" path="res://puzzles/microgames/frequency_match/frequency_match.gd" id="1_otutk"]
+[ext_resource type="Script" uid="uid://bfrqfliypcw75" path="res://puzzles/microgames/frequency_match/wave_display.gd" id="2_67ymh"]
+
+[node name="FrequencyMatch" type="Node" unique_id=1652242822]
+script = ExtResource("1_otutk")
+metadata/_custom_type_script = "uid://dc2f6gf80707h"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1178714807]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1048733112]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="WaveDisplay" type="Control" parent="CanvasLayer/Control" unique_id=1374834441]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_67ymh")
+color = Color(0, 0.54509807, 0.54509807, 0.33333334)
+
+[node name="InteractiveWave" type="Control" parent="CanvasLayer/Control" unique_id=136713520]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_67ymh")
+amplitude = 100.0
+frequency = 3.0
+interactive = true
+color = Color(0.2246446, 0.5492983, 0.36625615, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=1976321204]
+layout_mode = 0
+offset_left = 487.0
+offset_top = 333.0
+offset_right = 527.0
+offset_bottom = 470.0
+scale = Vector2(1.0307767, 1.0026186)
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer" unique_id=565757996]
+layout_mode = 2
+text = "Amplitude "
+
+[node name="AmplitudeSlider" type="HSlider" parent="CanvasLayer/Control/VBoxContainer" unique_id=1370501739]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/VBoxContainer" unique_id=1361253860]
+layout_mode = 2
+text = "Frequency "
+
+[node name="FreuqncySlider" type="HSlider" parent="CanvasLayer/Control/VBoxContainer" unique_id=953278132]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control/VBoxContainer" unique_id=1334279679]
+visible = false
+layout_mode = 2
+text = "Speed"
+
+[node name="SpeedSlider" type="HSlider" parent="CanvasLayer/Control/VBoxContainer" unique_id=126470664]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[connection signal="draw" from="CanvasLayer/Control/InteractiveWave" to="." method="_on_interactive_wave_draw"]
+[connection signal="drag_ended" from="CanvasLayer/Control/VBoxContainer/AmplitudeSlider" to="CanvasLayer/Control/InteractiveWave" method="_on_amplitude_slider_drag_ended"]
+[connection signal="drag_ended" from="CanvasLayer/Control/VBoxContainer/FreuqncySlider" to="CanvasLayer/Control/InteractiveWave" method="_on_freuqncy_slider_drag_ended"]
+[connection signal="drag_ended" from="CanvasLayer/Control/VBoxContainer/SpeedSlider" to="CanvasLayer/Control/InteractiveWave" method="_on_speed_slider_drag_ended"]

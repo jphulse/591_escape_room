@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dpakkhljtempy"]
+
+[ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="1_02rd5"]
+[ext_resource type="Script" uid="uid://d4firum3cfjr0" path="res://puzzles/microgames/dinosaur/obstacle.gd" id="1_uur6c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5x3nx"]
+size = Vector2(117, 128)
+
+[node name="Obstacle" type="Area2D" unique_id=291708811]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_uur6c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1608924948]
+shape = SubResource("RectangleShape2D_5x3nx")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=99648325]
+texture = ExtResource("1_02rd5")
