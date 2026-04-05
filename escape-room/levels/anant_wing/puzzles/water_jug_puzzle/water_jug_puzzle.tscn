@@ -1,3 +1,53 @@
 [gd_scene format=3 uid="uid://3u1sbwuhcg6b"]
 
-[node name="WaterJugPuzzle" type="Node2D" unique_id=194861722]
+[ext_resource type="Script" uid="uid://du2s0gfv1bqiw" path="res://levels/anant_wing/puzzles/water_jug_puzzle/water_jug_puzzle.gd" id="1_jkfl5"]
+[ext_resource type="PackedScene" uid="uid://8f10a1e770e8" path="res://levels/anant_wing/puzzles/water_jug_puzzle/water_jug.tscn" id="2_sdys1"]
+[ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="3_6juyl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f6rh1"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wg5n3"]
+size = Vector2(128, 128)
+
+[node name="WaterJugPuzzle" type="Node" unique_id=1507087665]
+script = ExtResource("1_jkfl5")
+metadata/_custom_type_script = "uid://dc2f6gf80707h"
+
+[node name="WaterJugs" type="Node" parent="." unique_id=60088915]
+
+[node name="WaterJug" parent="WaterJugs" unique_id=733360647 instance=ExtResource("2_sdys1")]
+position = Vector2(384, 320)
+current_capacity = 8
+maximum_capacity = 8
+
+[node name="WaterJug2" parent="WaterJugs" unique_id=227085684 instance=ExtResource("2_sdys1")]
+position = Vector2(576, 320)
+
+[node name="WaterJug3" parent="WaterJugs" unique_id=2098362363 instance=ExtResource("2_sdys1")]
+position = Vector2(768, 320)
+maximum_capacity = 3
+
+[node name="WaterTap" type="Area2D" parent="." unique_id=1052238891]
+position = Vector2(192, 320)
+
+[node name="Sprite2D" type="Sprite2D" parent="WaterTap" unique_id=1994766921]
+modulate = Color(1, 0, 1, 1)
+texture = ExtResource("3_6juyl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterTap" unique_id=1567697036]
+shape = SubResource("RectangleShape2D_f6rh1")
+
+[node name="WaterDrain" type="Area2D" parent="." unique_id=100497631]
+position = Vector2(960, 320)
+
+[node name="Sprite2D" type="Sprite2D" parent="WaterDrain" unique_id=732231889]
+modulate = Color(1, 1, 0, 1)
+texture = ExtResource("3_6juyl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterDrain" unique_id=2111755923]
+shape = SubResource("RectangleShape2D_wg5n3")
+
+[node name="Timer" type="Timer" parent="." unique_id=1540042647]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

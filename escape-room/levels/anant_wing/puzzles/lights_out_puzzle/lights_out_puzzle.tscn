@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dnii1fubuoovd"]
+
+[ext_resource type="Script" uid="uid://67q21gf5jn52" path="res://levels/anant_wing/puzzles/lights_out_puzzle/lights_out_puzzle.gd" id="1_68fhb"]
+[ext_resource type="PackedScene" uid="uid://b2fd8l6iv35vm" path="res://levels/anant_wing/puzzles/lights_out_puzzle/light_tile.tscn" id="2_4kho7"]
+
+[node name="LightsOutPuzzle" type="Node" unique_id=599823978]
+script = ExtResource("1_68fhb")
+light_tile_scene = ExtResource("2_4kho7")
+metadata/_custom_type_script = "uid://dc2f6gf80707h"
+
+[node name="Timer" type="Timer" parent="." unique_id=546824344]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

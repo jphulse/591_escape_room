@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cxl043rlmcr0j"]
+
+[ext_resource type="Script" uid="uid://dcg02dijissmq" path="res://levels/anant_wing/puzzles/mystery_door_puzzle/mystery_door_puzzle.gd" id="1_dox30"]
+[ext_resource type="PackedScene" uid="uid://ccdbbm4abyb1e" path="res://levels/anant_wing/puzzles/mystery_door_puzzle/mystery_door.tscn" id="2_2tnr5"]
+
+[node name="MysteryDoorPuzzle" type="Node" unique_id=731407071]
+script = ExtResource("1_dox30")
+metadata/_custom_type_script = "uid://dc2f6gf80707h"
+
+[node name="LevelLabel" type="Label" parent="." unique_id=1679375243]
+offset_left = 512.0
+offset_top = 120.0
+offset_right = 640.0
+offset_bottom = 143.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=1161911209]
+
+[node name="Doors" type="Node" parent="." unique_id=765337280]
+
+[node name="MysteryDoor" parent="Doors" unique_id=52902679 instance=ExtResource("2_2tnr5")]
+position = Vector2(384, 256)
+
+[node name="MysteryDoor2" parent="Doors" unique_id=669001978 instance=ExtResource("2_2tnr5")]
+position = Vector2(576, 256)
+
+[node name="MysteryDoor3" parent="Doors" unique_id=511869707 instance=ExtResource("2_2tnr5")]
+position = Vector2(768, 256)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
