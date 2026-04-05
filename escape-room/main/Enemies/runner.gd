@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		checkProximityToPoint()
 		move_and_slide()
-		rotation = rotateTowardsPosition(markers[currentMarkerIndex].position, rotation, 4, delta)
+		rotation = rotateTowardsPosition(markers[currentMarkerIndex].position, rotation, 6, delta)
 		velocity = velocityAdjust(
 			Vector2.from_angle(rotation) * speed,
 			markers[currentMarkerIndex].position
@@ -90,3 +90,4 @@ func velocityAdjust(currentVelocity:Vector2, location:Vector2) -> Vector2:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		vision_cone.emit()
+		print("Runner saw player")

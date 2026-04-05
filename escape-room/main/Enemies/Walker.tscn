@@ -20,7 +20,7 @@ radius = 6.0
 height = 22.0
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_bufc3"]
-points = PackedVector2Array(0, 0, 60, 20, 60, -20)
+points = PackedVector2Array(0, 0, 60, 25, 60, -25.75)
 
 [node name="Walker" type="CharacterBody2D" unique_id=1094628956]
 scale = Vector2(4, 4)
@@ -38,7 +38,8 @@ sprite_frames = SubResource("SpriteFrames_hxojc")
 shape = SubResource("CapsuleShape2D_hxojc")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=311641770]
-position = Vector2(30, 0)
+position = Vector2(30.249998, -0.50000143)
+scale = Vector2(1.0083333, 1.2625)
 texture = ExtResource("2_hxojc")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1403587738]

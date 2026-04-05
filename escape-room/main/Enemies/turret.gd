@@ -55,8 +55,9 @@ func rotateTowardsDirection(target_dir: Vector2, current_rotation: float, streng
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		playerSighted = true
+		print("Turret saw player")
 
 func  _on_area_2d_body_exit(body: Node2D) -> void:
 	if body is Player:
 		playerSighted = false
-		
+		print("Turret saw player")

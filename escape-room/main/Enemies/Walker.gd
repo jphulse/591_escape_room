@@ -90,3 +90,4 @@ func velocityAdjust(currentVelocity:Vector2, location:Vector2) -> Vector2:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		vision_cone.emit()
+		print("Walker saw player")

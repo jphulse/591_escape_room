@@ -18,7 +18,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_2mq3m"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_bufc3"]
-points = PackedVector2Array(0, 0, 60, 20, 60, -20)
+points = PackedVector2Array(0, 0, 100, 40, 100, -40)
 
 [node name="Turret" type="CharacterBody2D" unique_id=1094628956]
 scale = Vector2(4, 4)
@@ -34,7 +34,8 @@ scale = Vector2(1.1, 1.1)
 shape = SubResource("CircleShape2D_2mq3m")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=311641770]
-position = Vector2(30, 0)
+position = Vector2(50.375, 1.9073486e-06)
+scale = Vector2(1.6791667, 2)
 texture = ExtResource("3_2mq3m")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1403587738]
