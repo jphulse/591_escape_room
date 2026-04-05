@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cskgb5814xrc8"]
+
+[ext_resource type="Texture2D" uid="uid://b2iktl3c7lr7f" path="res://main/Sprites/Runner.png" id="1_3ol1d"]
+[ext_resource type="Script" uid="uid://lv7fk5rsghcn" path="res://main/Enemies/runner.gd" id="1_l77li"]
+[ext_resource type="Texture2D" uid="uid://d13uj4w2gmeow" path="res://main/Sprites/walker_vision_cone.png" id="2_aviun"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aviun"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3ol1d")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l77li"]
+radius = 6.0
+height = 22.0
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_xwde0"]
+points = PackedVector2Array(0, 0, 60, 20, 60, -20)
+
+[node name="Runner" type="CharacterBody2D" unique_id=1641400777]
+script = ExtResource("1_l77li")
+speed = 600.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=814794547]
+sprite_frames = SubResource("SpriteFrames_aviun")
+animation = &"new_animation"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1375982286]
+
+[node name="VisionCone" type="CollisionShape2D" parent="." unique_id=1747203375]
+shape = SubResource("CapsuleShape2D_l77li")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1826193793]
+position = Vector2(30, 0)
+texture = ExtResource("2_aviun")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1066968662]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1781253165]
+shape = SubResource("ConvexPolygonShape2D_xwde0")
+
+[node name="WaitTimer" type="Timer" parent="." unique_id=915957200]
+wait_time = 5.0
+one_shot = true
