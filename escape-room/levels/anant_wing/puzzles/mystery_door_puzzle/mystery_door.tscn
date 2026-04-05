@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ccdbbm4abyb1e"]
+
+[ext_resource type="Script" uid="uid://b02yw14wg2wig" path="res://levels/anant_wing/puzzles/mystery_door_puzzle/mystery_door.gd" id="1_bllb8"]
+[ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="2_mmrvv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ve032"]
+size = Vector2(128, 128)
+
+[node name="MysteryDoor" type="StaticBody2D" unique_id=52902679]
+input_pickable = true
+script = ExtResource("1_bllb8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1613032608]
+texture = ExtResource("2_mmrvv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1969899125]
+shape = SubResource("RectangleShape2D_ve032")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

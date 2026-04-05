@@ -10,10 +10,6 @@ func _ready() -> void:
 	super._ready()
 	laser_target.target_hit.connect(_on_laser_target_hit)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
-
 func _on_laser_target_hit():
 	if puzzle_completed:
 		return

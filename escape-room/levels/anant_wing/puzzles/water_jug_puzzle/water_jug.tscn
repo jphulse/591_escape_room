@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://8f10a1e770e8"]
+
+[ext_resource type="Script" uid="uid://cjsi1j244mwdo" path="res://levels/anant_wing/puzzles/water_jug_puzzle/water_jug.gd" id="1_aca2o"]
+[ext_resource type="Texture2D" uid="uid://cskg5tr4kciuc" path="res://levels/anant_wing/puzzles/water_jug_puzzle/assets/Jug.png" id="2_ced0u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ced0u"]
+size = Vector2(128, 192)
+
+[node name="WaterJug" type="StaticBody2D" unique_id=733360647]
+input_pickable = true
+script = ExtResource("1_aca2o")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=716355419]
+position = Vector2(9.536743e-06, -4.7683716e-06)
+scale = Vector2(2, 3.0000002)
+texture = ExtResource("2_ced0u")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=432090676]
+offset_left = -64.0
+offset_top = -96.0
+offset_right = 64.0
+offset_bottom = 96.0
+mouse_filter = 2
+color = Color(0.0627451, 0.5176471, 1, 1)
+
+[node name="CurrentVolume" type="Label" parent="." unique_id=1527729794]
+modulate = Color(0, 0, 0, 1)
+offset_left = -64.0
+offset_top = -12.0
+offset_right = 64.0
+offset_bottom = 11.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MaxVolume" type="Label" parent="." unique_id=1575553508]
+modulate = Color(0, 0, 0, 1)
+offset_left = -64.0
+offset_top = 104.0
+offset_right = 64.0
+offset_bottom = 127.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=458711007]
+z_index = 1
+shape = SubResource("RectangleShape2D_ced0u")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
