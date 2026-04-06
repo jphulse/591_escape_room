@@ -95,13 +95,13 @@ func  _on_area_2d_body_exit(body: Node2D) -> void:
 
 func _on_wait_timer_3_timeout() -> void:
 	firing = true;
-	shootTimer.start(0.05)
+	shootTimer.start(0.02)
 
 func _on_wait_timer_2_timeout() -> void:
 	var shot : CharacterBody2D = projectile_scene.instantiate()
 	var direction := (target.global_position - global_position).normalized()
-	var spread = Vector2(1,1) * randf()/25
-	shot.velocity = (direction + spread).normalized() * 2000 
+	var spread = Vector2(1,1) * randf()/10
+	shot.velocity = (direction + spread).normalized() * 3200 
 	shot.global_position = global_position
 	shot.rotation = rotation
 	shot.scale = shot.scale * 4
@@ -117,4 +117,4 @@ func _on_wait_timer_2_timeout() -> void:
 	add_sibling(shot)
 	leftBarrelShoot = !leftBarrelShoot
 	
-	shootTimer.start(0.05)
+	shootTimer.start(0.02)

@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://by5xw8ui0thfr"]
+
+[ext_resource type="Script" uid="uid://dne0w8j164xqf" path="res://main/door.gd" id="1_fto4c"]
+[ext_resource type="Texture2D" uid="uid://do6koumrpyebw" path="res://main/Sprites/vertical_door1.png" id="2_po6eq"]
+[ext_resource type="Texture2D" uid="uid://bfai0bo8qxwhi" path="res://main/Sprites/vertical_door2.png" id="3_emqul"]
+[ext_resource type="Texture2D" uid="uid://baxh335m8mdqp" path="res://main/Sprites/vertical_door3.png" id="4_76c05"]
+[ext_resource type="Texture2D" uid="uid://msaw4hfr6b77" path="res://main/Sprites/vertical_door4.png" id="5_po0vj"]
+[ext_resource type="Texture2D" uid="uid://c111f1qw3w14o" path="res://main/Sprites/vertical_door5.png" id="6_m3baa"]
+[ext_resource type="Texture2D" uid="uid://dldf1i5vpkcg6" path="res://main/Sprites/vertical_door6.png" id="7_pnrkm"]
+[ext_resource type="Texture2D" uid="uid://cd87na160j3lt" path="res://main/Sprites/vertical_door7.png" id="8_jr5by"]
+[ext_resource type="Texture2D" uid="uid://bhrib8lfjm1tx" path="res://main/Sprites/vertical_door8.png" id="9_pq6nh"]
+[ext_resource type="Texture2D" uid="uid://pxg7tvsgj7c8" path="res://main/Sprites/vertical_door9.png" id="10_26qmq"]
+[ext_resource type="Texture2D" uid="uid://ewhecxkbpgbn" path="res://main/Sprites/vertical_door10.png" id="11_ywwwv"]
+[ext_resource type="Texture2D" uid="uid://yojk3l1eaeky" path="res://main/Sprites/vertical_door11.png" id="12_drntm"]
+[ext_resource type="Texture2D" uid="uid://b2amri5a3l2qr" path="res://main/Sprites/vertical_door12.png" id="13_kinsy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cxwhc"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("2_po6eq")
+}, {
+"duration": 0.5,
+"texture": ExtResource("3_emqul")
+}, {
+"duration": 0.5,
+"texture": ExtResource("4_76c05")
+}, {
+"duration": 0.5,
+"texture": ExtResource("5_po0vj")
+}, {
+"duration": 0.5,
+"texture": ExtResource("6_m3baa")
+}, {
+"duration": 0.5,
+"texture": ExtResource("7_pnrkm")
+}, {
+"duration": 0.5,
+"texture": ExtResource("8_jr5by")
+}, {
+"duration": 0.5,
+"texture": ExtResource("9_pq6nh")
+}, {
+"duration": 0.5,
+"texture": ExtResource("10_26qmq")
+}, {
+"duration": 0.5,
+"texture": ExtResource("11_ywwwv")
+}, {
+"duration": 0.5,
+"texture": ExtResource("12_drntm")
+}, {
+"duration": 0.5,
+"texture": ExtResource("13_kinsy")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Door" type="Node2D" unique_id=1376348165]
+script = ExtResource("1_fto4c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1658668018]
+sprite_frames = SubResource("SpriteFrames_cxwhc")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

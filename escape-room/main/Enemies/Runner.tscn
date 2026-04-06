@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cskgb5814xrc8"]
 
 [ext_resource type="Texture2D" uid="uid://b2iktl3c7lr7f" path="res://main/Sprites/Runner.png" id="1_3ol1d"]
-[ext_resource type="Script" uid="uid://lv7fk5rsghcn" path="res://main/Enemies/runner.gd" id="1_l77li"]
+[ext_resource type="Script" uid="uid://lv7fk5rsghcn" path="res://main/Enemies/Runner.gd" id="1_l77li"]
 [ext_resource type="Texture2D" uid="uid://d13uj4w2gmeow" path="res://main/Sprites/walker_vision_cone.png" id="2_aviun"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aviun"]
@@ -20,7 +20,7 @@ radius = 6.0
 height = 22.0
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_xwde0"]
-points = PackedVector2Array(0, 0, 60, 30, 60, -30)
+points = PackedVector2Array(22, -1, 60, 29, 60, -31)
 
 [node name="Runner" type="CharacterBody2D" unique_id=1641400777]
 script = ExtResource("1_l77li")
@@ -36,14 +36,14 @@ animation = &"new_animation"
 shape = SubResource("CapsuleShape2D_l77li")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1826193793]
-position = Vector2(33, -8.077936e-28)
-scale = Vector2(1.0166667, 1.5)
+position = Vector2(22.25, -8.077936e-28)
+scale = Vector2(0.64166665, 1.5)
 texture = ExtResource("2_aviun")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1066968662]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1781253165]
-position = Vector2(3, 0)
+position = Vector2(-19, 1)
 shape = SubResource("ConvexPolygonShape2D_xwde0")
 
 [node name="WaitTimer" type="Timer" parent="." unique_id=915957200]
