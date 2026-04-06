@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://chmxswe4bk615"]
 
 [ext_resource type="Script" uid="uid://dg0qttoguifeo" path="res://levels/anant_wing/puzzles/laser_puzzle/mirror.gd" id="1_cx0y1"]
-[ext_resource type="Texture2D" uid="uid://cdsieeo4gwwv3" path="res://levels/anant_wing/puzzles/laser_puzzle/assets/simple_mirror.png" id="2_cx0y1"]
+[ext_resource type="Texture2D" uid="uid://bd58sscvrk3la" path="res://levels/anant_wing/puzzles/laser_puzzle/assets/puzzle_mirror.png" id="2_cx0y1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cx0y1"]
 size = Vector2(128.00002, 0.47532272)

@@ -7,6 +7,7 @@ class_name WaterJug extends StaticBody2D
 @onready var fill_rect: ColorRect = $ColorRect
 @onready var current_volume_label: Label = $CurrentVolume
 @onready var maximum_volume_label: Label = $MaxVolume
+@onready var border_rect: ReferenceRect = $ReferenceRect
 
 var id: int = 0
 var base_y: float = 0.0
@@ -29,10 +30,7 @@ func _ready() -> void:
 	fill_rect.position.x = scaled_pos.x
 	
 	update_fill()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
+	set_border(false)
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
@@ -61,3 +59,9 @@ func update_fill() -> void:
 	var fill_ratio := float(current_capacity) / float(maximum_capacity)
 	fill_rect.size.y = max_fill_height * fill_ratio
 	fill_rect.position.y = base_y - fill_rect.size.y
+
+func set_border(border_is_on: bool) -> void:
+	if border_is_on:
+		border_rect.editor_only = false
+	else:
+		border_rect.editor_only = true

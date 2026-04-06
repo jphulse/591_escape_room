@@ -2,11 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://dc5r6gcms47wn" path="res://levels/tilemaps/placeholder_tilemap.tscn" id="1_3hwot"]
 [ext_resource type="PackedScene" uid="uid://bbqemvy0opfhg" path="res://interactable/test_objects/test_interactable.tscn" id="3_ea3ei"]
-[ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="3_ipkjx"]
 [ext_resource type="Script" uid="uid://do032p2b8idtx" path="res://interactable/critical_interactable.gd" id="4_3hwot"]
+[ext_resource type="Texture2D" uid="uid://clteybg8l5qj5" path="res://levels/anant_wing/puzzles/laser_puzzle/assets/LaserPuzzleIcon.png" id="4_nv5oc"]
 [ext_resource type="PackedScene" uid="uid://q5h0istanlvq" path="res://levels/anant_wing/puzzles/laser_puzzle/laser_puzzle_2.tscn" id="4_svpj5"]
 [ext_resource type="Script" uid="uid://cuagmwq26ovxf" path="res://levels/anant_wing/rooms/interactable.gd" id="5_ea3ei"]
 [ext_resource type="PackedScene" uid="uid://dnii1fubuoovd" path="res://levels/anant_wing/puzzles/lights_out_puzzle/lights_out_puzzle.tscn" id="6_ea3ei"]
+[ext_resource type="Texture2D" uid="uid://bhtpuv6h8vhyi" path="res://levels/anant_wing/puzzles/lights_out_puzzle/assets/LightsOutIcon.png" id="8_mgbst"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_svpj5"]
 radius = 88.0
@@ -25,7 +26,7 @@ script = ExtResource("4_3hwot")
 puzzle_scene = null
 
 [node name="Sprite2D" parent="LaserPuzzles/LaserPuzzle1" index="1" unique_id=956446760]
-modulate = Color(1, 1, 0, 1)
+texture = ExtResource("4_nv5oc")
 
 [node name="LaserPuzzle2" parent="LaserPuzzles" unique_id=1212048395 instance=ExtResource("3_ea3ei")]
 position = Vector2(0, -800)
@@ -33,7 +34,7 @@ script = ExtResource("4_3hwot")
 puzzle_scene = ExtResource("4_svpj5")
 
 [node name="Sprite2D" parent="LaserPuzzles/LaserPuzzle2" index="1" unique_id=956446760]
-modulate = Color(1, 1, 0, 1)
+texture = ExtResource("4_nv5oc")
 
 [node name="LightsOutPuzzles" type="Node2D" parent="." unique_id=1787084874]
 
@@ -47,8 +48,7 @@ metadata/_custom_type_script = "uid://b4glxx16mvlcp"
 shape = SubResource("CircleShape2D_svpj5")
 
 [node name="Sprite2D" type="Sprite2D" parent="LightsOutPuzzles/LightsOutPuzzle1" unique_id=94762380]
-modulate = Color(1, 0, 0, 1)
-texture = ExtResource("3_ipkjx")
+texture = ExtResource("8_mgbst")
 
 [node name="LightsOutPuzzle2" type="Area2D" parent="LightsOutPuzzles" unique_id=1854349286]
 position = Vector2(-449, -800)
@@ -60,8 +60,7 @@ metadata/_custom_type_script = "uid://b4glxx16mvlcp"
 shape = SubResource("CircleShape2D_svpj5")
 
 [node name="Sprite2D" type="Sprite2D" parent="LightsOutPuzzles/LightsOutPuzzle2" unique_id=1358675654]
-modulate = Color(1, 0, 0, 1)
-texture = ExtResource("3_ipkjx")
+texture = ExtResource("8_mgbst")
 
 [editable path="LaserPuzzles/LaserPuzzle1"]
 [editable path="LaserPuzzles/LaserPuzzle2"]

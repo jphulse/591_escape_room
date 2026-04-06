@@ -26,23 +26,28 @@ func _on_jug_clicked(jug: WaterJug) -> void:
 	if not selected_jug:
 		#print("Selected Jug: %d" % jug.id)
 		selected_jug = jug
+		selected_jug.set_border(true)
 	elif selected_jug == jug:
 		#print("Deselected Jug: %d" % jug.id)
+		selected_jug.set_border(false)
 		selected_jug = null
 	else:
 		#print("Pouring from %d to %d" % [selected_jug.id, jug.id])
 		jug.add_water(selected_jug)
+		selected_jug.set_border(false)
 		selected_jug = null
 		check_win_condition()
 
 func _on_water_tap_clicked(_tap: WaterTap) -> void:
 	if selected_jug is WaterJug:
 		selected_jug.set_current_capacity(selected_jug.maximum_capacity)
+		selected_jug.set_border(false)
 		selected_jug = null
 
 func _on_water_drain_clicked(_drain: WaterDrain) -> void:
 	if selected_jug is WaterJug:
 		selected_jug.set_current_capacity(0)
+		selected_jug.set_border(false)
 		selected_jug = null
 
 func check_win_condition() -> void:

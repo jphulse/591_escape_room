@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dtvonlwm04ndb" path="res://levels/anant_wing/puzzles/laser_puzzle/laser_puzzle.gd" id="1_k7752"]
 [ext_resource type="Script" uid="uid://bprnk7qmwxfp5" path="res://levels/anant_wing/puzzles/laser_puzzle/laser.gd" id="2_adshv"]
-[ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="3_21fa0"]
+[ext_resource type="Texture2D" uid="uid://dcbubq6q2habt" path="res://levels/anant_wing/puzzles/laser_puzzle/assets/BeamEmitter.png" id="3_adshv"]
 [ext_resource type="Script" uid="uid://ddrpn1u75c17e" path="res://levels/anant_wing/puzzles/laser_puzzle/laser_target.gd" id="4_h0jxv"]
+[ext_resource type="Texture2D" uid="uid://dng7sdflifjyn" path="res://levels/anant_wing/puzzles/laser_puzzle/assets/TheCube.png" id="5_21fa0"]
 [ext_resource type="PackedScene" uid="uid://chmxswe4bk615" path="res://levels/anant_wing/puzzles/laser_puzzle/mirror.tscn" id="5_mec3j"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jlr1w"]
@@ -17,7 +18,7 @@ angular_velocity_max = 9.999984
 gravity = Vector3(0, 90, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x73l0"]
-size = Vector2(128, 128)
+size = Vector2(64, 64)
 
 [node name="LaserPuzzle" type="Node2D" unique_id=1987172854]
 script = ExtResource("1_k7752")
@@ -27,9 +28,7 @@ position = Vector2(576, 448)
 script = ExtResource("2_adshv")
 
 [node name="Sprite2D" type="Sprite2D" parent="Laser" unique_id=626793480]
-modulate = Color(0, 1, 1, 1)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("3_21fa0")
+texture = ExtResource("3_adshv")
 
 [node name="LaserLine" type="Line2D" parent="Laser" unique_id=2122267385]
 modulate = Color(0, 1, 1, 1)
@@ -43,12 +42,10 @@ process_material = SubResource("ParticleProcessMaterial_jlr1w")
 
 [node name="LaserTarget" type="Area2D" parent="." unique_id=111695338]
 position = Vector2(896, 448)
-scale = Vector2(0.25, 0.25)
 script = ExtResource("4_h0jxv")
 
 [node name="Sprite2D" type="Sprite2D" parent="LaserTarget" unique_id=870513734]
-modulate = Color(0.20784314, 1, 0, 1)
-texture = ExtResource("3_21fa0")
+texture = ExtResource("5_21fa0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LaserTarget" unique_id=424776923]
 shape = SubResource("RectangleShape2D_x73l0")

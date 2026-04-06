@@ -4,9 +4,10 @@
 [ext_resource type="Script" uid="uid://b4glxx16mvlcp" path="res://interactable/interactable.gd" id="2_pkm8b"]
 [ext_resource type="PackedScene" uid="uid://cxl043rlmcr0j" path="res://levels/anant_wing/puzzles/mystery_door_puzzle/mystery_door_puzzle.tscn" id="3_8h7nn"]
 [ext_resource type="PackedScene" uid="uid://3u1sbwuhcg6b" path="res://levels/anant_wing/puzzles/water_jug_puzzle/water_jug_puzzle.tscn" id="3_smsf6"]
+[ext_resource type="Texture2D" uid="uid://bbxkfqfglxybe" path="res://levels/anant_wing/puzzles/water_jug_puzzle/assets/WaterJugIcon.png" id="4_imj4h"]
 [ext_resource type="PackedScene" uid="uid://bqebrf83vptjp" path="res://levels/anant_wing/puzzles/water_jug_puzzle/water_jug_puzzle_2.tscn" id="5_imj4h"]
 [ext_resource type="PackedScene" uid="uid://chw3ptukm72kt" path="res://levels/anant_wing/puzzles/mystery_door_puzzle/mystery_door_puzzle_2.tscn" id="5_kayw8"]
-[ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="6_b7ja2"]
+[ext_resource type="Texture2D" uid="uid://cito8jm1mle2j" path="res://levels/anant_wing/puzzles/mystery_door_puzzle/assets/MysteryDoorIcon.png" id="7_5vfwy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8h7nn"]
 radius = 88.362885
@@ -32,7 +33,7 @@ metadata/_custom_type_script = "uid://b4glxx16mvlcp"
 shape = SubResource("CircleShape2D_8h7nn")
 
 [node name="Sprite2D" type="Sprite2D" parent="WaterJugPuzzles/WaterJugPuzzle1" unique_id=999198696]
-texture = ExtResource("6_b7ja2")
+texture = ExtResource("4_imj4h")
 
 [node name="WaterJugPuzzle2" type="Area2D" parent="WaterJugPuzzles" unique_id=402617926]
 position = Vector2(1736, 0)
@@ -44,7 +45,7 @@ metadata/_custom_type_script = "uid://b4glxx16mvlcp"
 shape = SubResource("CircleShape2D_8h7nn")
 
 [node name="Sprite2D" type="Sprite2D" parent="WaterJugPuzzles/WaterJugPuzzle2" unique_id=747463559]
-texture = ExtResource("6_b7ja2")
+texture = ExtResource("4_imj4h")
 
 [node name="MysteryDoorPuzzles" type="Node2D" parent="." unique_id=1977836536]
 
@@ -58,7 +59,7 @@ metadata/_custom_type_script = "uid://b4glxx16mvlcp"
 shape = SubResource("CircleShape2D_kayw8")
 
 [node name="Sprite2D" type="Sprite2D" parent="MysteryDoorPuzzles/MysteryDoorPuzzle1" unique_id=1605023419]
-texture = ExtResource("6_b7ja2")
+texture = ExtResource("7_5vfwy")
 
 [node name="MysteryDoorPuzzle2" type="Area2D" parent="MysteryDoorPuzzles" unique_id=1739203643]
 position = Vector2(447, -896)
@@ -70,4 +71,4 @@ metadata/_custom_type_script = "uid://b4glxx16mvlcp"
 shape = SubResource("CircleShape2D_kayw8")
 
 [node name="Sprite2D" type="Sprite2D" parent="MysteryDoorPuzzles/MysteryDoorPuzzle2" unique_id=1091161055]
-texture = ExtResource("6_b7ja2")
+texture = ExtResource("7_5vfwy")

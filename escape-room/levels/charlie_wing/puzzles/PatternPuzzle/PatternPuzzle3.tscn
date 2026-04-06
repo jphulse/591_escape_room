@@ -1,14 +1,17 @@
 [gd_scene format=3 uid="uid://dj1a2xr3nojtk"]
 
 [ext_resource type="Script" uid="uid://cwh27qypfn2jh" path="res://levels/charlie_wing/puzzles/PatternPuzzle/patternpuzzle.gd" id="1_m3s6o"]
+[ext_resource type="Texture2D" uid="uid://140fkwti53gt" path="res://main/Sprites/Square.png" id="2_4rum7"]
 [ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="2_vf42p"]
+[ext_resource type="Texture2D" uid="uid://cgeyhru6llpbj" path="res://main/Sprites/Triangle.png" id="3_l3jik"]
+[ext_resource type="Texture2D" uid="uid://cqxv1x76egkuy" path="res://main/Sprites/Trapezoid.png" id="4_tfldq"]
 
 [node name="SymbolPanelPuzzle" type="Node" unique_id=436246070]
 script = ExtResource("1_m3s6o")
-symbol_1 = ExtResource("2_vf42p")
-symbol_2 = ExtResource("2_vf42p")
-symbol_3 = ExtResource("2_vf42p")
-riddle = "Blah Blah"
+symbol_1 = ExtResource("2_4rum7")
+symbol_2 = ExtResource("3_l3jik")
+symbol_3 = ExtResource("4_tfldq")
+riddle = "Third: Square - Triangle + Trapezoid"
 metadata/_custom_type_script = "uid://dc2f6gf80707h"
 
 [node name="UI" type="Control" parent="." unique_id=524354689]
@@ -43,16 +46,13 @@ layout_mode = 2
 layout_mode = 2
 texture = ExtResource("2_vf42p")
 expand_mode = 2
-stretch_mode = 3
 
 [node name="Symbol2" type="TextureRect" parent="UI/Panel/MarginContainer/VBoxContainer/Symbols" unique_id=1773010186]
 layout_mode = 2
 texture = ExtResource("2_vf42p")
 expand_mode = 2
-stretch_mode = 3
 
 [node name="Symbol3" type="TextureRect" parent="UI/Panel/MarginContainer/VBoxContainer/Symbols" unique_id=761208679]
 layout_mode = 2
 texture = ExtResource("2_vf42p")
 expand_mode = 2
-stretch_mode = 3
