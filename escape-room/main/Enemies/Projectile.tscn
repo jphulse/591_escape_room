@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://bfth70u000w52"]
 
-[node name="Projectile" type="Node2D" unique_id=414843146]
+[node name="Projectile" type="Area2D" unique_id=204799752]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1302537966]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1265535117]
+
+[node name="Timer" type="Timer" parent="." unique_id=1527441665]
