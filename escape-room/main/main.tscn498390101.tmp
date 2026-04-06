@@ -249,7 +249,6 @@ autostart = true
 [connection signal="interact" from="World/SlidingPuzzleRoom2/SlidingPuzzle3" to="." method="_on_interaction"]
 [connection signal="critical_interactable_solved" from="World/SlidingPuzzleRoom2/Keypad" to="." method="_on_critical_puzzle_solved"]
 [connection signal="interact" from="World/SlidingPuzzleRoom2/Keypad" to="." method="_on_interaction"]
-[connection signal="interact" from="World/PatternPuzzleRoom/SlidingPuzzle1" to="." method="_on_interaction"]
 [connection signal="enable_player" from="CanvasLayer/PuzzleUi" to="." method="_on_enable_player"]
 [connection signal="timeout" from="AlwaysActive/CountdownTimer" to="." method="_on_countdown_timer_timeout"]
 

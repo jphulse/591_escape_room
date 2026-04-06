@@ -18,12 +18,11 @@ script = ExtResource("1_58jlb")
 metadata/_custom_type_script = "uid://dc2f6gf80707h"
 
 [node name="Label" type="Label" parent="." unique_id=2087957258]
-offset_left = 1.0
-offset_right = 41.0
+offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="RightPan" type="Area2D" parent="." unique_id=1338345197]
-position = Vector2(412, 219)
+position = Vector2(911, 219)
 
 [node name="PanSprite" type="Sprite2D" parent="RightPan" unique_id=1210068701]
 texture = ExtResource("2_58jlb")
@@ -42,7 +41,7 @@ position = Vector2(-2, -22)
 shape = SubResource("RectangleShape2D_58jlb")
 
 [node name="LeftPan" type="Area2D" parent="." unique_id=1426146206]
-position = Vector2(144, 219)
+position = Vector2(250, 218)
 
 [node name="PanSprite" type="Sprite2D" parent="LeftPan" unique_id=830559607]
 texture = ExtResource("2_58jlb")
@@ -64,7 +63,7 @@ shape = SubResource("RectangleShape2D_58jlb")
 position = Vector2(595, 363)
 
 [node name="Shape1" type="Area2D" parent="ShapePool" unique_id=1063030045]
-position = Vector2(-483, -81)
+position = Vector2(-280, -4)
 
 [node name="Sprite2D" type="Sprite2D" parent="ShapePool/Shape1" unique_id=1993734351]
 scale = Vector2(0.3600012, 0.3600012)
@@ -74,7 +73,7 @@ texture = ExtResource("3_g5rkd")
 shape = SubResource("CircleShape2D_58jlb")
 
 [node name="Shape2" type="Area2D" parent="ShapePool" unique_id=1538237063]
-position = Vector2(-417, -82)
+position = Vector2(329, -9)
 
 [node name="Sprite2D" type="Sprite2D" parent="ShapePool/Shape2" unique_id=269611937]
 scale = Vector2(1.5199951, 1.5199951)
@@ -84,7 +83,7 @@ texture = ExtResource("4_ifidn")
 shape = SubResource("CircleShape2D_58jlb")
 
 [node name="Shape3" type="Area2D" parent="ShapePool" unique_id=1336848639]
-position = Vector2(-238, -82)
+position = Vector2(-8, -187)
 
 [node name="Sprite2D" type="Sprite2D" parent="ShapePool/Shape3" unique_id=383121876]
 scale = Vector2(1.3928037, 1.3928037)
@@ -95,7 +94,6 @@ position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_58jlb")
 
 [node name="Shape4" type="Area2D" parent="ShapePool" unique_id=1734000505]
-position = Vector2(-178, -83)
 
 [node name="Sprite2D" type="Sprite2D" parent="ShapePool/Shape4" unique_id=1287106439]
 scale = Vector2(0.32, 0.32)

@@ -8,8 +8,6 @@ extends Puzzle
 @export var shape_3_type := "circle"
 @export var shape_4_type := "star"
 
-a
-
 @onready var hint_label: Label = $Label
 
 @onready var left_pan: Area2D = $LeftPan
@@ -37,6 +35,8 @@ a
 @onready var shape_3: Area2D = $ShapePool/Shape3
 @onready var shape_4: Area2D = $ShapePool/Shape4
 
+var shape_weights: Dictionary = {}
+
 var selected_shape: Area2D = null
 
 var left_shapes: Array[Area2D] = []
@@ -61,6 +61,8 @@ func _ready() -> void:
 	shape_types[shape_3] = shape_3_type
 	shape_types[shape_4] = shape_4_type
 	
+	_generate_solvable_weights()
+	
 	pool_positions[shape_1] = shape_1.position
 	pool_positions[shape_2] = shape_2.position
 	pool_positions[shape_3] = shape_3.position
@@ -76,6 +78,35 @@ func _ready() -> void:
 	
 	_update_pan_visuals()
 	_update_shape_positions()
+
+# Chat Gpt helped make this puzzle 'replayable'
+func _generate_solvable_weights() -> void:
+	var shape_names := [
+		shape_1_type,
+		shape_2_type,
+		shape_3_type,
+		shape_4_type
+	]
+	
+	shape_names.shuffle()
+	
+	var a := randi_range(1, 6)
+	var b := randi_range(1, 6)
+	var c := randi_range(1, 6)
+	var d := a + b - c
+	
+	while d < 1 or d > 9:
+		a = randi_range(1, 6)
+		b = randi_range(1, 6)
+		c = randi_range(1, 6)
+		d = a + b - c
+	
+	shape_weights.clear()
+	shape_weights[shape_names[0]] = a
+	shape_weights[shape_names[1]] = b
+	shape_weights[shape_names[2]] = c
+	shape_weights[shape_names[3]] = d
+
 
 func _connect_shape(shape: Area2D) -> void:
 	shape.input_event.connect(_on_shape_clicked.bind(shape))
@@ -143,7 +174,7 @@ func _update_shape_positions() -> void:
 
 func _update_pan_visuals() -> void:
 	var diff := _left_weight() - _right_weight()
-	var offset: float = clamp(diff * 4.0, -12.0, 12.0)
+	var offset: float = clamp(diff * 10.0, -30.0, 30.0)
 	
 	left_pan.position.y = left_rest_y + offset
 	right_pan.position.y = right_rest_y - offset
