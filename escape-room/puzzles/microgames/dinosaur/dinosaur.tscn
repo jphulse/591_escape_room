@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ckcem601romlw"]
 
 [ext_resource type="Script" uid="uid://44v7se835u1w" path="res://puzzles/microgames/dinosaur/dinosaur.gd" id="1_5x3nx"]
-[ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="2_ojcbf"]
+[ext_resource type="Texture2D" uid="uid://c4qmwrlh86h8x" path="res://puzzles/microgames/dinosaur/little_guy.png" id="2_ojcbf"]
 [ext_resource type="Texture2D" uid="uid://brpbyo4uiaxpn" path="res://puzzles/microgames/dinosaur/dinosaur_aesprite.png" id="3_ojcbf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5x3nx"]
@@ -22,6 +22,8 @@ scale = Vector2(0.33, 0.33)
 shape = SubResource("RectangleShape2D_5x3nx")
 
 [node name="Icon" type="Sprite2D" parent="Dino" unique_id=1550145291]
+position = Vector2(1.0967255e-05, -13.63637)
+scale = Vector2(3.5984852, 5.247598)
 texture = ExtResource("2_ojcbf")
 
 [node name="ObstacleSpawnTimer" type="Timer" parent="." unique_id=450233884]

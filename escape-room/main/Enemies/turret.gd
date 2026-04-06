@@ -88,7 +88,7 @@ func  _on_area_2d_body_exit(body: Node2D) -> void:
 		shootTimer.stop()
 		sightedTimer.stop()
 		waiting = true
-		if timer.is_node_ready():
+		if timer.is_inside_tree():
 			timer.start(waitTime)
 		else:
 			timer.autostart = true

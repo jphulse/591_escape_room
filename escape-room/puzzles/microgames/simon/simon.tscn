@@ -2,14 +2,15 @@
 
 [ext_resource type="Script" uid="uid://2d17p27ibgq4" path="res://puzzles/microgames/simon/simon.gd" id="1_n8sgl"]
 [ext_resource type="Shader" uid="uid://cq0xd4mobju2y" path="res://puzzles/microgames/simon/simon.gdshader" id="2_01lwq"]
-[ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="2_cq33o"]
+[ext_resource type="Texture2D" uid="uid://broful3k18c5m" path="res://puzzles/microgames/simon/button.png" id="3_v5v58"]
 [ext_resource type="Script" uid="uid://durwoir37s2oi" path="res://puzzles/microgames/simon/simon_button.gd" id="4_77vvc"]
+[ext_resource type="Texture2D" uid="uid://ct62yq3sm3y3u" path="res://puzzles/microgames/simon/board.png" id="5_v5v58"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_77vvc"]
 shader = ExtResource("2_01lwq")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_01lwq"]
-size = Vector2(123, 125)
+size = Vector2(64.96972, 40.388054)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_01lwq"]
 shader = ExtResource("2_01lwq")
@@ -22,29 +23,32 @@ shader = ExtResource("2_01lwq")
 
 [node name="Simon" type="Node" unique_id=985988121]
 script = ExtResource("1_n8sgl")
+cycle_cooldown = 6.0
 metadata/_custom_type_script = "uid://dc2f6gf80707h"
 
 [node name="TopSprite" type="Sprite2D" parent="." unique_id=1262587972]
 self_modulate = Color(0, 0, 1, 1)
 material = SubResource("ShaderMaterial_77vvc")
 instance_shader_parameters/darkness_mult = 0.5
-position = Vector2(532, 104)
-texture = ExtResource("2_cq33o")
+position = Vector2(573, 276)
+scale = Vector2(1.03125, 0.81707317)
+texture = ExtResource("3_v5v58")
 script = ExtResource("4_77vvc")
 
 [node name="Area" type="Area2D" parent="TopSprite" unique_id=130741741]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopSprite/Area" unique_id=1254574610]
-position = Vector2(0.5, -1.5)
+position = Vector2(-0.48486328, 0.30596924)
 shape = SubResource("RectangleShape2D_01lwq")
 
 [node name="CooldownTimer" type="Timer" parent="TopSprite" unique_id=128132270]
 one_shot = true
 
 [node name="RightSprite" type="Sprite2D" parent="." unique_id=906733752]
+self_modulate = Color(1, 0, 0, 1)
 material = SubResource("ShaderMaterial_01lwq")
-position = Vector2(788, 294)
-texture = ExtResource("2_cq33o")
+position = Vector2(576, 372)
+texture = ExtResource("3_v5v58")
 script = ExtResource("4_77vvc")
 
 [node name="Area" type="Area2D" parent="RightSprite" unique_id=306396193]
@@ -57,9 +61,10 @@ shape = SubResource("RectangleShape2D_01lwq")
 one_shot = true
 
 [node name="BottomSprite" type="Sprite2D" parent="." unique_id=2145034746]
+modulate = Color(1, 1, 0, 1)
 material = SubResource("ShaderMaterial_v5v58")
-position = Vector2(524, 480)
-texture = ExtResource("2_cq33o")
+position = Vector2(659, 322)
+texture = ExtResource("3_v5v58")
 script = ExtResource("4_77vvc")
 
 [node name="Area" type="Area2D" parent="BottomSprite" unique_id=2040639933]
@@ -72,9 +77,10 @@ shape = SubResource("RectangleShape2D_01lwq")
 one_shot = true
 
 [node name="LeftSprite" type="Sprite2D" parent="." unique_id=1070550385]
+self_modulate = Color(0, 1, 0, 1)
 material = SubResource("ShaderMaterial_won0y")
-position = Vector2(208, 240)
-texture = ExtResource("2_cq33o")
+position = Vector2(489, 320)
+texture = ExtResource("3_v5v58")
 script = ExtResource("4_77vvc")
 
 [node name="Area" type="Area2D" parent="LeftSprite" unique_id=467777121]
@@ -93,6 +99,12 @@ one_shot = true
 
 [node name="SpriteHighlightTimer" type="Timer" parent="." unique_id=677583959]
 one_shot = true
+
+[node name="Board" type="Sprite2D" parent="." unique_id=1174527732]
+z_index = -99
+position = Vector2(572.00006, 323.5)
+scale = Vector2(17.968748, 9.984375)
+texture = ExtResource("5_v5v58")
 
 [connection signal="pressed" from="TopSprite" to="." method="_on_button_pressed"]
 [connection signal="mouse_entered" from="TopSprite/Area" to="TopSprite" method="_on_area_mouse_entered"]
