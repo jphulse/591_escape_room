@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://44v7se835u1w" path="res://puzzles/microgames/dinosaur/dinosaur.gd" id="1_5x3nx"]
 [ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="2_ojcbf"]
+[ext_resource type="Texture2D" uid="uid://brpbyo4uiaxpn" path="res://puzzles/microgames/dinosaur/dinosaur_aesprite.png" id="3_ojcbf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5x3nx"]
 size = Vector2(117, 128)
@@ -46,6 +47,12 @@ position = Vector2(-207, 395)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathArea" unique_id=1519558295]
 position = Vector2(31.5, -78.5)
 shape = SubResource("RectangleShape2D_ojcbf")
+
+[node name="DinosaurAesprite" type="Sprite2D" parent="." unique_id=1382813188]
+z_index = -1
+position = Vector2(579.5, 320.99997)
+scale = Vector2(18.046875, 10.062499)
+texture = ExtResource("3_ojcbf")
 
 [connection signal="area_entered" from="Dino" to="." method="_on_dino_area_entered"]
 [connection signal="timeout" from="ObstacleSpawnTimer" to="." method="_on_obstacle_spawn_timer_timeout"]

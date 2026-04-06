@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bqgusgsppdeby"]
 
 [ext_resource type="Script" uid="uid://uw1k6e6ud6l7" path="res://puzzles/microgames/rythym/rythym_microgame.gd" id="1_j4vdc"]
-[ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="2_opkrq"]
+[ext_resource type="Texture2D" uid="uid://cmus13mtrcefl" path="res://puzzles/microgames/rythym/Rythym_drawing.png" id="3_o6fhh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4vdc"]
-size = Vector2(1164, 84)
+size = Vector2(1164, 134)
 
 [node name="RythymMicrogame" type="Node" unique_id=1413308969]
 script = ExtResource("1_j4vdc")
@@ -17,25 +17,15 @@ metadata/_custom_type_script = "uid://dc2f6gf80707h"
 position = Vector2(0, 631)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1120951273]
-position = Vector2(572, -32)
+position = Vector2(572, -57)
 shape = SubResource("RectangleShape2D_j4vdc")
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=298532607]
-position = Vector2(563, -27.500002)
-scale = Vector2(8.953125, 0.69531256)
-texture = ExtResource("2_opkrq")
 
 [node name="DeathBarrier" type="Area2D" parent="." unique_id=989160243]
 position = Vector2(0, 701)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBarrier" unique_id=1655016386]
-position = Vector2(572, 0)
+position = Vector2(580, 67)
 shape = SubResource("RectangleShape2D_j4vdc")
-
-[node name="Sprite2D" type="Sprite2D" parent="DeathBarrier" unique_id=1548133026]
-position = Vector2(540.5, -2.499977)
-scale = Vector2(9.4453125, 0.21093786)
-texture = ExtResource("2_opkrq")
 
 [node name="SpawnTimer" type="Timer" parent="." unique_id=1592754660]
 
@@ -61,6 +51,12 @@ unique_name_in_owner = true
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="RythymDrawing" type="Sprite2D" parent="." unique_id=773883948]
+z_index = -1
+position = Vector2(572.5, 321)
+scale = Vector2(18.203125, 15.707318)
+texture = ExtResource("3_o6fhh")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

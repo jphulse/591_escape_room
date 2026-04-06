@@ -7,6 +7,7 @@ extends Puzzle
 @export var required_score := 10
 @export var dino_jump_speed := 300.0
 @export var dino_gravity := 450.0
+@export var position_offset := 10.0
 
 @onready var obstacle_timer : Timer = $ObstacleSpawnTimer
 @onready var dino : Node2D = $Dino
@@ -33,7 +34,9 @@ func _ready() -> void:
 	
 	dino_resting_position.x = dino.position.x
 	dino_resting_position.y = SubviewportInfo.viewport_dimensions.y / 2  - (dino_shape.size.y * dino.scale.y) / (2.0)
+	dino_resting_position.y -= position_offset
 	dino.position = dino_resting_position
+	
 	
 
 func _physics_process(delta: float) -> void:
@@ -55,7 +58,8 @@ func _on_dino_area_entered(_area: Area2D) -> void:
 func _on_obstacle_spawn_timer_timeout() -> void:
 	var inst : DinoObstacle = obstacle.instantiate()
 	inst.position.x = SubviewportInfo.viewport_dimensions.x
-	inst.position.y = SubviewportInfo.viewport_dimensions.y / 2 - (inst.get_shape().size.y * inst.scale.y) / 2.0
+	inst.position.y = SubviewportInfo.viewport_dimensions.y / 2 - (inst.get_shape().size.y * inst.scale.y) / 2.0 - position_offset
+	
 	inst.velocity = obstacle_velocity
 	add_child(inst)
 	obstacle_timer.start(randf_range(obstacle_cooldown_timer - obstacle_time_range, obstacle_cooldown_timer + obstacle_time_range))

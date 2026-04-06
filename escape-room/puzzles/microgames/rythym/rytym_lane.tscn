@@ -8,4 +8,11 @@ script = ExtResource("1_spnm4")
 [node name="MissTimer" type="Timer" parent="." unique_id=526345347]
 one_shot = true
 
+[node name="Line2D" type="Line2D" parent="." unique_id=1248006760]
+z_index = -1
+position = Vector2(0, -7.049505)
+scale = Vector2(1, 0.29504952)
+points = PackedVector2Array(0, 0, 0, 2000)
+default_color = Color(1, 0, 1, 1)
+
 [connection signal="timeout" from="MissTimer" to="." method="_on_miss_timer_timeout"]

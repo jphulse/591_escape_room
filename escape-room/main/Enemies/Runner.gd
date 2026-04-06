@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var waitTime: float = 5
 
 @onready var timer = $WaitTimer
+@onready var deathTimer = $Timer
 
 signal vision_cone() 
 
@@ -53,6 +54,10 @@ func _on_wait_timer_timeout() -> void:
 	if currentMarkerIndex >= markers.size():
 		currentMarkerIndex = 0
 
+func _on_timer_timeout() -> void:
+	vision_cone.emit()
+
+
 func rotateTowardsPosition(location: Vector2, current_rotation: float, strength: float, delta: float) -> float:
 	var direction = location - global_position
 	var target_angle = direction.angle()
@@ -89,5 +94,10 @@ func velocityAdjust(currentVelocity:Vector2, location:Vector2) -> Vector2:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
-		vision_cone.emit()
+		deathTimer.start(.2)
 		print("Runner saw player")
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body is Player:
+		deathTimer.stop()
