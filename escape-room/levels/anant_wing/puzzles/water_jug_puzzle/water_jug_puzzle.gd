@@ -1,4 +1,4 @@
-extends Puzzle
+class_name WaterJugPuzzle extends Puzzle
 
 @onready var water_jug_list: Node = $WaterJugs
 @onready var water_tap: Area2D = $WaterTap
@@ -17,6 +17,8 @@ func _ready() -> void:
 			jug.jug_clicked.connect(_on_jug_clicked)
 			jug.id = id
 			id = id + 1
+	water_tap.water_tap_clicked.connect(_on_water_tap_clicked)
+	water_drain.water_drain_clicked.connect(_on_water_drain_clicked)
 
 func _on_jug_clicked(jug: WaterJug) -> void:
 	if is_solved:
@@ -33,6 +35,16 @@ func _on_jug_clicked(jug: WaterJug) -> void:
 		selected_jug = null
 		check_win_condition()
 
+func _on_water_tap_clicked(_tap: WaterTap) -> void:
+	if selected_jug is WaterJug:
+		selected_jug.set_current_capacity(selected_jug.maximum_capacity)
+		selected_jug = null
+
+func _on_water_drain_clicked(_drain: WaterDrain) -> void:
+	if selected_jug is WaterJug:
+		selected_jug.set_current_capacity(0)
+		selected_jug = null
+
 func check_win_condition() -> void:
 	var count: int = 0
 	for jug in water_jug_list.get_children():
@@ -40,7 +52,7 @@ func check_win_condition() -> void:
 			if (jug.current_capacity == 4):
 				count = count + 1
 	if (count == 2):
-		#print("DEBUG: Jug puzzle solved!")
+		print("DEBUG: Jug puzzle solved!")
 		is_solved = true
 		timer.start(admire_time)
 

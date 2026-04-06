@@ -41,7 +41,7 @@ func checkProximityToPoint() -> void:
 
 		if (!waypoint[currentMarkerIndex]):
 			waiting = true
-			timer.start()
+			timer.start(waitTime)
 		else:
 			currentMarkerIndex += 1
 			if currentMarkerIndex >= markers.size():

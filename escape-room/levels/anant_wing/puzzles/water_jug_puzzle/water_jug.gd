@@ -45,6 +45,8 @@ func update_current_capacity_text(new_current: int) -> void:
 
 func set_current_capacity(new_capacity: int) -> void:
 	current_capacity = new_capacity
+	update_current_capacity_text(current_capacity)
+	update_fill()
 
 func add_water(water_jug: WaterJug) -> void:
 	var remaining_capacity := maximum_capacity - current_capacity

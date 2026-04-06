@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://3u1sbwuhcg6b"]
+[gd_scene format=3 uid="uid://bqebrf83vptjp"]
 
-[ext_resource type="Script" uid="uid://du2s0gfv1bqiw" path="res://levels/anant_wing/puzzles/water_jug_puzzle/water_jug_puzzle.gd" id="1_jkfl5"]
-[ext_resource type="PackedScene" uid="uid://8f10a1e770e8" path="res://levels/anant_wing/puzzles/water_jug_puzzle/water_jug.tscn" id="2_sdys1"]
-[ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="3_6juyl"]
-[ext_resource type="Script" uid="uid://dpjcmeukuvmnx" path="res://levels/anant_wing/puzzles/water_jug_puzzle/water_tap.gd" id="3_f6rh1"]
-[ext_resource type="Script" uid="uid://df0lvtuqg0d0r" path="res://levels/anant_wing/puzzles/water_jug_puzzle/water_drain.gd" id="5_wg5n3"]
+[ext_resource type="Script" uid="uid://bh2sx8h2v38jw" path="res://levels/anant_wing/puzzles/water_jug_puzzle/water_jug_puzzle_2.gd" id="1_drttr"]
+[ext_resource type="PackedScene" uid="uid://8f10a1e770e8" path="res://levels/anant_wing/puzzles/water_jug_puzzle/water_jug.tscn" id="2_ct41o"]
+[ext_resource type="Script" uid="uid://dpjcmeukuvmnx" path="res://levels/anant_wing/puzzles/water_jug_puzzle/water_tap.gd" id="3_eqwgb"]
+[ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="3_g72w7"]
+[ext_resource type="Script" uid="uid://df0lvtuqg0d0r" path="res://levels/anant_wing/puzzles/water_jug_puzzle/water_drain.gd" id="5_b53sh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f6rh1"]
 size = Vector2(128, 128)
@@ -12,30 +12,30 @@ size = Vector2(128, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wg5n3"]
 size = Vector2(128, 128)
 
-[node name="WaterJugPuzzle" type="Node" unique_id=1507087665]
-script = ExtResource("1_jkfl5")
+[node name="WaterJugPuzzle2" type="Node" unique_id=1507087665]
+script = ExtResource("1_drttr")
 metadata/_custom_type_script = "uid://dc2f6gf80707h"
 
 [node name="WaterJugs" type="Node" parent="." unique_id=60088915]
 
-[node name="WaterJug" parent="WaterJugs" unique_id=733360647 instance=ExtResource("2_sdys1")]
+[node name="WaterJug" parent="WaterJugs" unique_id=733360647 instance=ExtResource("2_ct41o")]
 position = Vector2(384, 320)
+maximum_capacity = 12
+
+[node name="WaterJug2" parent="WaterJugs" unique_id=227085684 instance=ExtResource("2_ct41o")]
+position = Vector2(576, 320)
 maximum_capacity = 8
 
-[node name="WaterJug2" parent="WaterJugs" unique_id=227085684 instance=ExtResource("2_sdys1")]
-position = Vector2(576, 320)
-
-[node name="WaterJug3" parent="WaterJugs" unique_id=1071307203 instance=ExtResource("2_sdys1")]
+[node name="WaterJug3" parent="WaterJugs" unique_id=1071307203 instance=ExtResource("2_ct41o")]
 position = Vector2(768, 320)
-maximum_capacity = 3
 
 [node name="WaterTap" type="Area2D" parent="." unique_id=1052238891]
 position = Vector2(192, 320)
-script = ExtResource("3_f6rh1")
+script = ExtResource("3_eqwgb")
 
 [node name="Sprite2D" type="Sprite2D" parent="WaterTap" unique_id=1994766921]
 modulate = Color(1, 0, 1, 1)
-texture = ExtResource("3_6juyl")
+texture = ExtResource("3_g72w7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaterTap" unique_id=1567697036]
 shape = SubResource("RectangleShape2D_f6rh1")
@@ -49,11 +49,11 @@ text = "Fuel Spout"
 
 [node name="WaterDrain" type="Area2D" parent="." unique_id=100497631]
 position = Vector2(960, 320)
-script = ExtResource("5_wg5n3")
+script = ExtResource("5_b53sh")
 
 [node name="Sprite2D" type="Sprite2D" parent="WaterDrain" unique_id=732231889]
 modulate = Color(1, 1, 0, 1)
-texture = ExtResource("3_6juyl")
+texture = ExtResource("3_g72w7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaterDrain" unique_id=2111755923]
 shape = SubResource("RectangleShape2D_wg5n3")
@@ -73,7 +73,7 @@ offset_left = 416.0
 offset_top = 176.0
 offset_right = 738.0
 offset_bottom = 199.0
-text = "Goal: Obtain two jugs with 4 units of fuel."
+text = "Goal: Obtain one jug with 6 units of fuel."
 horizontal_alignment = 1
 vertical_alignment = 1
 

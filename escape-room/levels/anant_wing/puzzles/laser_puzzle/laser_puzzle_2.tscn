@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://q5h0istanlvq"]
+
+[ext_resource type="Script" uid="uid://dtvonlwm04ndb" path="res://levels/anant_wing/puzzles/laser_puzzle/laser_puzzle.gd" id="1_k7752"]
+[ext_resource type="Script" uid="uid://bprnk7qmwxfp5" path="res://levels/anant_wing/puzzles/laser_puzzle/laser.gd" id="2_adshv"]
+[ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="3_21fa0"]
+[ext_resource type="Script" uid="uid://ddrpn1u75c17e" path="res://levels/anant_wing/puzzles/laser_puzzle/laser_target.gd" id="4_h0jxv"]
+[ext_resource type="PackedScene" uid="uid://chmxswe4bk615" path="res://levels/anant_wing/puzzles/laser_puzzle/mirror.tscn" id="5_mec3j"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jlr1w"]
+particle_flag_disable_z = true
+angle_min = -19.99999
+angle_max = 20.000011
+initial_velocity_min = 2.0
+initial_velocity_max = 10.0
+angular_velocity_min = -10.000016
+angular_velocity_max = 9.999984
+gravity = Vector3(0, 90, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x73l0"]
+size = Vector2(128, 128)
+
+[node name="LaserPuzzle" type="Node2D" unique_id=1987172854]
+script = ExtResource("1_k7752")
+
+[node name="Laser" type="Node2D" parent="." unique_id=1121096263]
+position = Vector2(576, 448)
+script = ExtResource("2_adshv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Laser" unique_id=626793480]
+modulate = Color(0, 1, 1, 1)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_21fa0")
+
+[node name="LaserLine" type="Line2D" parent="Laser" unique_id=2122267385]
+modulate = Color(0, 1, 1, 1)
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="LaserParticle" type="GPUParticles2D" parent="Laser" unique_id=2119254580]
+emitting = false
+lifetime = 0.1
+process_material = SubResource("ParticleProcessMaterial_jlr1w")
+
+[node name="LaserTarget" type="Area2D" parent="." unique_id=111695338]
+position = Vector2(896, 448)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("4_h0jxv")
+
+[node name="Sprite2D" type="Sprite2D" parent="LaserTarget" unique_id=870513734]
+modulate = Color(0.20784314, 1, 0, 1)
+texture = ExtResource("3_21fa0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LaserTarget" unique_id=424776923]
+shape = SubResource("RectangleShape2D_x73l0")
+
+[node name="Mirrors" type="Node2D" parent="." unique_id=663552288]
+
+[node name="Mirror" parent="Mirrors" unique_id=1171681840 instance=ExtResource("5_mec3j")]
+position = Vector2(576, 320)
+
+[node name="Mirror2" parent="Mirrors" unique_id=476908431 instance=ExtResource("5_mec3j")]
+position = Vector2(384, 192)
+
+[node name="Mirror3" parent="Mirrors" unique_id=789748620 instance=ExtResource("5_mec3j")]
+position = Vector2(896, 192)
+
+[node name="Mirror4" parent="Mirrors" unique_id=1292229952 instance=ExtResource("5_mec3j")]
+position = Vector2(384, 64)
+
+[node name="Mirror5" parent="Mirrors" unique_id=1971619976 instance=ExtResource("5_mec3j")]
+position = Vector2(704, 64)
+
+[node name="Mirror6" parent="Mirrors" unique_id=621802157 instance=ExtResource("5_mec3j")]
+position = Vector2(704, 576)
+
+[node name="Mirror7" parent="Mirrors" unique_id=1388647521 instance=ExtResource("5_mec3j")]
+position = Vector2(448, 320)
+
+[node name="Mirror8" parent="Mirrors" unique_id=546428270 instance=ExtResource("5_mec3j")]
+position = Vector2(448, 576)
+
+[node name="Mirror9" parent="Mirrors" unique_id=1167246239 instance=ExtResource("5_mec3j")]
+position = Vector2(768, 320)
+
+[node name="Mirror10" parent="Mirrors" unique_id=152161611 instance=ExtResource("5_mec3j")]
+position = Vector2(896, 64)
+
+[node name="Mirror11" parent="Mirrors" unique_id=1617238256 instance=ExtResource("5_mec3j")]
+position = Vector2(576, 128)
+
+[node name="Obcstacles" type="Node2D" parent="." unique_id=1867574435]
+position = Vector2(-120, -64)
+
+[node name="AdmirePuzzleTimer" type="Timer" parent="." unique_id=472985866]
+
+[connection signal="timeout" from="AdmirePuzzleTimer" to="." method="_on_admire_puzzle_timer_timeout"]

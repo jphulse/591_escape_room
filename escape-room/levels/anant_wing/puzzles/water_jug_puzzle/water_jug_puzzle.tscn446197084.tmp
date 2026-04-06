@@ -19,18 +19,15 @@ metadata/_custom_type_script = "uid://dc2f6gf80707h"
 [node name="WaterJugs" type="Node" parent="." unique_id=60088915]
 
 [node name="WaterJug" parent="WaterJugs" unique_id=733360647 instance=ExtResource("2_sdys1")]
-position = Vector2(384, 320)
+position = Vector2(480, 320)
+current_capacity = 8
 maximum_capacity = 8
 
 [node name="WaterJug2" parent="WaterJugs" unique_id=227085684 instance=ExtResource("2_sdys1")]
-position = Vector2(576, 320)
-
-[node name="WaterJug3" parent="WaterJugs" unique_id=1071307203 instance=ExtResource("2_sdys1")]
-position = Vector2(768, 320)
-maximum_capacity = 3
+position = Vector2(672, 320)
 
 [node name="WaterTap" type="Area2D" parent="." unique_id=1052238891]
-position = Vector2(192, 320)
+position = Vector2(320, 320)
 script = ExtResource("3_f6rh1")
 
 [node name="Sprite2D" type="Sprite2D" parent="WaterTap" unique_id=1994766921]
@@ -48,7 +45,7 @@ offset_bottom = 87.0
 text = "Fuel Spout"
 
 [node name="WaterDrain" type="Area2D" parent="." unique_id=100497631]
-position = Vector2(960, 320)
+position = Vector2(832, 320)
 script = ExtResource("5_wg5n3")
 
 [node name="Sprite2D" type="Sprite2D" parent="WaterDrain" unique_id=732231889]
@@ -64,7 +61,6 @@ offset_top = 64.0
 offset_right = 40.0
 offset_bottom = 87.0
 text = "Fuel Drain"
-metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="." unique_id=1540042647]
 
@@ -73,7 +69,7 @@ offset_left = 416.0
 offset_top = 176.0
 offset_right = 738.0
 offset_bottom = 199.0
-text = "Goal: Obtain two jugs with 4 units of fuel."
+text = "Goal: Get one jug with 1 unit of fuel."
 horizontal_alignment = 1
 vertical_alignment = 1
 

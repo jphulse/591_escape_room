@@ -14,6 +14,7 @@ func _ready() -> void:
 	super._ready()
 	create_door_sequence()
 	update_level_label()
+	print("Correct Door Sequence: ", correct_sequence)
 
 func create_door_sequence() -> void:
 	var count: int = 0
