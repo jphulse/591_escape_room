@@ -6,12 +6,15 @@ extends CharacterBody2D
 @export var waitTime: float = 5
 
 @onready var timer = $WaitTimer
+@onready var deathTimer = $Timer
 
 signal vision_cone() 
 
 var currentMarkerIndex = 0
 var startPosition:Vector2
-var waiting = false
+var waiting := false
+var sighted := false
+var target : Player
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,7 +28,14 @@ func _process(delta: float) -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
-	if waiting:
+	if sighted:
+		rotation = rotateTowardsPosition(target.position, rotation, 4, delta)
+		velocity = velocityAdjust(
+			Vector2.from_angle(rotation) * speed,
+			target.position
+		)
+		move_and_slide()
+	elif waiting:
 		rotation = rotateTowardsDirection(markers[currentMarkerIndex].direction, rotation, 5, delta)
 	else:
 		checkProximityToPoint()
@@ -52,6 +62,21 @@ func _on_wait_timer_timeout() -> void:
 	currentMarkerIndex += 1
 	if currentMarkerIndex >= markers.size():
 		currentMarkerIndex = 0
+
+func _on_timer_timeout() -> void:
+	vision_cone.emit()
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body is Player:
+		target = body
+		print("Walker saw player")
+		deathTimer.start(1)
+		sighted = true
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body is Player:
+		sighted = false;
+		deathTimer.stop()
 
 func rotateTowardsPosition(location: Vector2, current_rotation: float, strength: float, delta: float) -> float:
 	var direction = location - global_position
@@ -85,9 +110,3 @@ func velocityAdjust(currentVelocity:Vector2, location:Vector2) -> Vector2:
 		var reduction = clamp(1.0 - (angleDifference / PI), 0.1, 1.0)
 		return currentVelocity * (reduction * reduction)
 	return currentVelocity
-
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is Player:
-		vision_cone.emit()
-		print("Walker saw player")

@@ -1,9 +1,20 @@
 [gd_scene format=3 uid="uid://bfth70u000w52"]
 
-[node name="Projectile" type="Area2D" unique_id=204799752]
+[ext_resource type="Texture2D" uid="uid://4e4f7fslo0ek" path="res://main/Sprites/Bullet.png" id="1_43v1f"]
+[ext_resource type="Script" uid="uid://ddv2u7ub1vxq4" path="res://main/Enemies/projectile.gd" id="1_npaig"]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1302537966]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ufgro"]
+size = Vector2(12, 2)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1265535117]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=957392453]
+script = ExtResource("1_npaig")
 
-[node name="Timer" type="Timer" parent="." unique_id=1527441665]
+[node name="Projectile" type="Area2D" parent="." unique_id=204799752]
+
+[node name="Sprite2D" type="Sprite2D" parent="Projectile" unique_id=1302537966]
+texture = ExtResource("1_43v1f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Projectile" unique_id=1265535117]
+shape = SubResource("RectangleShape2D_ufgro")
+
+[connection signal="body_entered" from="Projectile" to="." method="_on_projectile_body_entered"]

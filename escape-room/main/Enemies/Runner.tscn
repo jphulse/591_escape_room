@@ -50,4 +50,8 @@ shape = SubResource("ConvexPolygonShape2D_xwde0")
 wait_time = 5.0
 one_shot = true
 
+[node name="Timer" type="Timer" parent="." unique_id=1960984109]
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

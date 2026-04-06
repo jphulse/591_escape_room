@@ -3,10 +3,12 @@ class_name StealthWorld extends Node2D
 signal resetScene()
 
 @onready var interactables : Node2D = $Interactables
+@onready var player : Player = $Player
 
 func _ready():
 	for enemy in get_tree().get_nodes_in_group("Enemies"):
 		enemy.vision_cone.connect(_on_vision_cone_enter)
+	player.vision_cone.connect(_on_vision_cone_enter)
 
 func _on_vision_cone_enter():
 	resetScene.emit()
