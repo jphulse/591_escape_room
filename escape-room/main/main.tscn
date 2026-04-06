@@ -21,12 +21,12 @@
 [ext_resource type="Script" uid="uid://bghrbxiogsbt3" path="res://interactable/test_objects/test_interactable.gd" id="18_d8vpj"]
 [ext_resource type="Texture2D" uid="uid://bhc7kcws3we85" path="res://main/Sprites/paper.png" id="18_piupu"]
 [ext_resource type="Texture2D" uid="uid://b1ae7w3yf3mxx" path="res://main/Sprites/keypad.png" id="19_q0sk7"]
-[ext_resource type="PackedScene" uid="uid://cajnx57quicl7" path="res://levels/anant_wing/rooms/anant_wing_2.tscn" id="19_vapsy"]
-[ext_resource type="Script" uid="uid://o6u1xbsabq8q" path="res://main/water_jug_puzzle_1.gd" id="20_jofbb"]
+[ext_resource type="PackedScene" path="res://levels/anant_wing/rooms/anant_wing_2.tscn" id="19_vapsy"]
+[ext_resource type="Script" path="res://main/water_jug_puzzle_1.gd" id="20_jofbb"]
 [ext_resource type="Script" uid="uid://b4glxx16mvlcp" path="res://interactable/interactable.gd" id="20_qs5eo"]
-[ext_resource type="Script" uid="uid://1pxwy6iwcecf" path="res://main/water_jug_puzzle_2.gd" id="21_re7it"]
-[ext_resource type="Script" uid="uid://co3t8nu16uua6" path="res://main/mystery_door_puzzle_1.gd" id="22_oagth"]
-[ext_resource type="Script" uid="uid://5d8awretwc4i" path="res://main/mystery_door_puzzle_2.gd" id="23_n53tw"]
+[ext_resource type="Script" path="res://main/water_jug_puzzle_2.gd" id="21_re7it"]
+[ext_resource type="Script" path="res://main/mystery_door_puzzle_1.gd" id="22_oagth"]
+[ext_resource type="Script" path="res://main/mystery_door_puzzle_2.gd" id="23_n53tw"]
 
 [node name="Main" type="Node2D" unique_id=1037393617]
 script = ExtResource("1_53q0u")
@@ -126,7 +126,6 @@ puzzle_scene = ExtResource("12_na0o7")
 
 [node name="LaserPuzzle2" parent="World/AnantWing/LaserPuzzles" parent_id_path=PackedInt32Array(1908345394, 387347940) index="1" unique_id=1212048395]
 script = ExtResource("20_qs5eo")
-puzzle_scene = null
 
 [node name="AnantWing2" parent="World" unique_id=1659790861 instance=ExtResource("19_vapsy")]
 position = Vector2(856, -1605)
