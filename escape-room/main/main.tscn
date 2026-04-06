@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://k7vkl1c7cfhu" path="res://puzzle_ui/puzzle_ui.tscn" id="3_xwkvk"]
 [ext_resource type="PackedScene" uid="uid://b1smcxeuq6qs" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/SlidingPicturePuzzle1.tscn" id="4_3wy1v"]
 [ext_resource type="PackedScene" uid="uid://k0o1knc8lp0t" path="res://levels/charlie_wing/rooms/SlidingPuzzleRoom.tscn" id="5_kfbq2"]
-[ext_resource type="Script" path="res://levels/charlie_wing/picture_interactable.gd" id="6_4dugh"]
+[ext_resource type="Script" uid="uid://be4iddkkbsp6r" path="res://levels/charlie_wing/picture_interactable.gd" id="6_4dugh"]
 [ext_resource type="PackedScene" uid="uid://c2owxr0q4tj1c" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/SlidingPicturePuzzle2.tscn" id="7_bsumw"]
 [ext_resource type="PackedScene" uid="uid://de4xtpkiyduvg" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/SolvedSlidingPictureScene1.tscn" id="7_na0o7"]
 [ext_resource type="PackedScene" uid="uid://cd667tr1y6iy7" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/SolvedSlidingPictureScene2.tscn" id="8_73k8k"]
@@ -21,12 +21,13 @@
 [ext_resource type="Script" uid="uid://bghrbxiogsbt3" path="res://interactable/test_objects/test_interactable.gd" id="18_d8vpj"]
 [ext_resource type="Texture2D" uid="uid://bhc7kcws3we85" path="res://main/Sprites/paper.png" id="18_piupu"]
 [ext_resource type="Texture2D" uid="uid://b1ae7w3yf3mxx" path="res://main/Sprites/keypad.png" id="19_q0sk7"]
-[ext_resource type="PackedScene" path="res://levels/anant_wing/rooms/anant_wing_2.tscn" id="19_vapsy"]
-[ext_resource type="Script" path="res://main/water_jug_puzzle_1.gd" id="20_jofbb"]
+[ext_resource type="PackedScene" uid="uid://cajnx57quicl7" path="res://levels/anant_wing/rooms/anant_wing_2.tscn" id="19_vapsy"]
+[ext_resource type="Script" uid="uid://o6u1xbsabq8q" path="res://main/water_jug_puzzle_1.gd" id="20_jofbb"]
 [ext_resource type="Script" uid="uid://b4glxx16mvlcp" path="res://interactable/interactable.gd" id="20_qs5eo"]
-[ext_resource type="Script" path="res://main/water_jug_puzzle_2.gd" id="21_re7it"]
-[ext_resource type="Script" path="res://main/mystery_door_puzzle_1.gd" id="22_oagth"]
-[ext_resource type="Script" path="res://main/mystery_door_puzzle_2.gd" id="23_n53tw"]
+[ext_resource type="Script" uid="uid://1pxwy6iwcecf" path="res://main/water_jug_puzzle_2.gd" id="21_re7it"]
+[ext_resource type="Script" uid="uid://co3t8nu16uua6" path="res://main/mystery_door_puzzle_1.gd" id="22_oagth"]
+[ext_resource type="Script" uid="uid://5d8awretwc4i" path="res://main/mystery_door_puzzle_2.gd" id="23_n53tw"]
+[ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="28_qs5eo"]
 
 [node name="Main" type="Node2D" unique_id=1037393617]
 script = ExtResource("1_53q0u")
@@ -212,6 +213,13 @@ editor_description = "The children of this node are active during pause mode or 
 
 [node name="CountdownTimer" type="Timer" parent="AlwaysActive" unique_id=69641188]
 autostart = true
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1000400880]
+modulate = Color(0, 0, 0, 1)
+z_index = -99
+position = Vector2(1008.4995, -64.00122)
+scale = Vector2(209.5078, 144.35938)
+texture = ExtResource("28_qs5eo")
 
 [connection signal="interact" from="World/TestInteractable" to="." method="_on_interaction"]
 [connection signal="interact" from="World/SlidingPuzzleRoom/SlidingPuzzle1" to="." method="_on_interaction"]
