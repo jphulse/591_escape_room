@@ -27,6 +27,9 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
+func win() -> void:
+	for child in get_children():
+		child.queue_free()
 
 func _on_interaction(puzzle_scene: PackedScene, caller: Interactable) -> void:
 	if critical_puzzles >= 0 or part_two_inst:
@@ -58,6 +61,8 @@ func _start_part_2() -> void:
 	if part_two_inst:
 		part_two_inst.queue_free.call_deferred()
 	part_two_inst = part_two_scene.instantiate()
+	if part_two_inst.has_signal("win"):
+		part_two_inst.win.connect(win)
 	if part_two_inst.has_signal("resetScene"):
 		part_two_inst.resetScene.connect(_start_part_2)
 	_setup_stealth_interactables.call_deferred(part_two_inst)

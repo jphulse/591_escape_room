@@ -1,6 +1,7 @@
 class_name StealthWorld extends Node2D
 
 signal resetScene()
+signal win
 
 @onready var interactables : Node2D = $Interactables
 @onready var player : Player = $Player
@@ -22,3 +23,8 @@ func get_interactables() -> Array[Node]:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_escape_area_body_entered(body: Node2D) -> void:
+	if body is Player:
+		win.emit()
