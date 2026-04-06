@@ -20,12 +20,12 @@ vertical_alignment = 1
 [node name="Doors" type="Node" parent="." unique_id=765337280]
 
 [node name="MysteryDoor" parent="Doors" unique_id=52902679 instance=ExtResource("2_2tnr5")]
-position = Vector2(384, 256)
+position = Vector2(352, 320)
 
 [node name="MysteryDoor2" parent="Doors" unique_id=669001978 instance=ExtResource("2_2tnr5")]
-position = Vector2(576, 256)
+position = Vector2(576, 320)
 
 [node name="MysteryDoor3" parent="Doors" unique_id=511869707 instance=ExtResource("2_2tnr5")]
-position = Vector2(768, 256)
+position = Vector2(800, 320)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
