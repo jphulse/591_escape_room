@@ -8,12 +8,7 @@ extends Puzzle
 @export var shape_3_type := "circle"
 @export var shape_4_type := "star"
 
-var shape_weights := {
-	"triangle": 1,
-	"square": 2,
-	"circle": 3,
-	"star": 4
-}
+a
 
 @onready var hint_label: Label = $Label
 

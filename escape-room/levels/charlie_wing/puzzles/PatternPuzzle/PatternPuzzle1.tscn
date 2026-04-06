@@ -2,13 +2,17 @@
 
 [ext_resource type="Script" uid="uid://cwh27qypfn2jh" path="res://levels/charlie_wing/puzzles/PatternPuzzle/patternpuzzle.gd" id="1_xsjqr"]
 [ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="2_co0ua"]
+[ext_resource type="Texture2D" uid="uid://140fkwti53gt" path="res://main/Sprites/Square.png" id="2_im12j"]
+[ext_resource type="Texture2D" uid="uid://cgeyhru6llpbj" path="res://main/Sprites/Triangle.png" id="3_qw8gb"]
+[ext_resource type="Texture2D" uid="uid://dl7vbm1m635fo" path="res://main/Sprites/Oval.png" id="4_51btx"]
+[ext_resource type="Texture2D" uid="uid://b2i287djsw0el" path="res://main/Sprites/Circle.png" id="5_qw8gb"]
 
 [node name="SymbolPanelPuzzle" type="Node" unique_id=436246070]
 script = ExtResource("1_xsjqr")
-symbol_1 = ExtResource("2_co0ua")
-symbol_2 = ExtResource("2_co0ua")
-symbol_3 = ExtResource("2_co0ua")
-riddle = "Blah Blah"
+symbol_1 = ExtResource("2_im12j")
+symbol_2 = ExtResource("3_qw8gb")
+symbol_3 = ExtResource("4_51btx")
+riddle = "First: Square"
 metadata/_custom_type_script = "uid://dc2f6gf80707h"
 
 [node name="UI" type="Control" parent="." unique_id=524354689]
@@ -26,6 +30,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.9945768, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/Panel" unique_id=891546146]
 layout_mode = 0
@@ -44,18 +49,15 @@ layout_mode = 2
 
 [node name="Symbol1" type="TextureRect" parent="UI/Panel/MarginContainer/VBoxContainer/Symbols" unique_id=1811744497]
 layout_mode = 2
-texture = ExtResource("2_co0ua")
+texture = ExtResource("5_qw8gb")
 expand_mode = 2
-stretch_mode = 3
 
 [node name="Symbol2" type="TextureRect" parent="UI/Panel/MarginContainer/VBoxContainer/Symbols" unique_id=1773010186]
 layout_mode = 2
 texture = ExtResource("2_co0ua")
 expand_mode = 2
-stretch_mode = 3
 
 [node name="Symbol3" type="TextureRect" parent="UI/Panel/MarginContainer/VBoxContainer/Symbols" unique_id=761208679]
 layout_mode = 2
 texture = ExtResource("2_co0ua")
 expand_mode = 2
-stretch_mode = 3
