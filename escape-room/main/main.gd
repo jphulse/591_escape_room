@@ -40,6 +40,7 @@ func win() -> void:
 	win_label.fit_content = true
 	# Chat GPT styled this
 	win_label.text = "[center][b][color=green]YOU ESCAPED![/color][/b][/center]"
+	add_child(win_label)
 
 
 func _on_interaction(puzzle_scene: PackedScene, caller: Interactable) -> void:
