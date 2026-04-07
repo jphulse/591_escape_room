@@ -29,6 +29,7 @@ func update_score_label() -> void:
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	super._ready()
 	update_score_label()
 	obstacle_timer.start(obstacle_cooldown_timer)
 	
@@ -42,7 +43,6 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if dino.position.is_equal_approx(dino_resting_position) and Input.is_action_just_pressed("jump"):
 		dino_velocity = Vector2.UP * dino_jump_speed
-	print("Dino position is %d" % dino.position.y)
 	dino.position.y = clampf(dino.position.y + dino_velocity.y * delta, 0,  dino_resting_position.y)
 	dino_velocity += Vector2.DOWN * dino_gravity * delta
 	
@@ -69,3 +69,7 @@ func _on_death_area_area_entered(area: Area2D) -> void:
 	score += 1
 	update_score_label()
 	area.queue_free()
+
+
+func _on_dino_mouse_entered() -> void:
+	print("Mouse entered dino")
