@@ -7,16 +7,16 @@
 [ext_resource type="Texture2D" uid="uid://cavrgti0yfo2h" path="res://main/Sprites/placeholder_tilemap.png" id="2_uwd5a"]
 [ext_resource type="Script" uid="uid://wyst110h3hib" path="res://main/patrol_point.gd" id="5_5rkkr"]
 [ext_resource type="PackedScene" uid="uid://bbqemvy0opfhg" path="res://interactable/test_objects/test_interactable.tscn" id="7_bp8ap"]
-[ext_resource type="Script" path="res://main/door_open_script.gd" id="8_hqylm"]
+[ext_resource type="Script" uid="uid://8pr0qjy5xx71" path="res://main/door_open_script.gd" id="8_hqylm"]
 [ext_resource type="PackedScene" uid="uid://bqgusgsppdeby" path="res://puzzles/microgames/rythym/rythym_microgame.tscn" id="8_uajbl"]
 [ext_resource type="PackedScene" uid="uid://b4hn88opf6k2m" path="res://puzzles/microgames/frequency_match/frequency_match.tscn" id="9_60uiq"]
 [ext_resource type="PackedScene" uid="uid://qpcljfdsa2im" path="res://main/Enemies/Turret.tscn" id="9_uajbl"]
-[ext_resource type="PackedScene" uid="uid://ckcem601romlw" path="res://puzzles/microgames/dinosaur/dinosaur.tscn" id="10_assr1"]
+[ext_resource type="Texture2D" uid="uid://s6acm86tkgkl" path="res://main/Sprites/console.png" id="10_bujpv"]
 [ext_resource type="PackedScene" uid="uid://cskgb5814xrc8" path="res://main/Enemies/Runner.tscn" id="10_usdpa"]
 [ext_resource type="PackedScene" uid="uid://by5xw8ui0thfr" path="res://main/Door.tscn" id="11_2smlc"]
 [ext_resource type="PackedScene" uid="uid://bm7si8dt6f3pn" path="res://puzzles/microgames/simon/simon.tscn" id="11_60uiq"]
-[ext_resource type="Script" path="res://main/OpenDoor.gd" id="13_bujpv"]
-[ext_resource type="Script" path="res://main/door_group.gd" id="16_42n2x"]
+[ext_resource type="Script" uid="uid://km601t8ticfy" path="res://main/OpenDoor.gd" id="13_bujpv"]
+[ext_resource type="Script" uid="uid://ci6ktqemaqrpa" path="res://main/door_group.gd" id="16_42n2x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5rkkr"]
 texture = ExtResource("2_uwd5a")
@@ -356,28 +356,58 @@ waypoint = Array[bool]([false, true, true, false, true, true])
 position = Vector2(-1862, -518)
 
 [node name="TestInteractable" parent="Interactables" unique_id=848038532 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("7_bp8ap")]
-position = Vector2(-1725, 1380)
+position = Vector2(-1714, 1350)
 script = ExtResource("8_hqylm")
 linkedDoor = NodePath("../../Door8")
 puzzle_scene = ExtResource("9_60uiq")
+
+[node name="Sprite2D" parent="Interactables/TestInteractable" index="1" unique_id=956446760]
+position = Vector2(-40, 0)
+rotation = -1.5707964
+scale = Vector2(4, 4)
+texture = ExtResource("10_bujpv")
 
 [node name="TestInteractable2" parent="Interactables" unique_id=1308828408 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("7_bp8ap")]
 position = Vector2(-1532, 198)
 script = ExtResource("8_hqylm")
 linkedDoor = NodePath("../../Door")
-puzzle_scene = ExtResource("10_assr1")
+puzzle_scene = ExtResource("8_uajbl")
+
+[node name="CollisionShape2D" parent="Interactables/TestInteractable2" index="0" unique_id=607155606]
+position = Vector2(2, 8)
+
+[node name="Sprite2D" parent="Interactables/TestInteractable2" index="1" unique_id=956446760]
+position = Vector2(2, -32)
+scale = Vector2(4, 4)
+texture = ExtResource("10_bujpv")
 
 [node name="TestInteractable3" parent="Interactables" unique_id=723178105 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("7_bp8ap")]
-position = Vector2(744, 366)
+position = Vector2(806, 390)
+rotation = 1.5707964
 script = ExtResource("8_hqylm")
 linkedDoor = NodePath("../../Door3")
 puzzle_scene = ExtResource("11_60uiq")
 
+[node name="CollisionShape2D" parent="Interactables/TestInteractable3" index="0" unique_id=607155606]
+position = Vector2(0, 32)
+
+[node name="Sprite2D" parent="Interactables/TestInteractable3" index="1" unique_id=956446760]
+scale = Vector2(4, 4)
+texture = ExtResource("10_bujpv")
+
 [node name="TestInteractable4" parent="Interactables" unique_id=1029420236 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("7_bp8ap")]
-position = Vector2(-19, -121)
+position = Vector2(1, -114)
 script = ExtResource("8_hqylm")
 linkedDoor = NodePath("../../Door2")
-puzzle_scene = ExtResource("8_uajbl")
+puzzle_scene = ExtResource("9_60uiq")
+
+[node name="CollisionShape2D" parent="Interactables/TestInteractable4" index="0" unique_id=607155606]
+position = Vector2(4, 0)
+
+[node name="Sprite2D" parent="Interactables/TestInteractable4" index="1" unique_id=956446760]
+position = Vector2(5, -40)
+scale = Vector2(4, 4)
+texture = ExtResource("10_bujpv")
 
 [node name="TestInteractable5" parent="Interactables" unique_id=905981069 node_paths=PackedStringArray("doorGroup") instance=ExtResource("7_bp8ap")]
 position = Vector2(-1722, 2002)
@@ -385,11 +415,29 @@ script = ExtResource("13_bujpv")
 doorGroup = NodePath("../../DoorGroup")
 index = 0
 
+[node name="CollisionShape2D" parent="Interactables/TestInteractable5" index="0" unique_id=607155606]
+position = Vector2(0, -11)
+
+[node name="Sprite2D" parent="Interactables/TestInteractable5" index="1" unique_id=956446760]
+position = Vector2(-33, -11)
+rotation = -1.5707964
+scale = Vector2(4, 4)
+texture = ExtResource("10_bujpv")
+
 [node name="TestInteractable6" parent="Interactables" unique_id=1067938912 node_paths=PackedStringArray("doorGroup") instance=ExtResource("7_bp8ap")]
 position = Vector2(-822, 2002)
 script = ExtResource("13_bujpv")
 doorGroup = NodePath("../../DoorGroup")
 index = 2
+
+[node name="CollisionShape2D" parent="Interactables/TestInteractable6" index="0" unique_id=607155606]
+position = Vector2(-7, -11)
+
+[node name="Sprite2D" parent="Interactables/TestInteractable6" index="1" unique_id=956446760]
+position = Vector2(28, -12)
+rotation = 1.5707964
+scale = Vector2(4, 4)
+texture = ExtResource("10_bujpv")
 
 [node name="TestInteractable7" parent="Interactables" unique_id=616776669 node_paths=PackedStringArray("doorGroup") instance=ExtResource("7_bp8ap")]
 position = Vector2(-1722, 2262)
@@ -397,11 +445,29 @@ script = ExtResource("13_bujpv")
 doorGroup = NodePath("../../DoorGroup")
 index = 3
 
+[node name="CollisionShape2D" parent="Interactables/TestInteractable7" index="0" unique_id=607155606]
+position = Vector2(0, -16)
+
+[node name="Sprite2D" parent="Interactables/TestInteractable7" index="1" unique_id=956446760]
+position = Vector2(-32, -16)
+rotation = -1.5707964
+scale = Vector2(4, 4)
+texture = ExtResource("10_bujpv")
+
 [node name="TestInteractable8" parent="Interactables" unique_id=451216694 node_paths=PackedStringArray("doorGroup") instance=ExtResource("7_bp8ap")]
 position = Vector2(-828, 2266)
 script = ExtResource("13_bujpv")
 doorGroup = NodePath("../../DoorGroup")
 index = 1
+
+[node name="CollisionShape2D" parent="Interactables/TestInteractable8" index="0" unique_id=607155606]
+position = Vector2(0, -20)
+
+[node name="Sprite2D" parent="Interactables/TestInteractable8" index="1" unique_id=956446760]
+position = Vector2(34, -20)
+rotation = 1.5707964
+scale = Vector2(4, 4)
+texture = ExtResource("10_bujpv")
 
 [node name="Turret" parent="." unique_id=1885754590 groups=["Enemies"] instance=ExtResource("9_uajbl")]
 position = Vector2(-32, -544)
@@ -416,7 +482,7 @@ speed = 800.0
 
 [node name="Turret2" parent="." unique_id=1154758752 groups=["Enemies"] instance=ExtResource("9_uajbl")]
 position = Vector2(-3137, -323)
-lookPoints = Array[Vector2]([Vector2(0, 1), Vector2(-1, 0), Vector2(0, -1), Vector2(1, 0)])
+lookPoints = Array[Vector2]([Vector2(0, 1), Vector2(1, 0), Vector2(0, -1), Vector2(1, 0)])
 waitTime = 2.5
 
 [node name="Turret3" parent="." unique_id=1146659232 groups=["Enemies"] instance=ExtResource("9_uajbl")]
@@ -540,3 +606,12 @@ position = Vector2(24.5, 160.5)
 shape = SubResource("RectangleShape2D_bujpv")
 
 [connection signal="body_entered" from="EscapeArea" to="." method="_on_escape_area_body_entered"]
+
+[editable path="Interactables/TestInteractable"]
+[editable path="Interactables/TestInteractable2"]
+[editable path="Interactables/TestInteractable3"]
+[editable path="Interactables/TestInteractable4"]
+[editable path="Interactables/TestInteractable5"]
+[editable path="Interactables/TestInteractable6"]
+[editable path="Interactables/TestInteractable7"]
+[editable path="Interactables/TestInteractable8"]
