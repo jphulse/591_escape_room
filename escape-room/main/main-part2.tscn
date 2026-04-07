@@ -324,22 +324,22 @@ script = ExtResource("5_5rkkr")
 direction = Vector2i(0, -1)
 
 [node name="Patrol_Point_25" type="Marker2D" parent="PatrolPoints" unique_id=1906401970]
-position = Vector2(-2774, 1438)
+position = Vector2(-2915, 1463)
 script = ExtResource("5_5rkkr")
 direction = Vector2i(0, -1)
 
 [node name="Patrol_Point_26" type="Marker2D" parent="PatrolPoints" unique_id=1107032780]
-position = Vector2(-2777, 1732)
+position = Vector2(-2906, 1711)
 script = ExtResource("5_5rkkr")
 direction = Vector2i(0, -1)
 
 [node name="Patrol_Point_27" type="Marker2D" parent="PatrolPoints" unique_id=327330501]
-position = Vector2(-3411, 1439)
+position = Vector2(-3359, 1479)
 script = ExtResource("5_5rkkr")
 direction = Vector2i(0, 1)
 
 [node name="Patrol_Point_28" type="Marker2D" parent="PatrolPoints" unique_id=1871472437]
-position = Vector2(-3405, 1731)
+position = Vector2(-3351, 1706)
 script = ExtResource("5_5rkkr")
 direction = Vector2i(0, -1)
 
@@ -533,11 +533,6 @@ position = Vector2(-3237, 616)
 markers = [NodePath("../PatrolPoints/Patrol_Point_23"), NodePath("../PatrolPoints/Patrol_Point_24")]
 waypoint = Array[bool]([false, false])
 waitTime = 0.5
-
-[node name="Turret5" parent="." unique_id=1118570342 groups=["Enemies"] instance=ExtResource("9_uajbl")]
-position = Vector2(-2495, 799)
-lookPoints = Array[Vector2]([Vector2(0, 1), Vector2(-1, 0), Vector2(0, -1), Vector2(1, 0)])
-waitTime = 3.0
 
 [node name="Turret6" parent="." unique_id=999432096 groups=["Enemies"] instance=ExtResource("9_uajbl")]
 position = Vector2(-2501, 928)
