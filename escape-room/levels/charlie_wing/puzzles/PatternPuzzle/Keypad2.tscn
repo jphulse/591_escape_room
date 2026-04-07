@@ -4,7 +4,7 @@
 
 [node name="Keypad" type="Node" unique_id=1084274704]
 script = ExtResource("1_jvylc")
-correct_code = "123"
+correct_code = "405"
 max_length = 3
 metadata/_custom_type_script = "uid://dc2f6gf80707h"
 
