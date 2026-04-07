@@ -1,11 +1,8 @@
-[gd_scene format=3 uid="uid://ch6ursvieip3x"]
+[gd_scene format=4 uid="uid://ch6ursvieip3x"]
 
 [ext_resource type="Texture2D" uid="uid://cavrgti0yfo2h" path="res://main/Sprites/placeholder_tilemap.png" id="1_oirp3"]
 [ext_resource type="PackedScene" uid="uid://bbqemvy0opfhg" path="res://interactable/test_objects/test_interactable.tscn" id="2_vpbrs"]
-[ext_resource type="Script" uid="uid://bghrbxiogsbt3" path="res://interactable/test_objects/test_interactable.gd" id="3_d5wc2"]
-[ext_resource type="PackedScene" uid="uid://tlb6dk72cm76" path="res://levels/charlie_wing/puzzles/PatternPuzzle/PatternPuzzle1.tscn" id="4_lhfao"]
 [ext_resource type="Script" uid="uid://do032p2b8idtx" path="res://interactable/critical_interactable.gd" id="7_w5p0b"]
-[ext_resource type="PackedScene" uid="uid://bf0d7s0ri1ah1" path="res://levels/charlie_wing/puzzles/PatternPuzzle/Keypad2.tscn" id="8_otx44"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b8rv5"]
 texture = ExtResource("1_oirp3")
@@ -165,21 +162,26 @@ sources/0 = SubResource("TileSetAtlasSource_b8rv5")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1783599910]
 scale = Vector2(5, 5)
+tile_map_data = PackedByteArray("AAAEAAMAAAABAAMAAAAEAPv/AAABAAQAAAD2//v/AAACAAQAAAD2/wMAAAACAAMAAAD3/wMAAAADAAMAAAD4/wMAAAADAAMAAAD5/wMAAAADAAMAAAD6/wMAAAADAAMAAAD7/wMAAAADAAMAAAD8/wMAAAADAAMAAAD9/wMAAAADAAMAAAD+/wMAAAADAAMAAAD//wMAAAADAAMAAAAAAAMAAAADAAMAAAABAAMAAAADAAMAAAACAAMAAAADAAMAAAADAAMAAAADAAMAAAAEAAIAAAACAAIAAAAEAAEAAAACAAIAAAAEAAAAAAACAAIAAAAEAP//AAACAAIAAAAEAP7/AAACAAIAAAAEAP3/AAACAAIAAAAEAPz/AAACAAIAAAADAPv/AAADAAMAAAACAPv/AAADAAMAAAABAPv/AAADAAMAAAAAAPv/AAADAAMAAAD///v/AAADAAMAAAD+//v/AAADAAMAAAD9//v/AAADAAMAAAD8//v/AAADAAMAAAD7//v/AAADAAMAAAD6//v/AAADAAMAAAD5//v/AAADAAMAAAD4//v/AAADAAMAAAD3//v/AAADAAMAAAD2//z/AAABAAMAAAD2/wIAAAABAAQAAAD3//z/AAAJAAEAAAD3//3/AAAJAAEAAAD3//7/AAAJAAEAAAD3////AAAJAAEAAAD3/wAAAAAJAAEAAAD3/wEAAAAJAAEAAAD3/wIAAAAJAAEAAAD4/wIAAAAJAAEAAAD5/wIAAAAJAAEAAAD6/wIAAAAJAAEAAAD7/wIAAAAJAAEAAAD8/wIAAAAJAAEAAAD9/wIAAAAJAAEAAAD+/wIAAAAJAAEAAAD//wIAAAAJAAEAAAAAAAIAAAAJAAEAAAABAAIAAAAJAAEAAAACAAIAAAAJAAEAAAADAAIAAAAJAAEAAAADAAEAAAAJAAEAAAADAAAAAAAJAAEAAAADAP//AAAJAAEAAAADAP7/AAAJAAEAAAADAP3/AAAJAAEAAAADAPz/AAAJAAEAAAACAPz/AAAJAAEAAAABAPz/AAAJAAEAAAAAAPz/AAAJAAEAAAD///z/AAAJAAEAAAD+//z/AAAJAAEAAAD9//z/AAAJAAEAAAD8//z/AAAJAAEAAAD7//z/AAAJAAEAAAD6//z/AAAJAAEAAAD5//z/AAAJAAEAAAD4//z/AAAJAAEAAAD7//3/AAAJAAEAAAD8//3/AAAJAAEAAAD6//3/AAAJAAEAAAD5//3/AAAJAAEAAAD4//3/AAAJAAEAAAD9//3/AAAJAAEAAAD+//3/AAAJAAEAAAD///3/AAAJAAEAAAAAAP3/AAAJAAEAAAABAP3/AAAJAAEAAAACAP3/AAAJAAEAAAACAP7/AAAJAAEAAAABAP7/AAAJAAEAAAAAAP7/AAAJAAEAAAD///7/AAAJAAEAAAD+//7/AAAJAAEAAAD9//7/AAAJAAEAAAD8//7/AAAJAAEAAAD7//7/AAAJAAEAAAD6//7/AAAJAAEAAAD5//7/AAAJAAEAAAD4//7/AAAJAAEAAAD4////AAAJAAEAAAD5////AAAJAAEAAAD6////AAAJAAEAAAD7////AAAJAAEAAAD8////AAAJAAEAAAD9////AAAJAAEAAAD+////AAAJAAEAAAD/////AAAJAAEAAAAAAP//AAAJAAEAAAABAP//AAAJAAEAAAACAP//AAAJAAEAAAACAAAAAAAJAAEAAAABAAAAAAAJAAEAAAAAAAAAAAAJAAEAAAD//wAAAAAJAAEAAAD+/wAAAAAJAAEAAAD9/wAAAAAJAAEAAAD8/wAAAAAJAAEAAAD7/wAAAAAJAAEAAAD6/wAAAAAJAAEAAAD5/wAAAAAJAAEAAAD4/wAAAAAJAAEAAAD4/wEAAAAJAAEAAAD5/wEAAAAJAAEAAAD6/wEAAAAJAAEAAAD7/wEAAAAJAAEAAAD8/wEAAAAJAAEAAAD9/wEAAAAJAAEAAAD+/wEAAAAJAAEAAAD//wEAAAAJAAEAAAAAAAEAAAAJAAEAAAABAAEAAAAJAAEAAAACAAEAAAAJAAEAAAD2//3/AAAJAAEAAAD2//7/AAAJAAEAAAD2////AAAJAAEAAAD2/wAAAAAJAAEAAAD2/wEAAAAJAAEAAAA=")
 tile_set = SubResource("TileSet_r4i0n")
 
 [node name="SlidingPuzzle1" parent="." unique_id=848038532 instance=ExtResource("2_vpbrs")]
-script = ExtResource("3_d5wc2")
-puzzle_scene = ExtResource("4_lhfao")
+position = Vector2(-591, -205)
+script = ExtResource("7_w5p0b")
+puzzle_scene = null
+interaction_text = "Press E to interact"
 
 [node name="Sprite2D" parent="SlidingPuzzle1" index="1" unique_id=956446760]
 modulate = Color(1, 0, 0, 1)
 
-[node name="Keypad" parent="." unique_id=1416669148 instance=ExtResource("2_vpbrs")]
+[node name="SlidingPuzzle2" parent="." unique_id=1173402860 instance=ExtResource("2_vpbrs")]
+position = Vector2(-591, -205)
 script = ExtResource("7_w5p0b")
-puzzle_scene = ExtResource("8_otx44")
+puzzle_scene = null
+interaction_text = "Press E to interact"
 
-[node name="Sprite2D" parent="Keypad" index="1" unique_id=956446760]
-modulate = Color(0, 0, 1, 1)
+[node name="Sprite2D" parent="SlidingPuzzle2" index="1" unique_id=956446760]
+modulate = Color(1, 0, 0, 1)
 
 [editable path="SlidingPuzzle1"]
-[editable path="Keypad"]
+[editable path="SlidingPuzzle2"]
