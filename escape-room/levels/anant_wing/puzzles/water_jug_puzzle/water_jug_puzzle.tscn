@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://du2s0gfv1bqiw" path="res://levels/anant_wing/puzzles/water_jug_puzzle/water_jug_puzzle.gd" id="1_jkfl5"]
 [ext_resource type="PackedScene" uid="uid://8f10a1e770e8" path="res://levels/anant_wing/puzzles/water_jug_puzzle/water_jug.tscn" id="2_sdys1"]
-[ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="3_6juyl"]
 [ext_resource type="Script" uid="uid://dpjcmeukuvmnx" path="res://levels/anant_wing/puzzles/water_jug_puzzle/water_tap.gd" id="3_f6rh1"]
+[ext_resource type="Texture2D" uid="uid://bmw0bjehkhks" path="res://levels/anant_wing/puzzles/water_jug_puzzle/assets/spout.png" id="4_xcukx"]
 [ext_resource type="Script" uid="uid://df0lvtuqg0d0r" path="res://levels/anant_wing/puzzles/water_jug_puzzle/water_drain.gd" id="5_wg5n3"]
+[ext_resource type="Texture2D" uid="uid://dh72dw1v718gt" path="res://levels/anant_wing/puzzles/water_jug_puzzle/assets/drain.png" id="6_186ye"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f6rh1"]
 size = Vector2(128, 128)
@@ -34,8 +35,8 @@ position = Vector2(192, 320)
 script = ExtResource("3_f6rh1")
 
 [node name="Sprite2D" type="Sprite2D" parent="WaterTap" unique_id=1994766921]
-modulate = Color(1, 0, 1, 1)
-texture = ExtResource("3_6juyl")
+scale = Vector2(2, 2)
+texture = ExtResource("4_xcukx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaterTap" unique_id=1567697036]
 shape = SubResource("RectangleShape2D_f6rh1")
@@ -52,8 +53,8 @@ position = Vector2(960, 320)
 script = ExtResource("5_wg5n3")
 
 [node name="Sprite2D" type="Sprite2D" parent="WaterDrain" unique_id=732231889]
-modulate = Color(1, 1, 0, 1)
-texture = ExtResource("3_6juyl")
+scale = Vector2(2, 2)
+texture = ExtResource("6_186ye")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaterDrain" unique_id=2111755923]
 shape = SubResource("RectangleShape2D_wg5n3")
