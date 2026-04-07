@@ -336,7 +336,7 @@ direction = Vector2i(0, -1)
 [node name="Patrol_Point_27" type="Marker2D" parent="PatrolPoints" unique_id=327330501]
 position = Vector2(-3411, 1439)
 script = ExtResource("5_5rkkr")
-direction = Vector2i(0, -1)
+direction = Vector2i(0, 1)
 
 [node name="Patrol_Point_28" type="Marker2D" parent="PatrolPoints" unique_id=1871472437]
 position = Vector2(-3405, 1731)
