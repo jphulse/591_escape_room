@@ -11,6 +11,7 @@ size = Vector2(117, 128)
 size = Vector2(315, 655)
 
 [node name="Dinosaur" type="Node" unique_id=1540238408]
+process_mode = 3
 script = ExtResource("1_5x3nx")
 metadata/_custom_type_script = "uid://dc2f6gf80707h"
 
