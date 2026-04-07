@@ -6,6 +6,7 @@
 [node name="LightsOutPuzzle" type="Node" unique_id=599823978]
 script = ExtResource("1_68fhb")
 light_tile_scene = ExtResource("2_4kho7")
+grid_size = 3
 metadata/_custom_type_script = "uid://dc2f6gf80707h"
 
 [node name="Timer" type="Timer" parent="." unique_id=546824344]
