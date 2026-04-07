@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cavrgti0yfo2h" path="res://main/Sprites/placeholder_tilemap.png" id="2_uwd5a"]
 [ext_resource type="Script" uid="uid://wyst110h3hib" path="res://main/patrol_point.gd" id="5_5rkkr"]
 [ext_resource type="PackedScene" uid="uid://bbqemvy0opfhg" path="res://interactable/test_objects/test_interactable.tscn" id="7_bp8ap"]
-[ext_resource type="Script" uid="uid://8pr0qjy5xx71" path="res://main/door_open_script.gd" id="8_hqylm"]
+[ext_resource type="Script" path="res://main/door_open_script.gd" id="8_hqylm"]
 [ext_resource type="PackedScene" uid="uid://bqgusgsppdeby" path="res://puzzles/microgames/rythym/rythym_microgame.tscn" id="8_uajbl"]
 [ext_resource type="PackedScene" uid="uid://b4hn88opf6k2m" path="res://puzzles/microgames/frequency_match/frequency_match.tscn" id="9_60uiq"]
 [ext_resource type="PackedScene" uid="uid://qpcljfdsa2im" path="res://main/Enemies/Turret.tscn" id="9_uajbl"]
@@ -15,8 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://cskgb5814xrc8" path="res://main/Enemies/Runner.tscn" id="10_usdpa"]
 [ext_resource type="PackedScene" uid="uid://by5xw8ui0thfr" path="res://main/Door.tscn" id="11_2smlc"]
 [ext_resource type="PackedScene" uid="uid://bm7si8dt6f3pn" path="res://puzzles/microgames/simon/simon.tscn" id="11_60uiq"]
-[ext_resource type="Script" uid="uid://km601t8ticfy" path="res://main/OpenDoor.gd" id="13_bujpv"]
-[ext_resource type="Script" uid="uid://ci6ktqemaqrpa" path="res://main/door_group.gd" id="16_42n2x"]
+[ext_resource type="Script" path="res://main/OpenDoor.gd" id="13_bujpv"]
+[ext_resource type="Script" path="res://main/door_group.gd" id="16_42n2x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5rkkr"]
 texture = ExtResource("2_uwd5a")
@@ -196,6 +196,9 @@ texture = ExtResource("2_uwd5a")
 [sub_resource type="TileSet" id="TileSet_7458p"]
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_5rkkr")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bujpv"]
+size = Vector2(255, 839)
 
 [node name="World-Part2" type="Node2D" unique_id=1591374012]
 script = ExtResource("1_7458p")
@@ -528,3 +531,12 @@ scale = Vector2(4, 4)
 position = Vector2(-3136, 2080)
 rotation = 1.5707964
 scale = Vector2(4, 4)
+
+[node name="EscapeArea" type="Area2D" parent="." unique_id=1368444675]
+position = Vector2(-3160, 3065)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EscapeArea" unique_id=882414399]
+position = Vector2(24.5, 160.5)
+shape = SubResource("RectangleShape2D_bujpv")
+
+[connection signal="body_entered" from="EscapeArea" to="." method="_on_escape_area_body_entered"]
