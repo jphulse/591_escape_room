@@ -1,5 +1,47 @@
 Controls
 - WASD to move around
 - E to interact with 'interactables'
-- Two Puzzles utilize the mouse to solve them
+- The puzzles in the first half utilize the mouse to solve them
 - The Micro Game present at the end of the stealth section uses A, W, and D for left, middle and right
+
+## First Half Puzzles
+- Use the mouse to interact with all the puzzles.
+
+### Keypad Puzzle
+- Enter in the correct keypad to complete it. To get the code, complete the documents puzzle.
+
+### Documents Puzzle
+- Click on the squares to move them to the adjacent empty square. Orient them to create a complete picture.
+- Solve the riddles within these documents to get the diigts for the code.
+
+### Weights Puzzle
+- Move around the different shapes to balance the puzzle.
+
+### Lights Out Puzzle
+- Goal is to turn off all the lights (gray).
+
+### Water Jug Puzzle
+- Click on a jug to select it, then click on another jug to move liquid to it, the tap to fill it up, or the drain to emmpty it.
+
+### Laser Puzzle
+- Click the mirrors to reorient the beam to hit the target (green block).
+
+### Mystery Door Puzzle
+- Click on the 
+
+## Second Half Microgames
+
+### Dinosaur Run Microgame
+- Use `Space` to jump and avoid the incoming spikes.
+
+### Radio Signal Microgame
+- Adjust the `Amplitude` and `Frequency` to make the waves match.
+
+### Simon Says Microgame
+- Click on the highlighted squares to replicate the sequence. Do it three times to complete the game.
+
+### Door Microgame
+- Interact with the terminals in the room in a specific order to open the door.
+
+### Musical Notes Microgame
+- Use `A`, `W`, and `D` to play a game similar to guitar hero and complete the notes. Get enough right to advance.
