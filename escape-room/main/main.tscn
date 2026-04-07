@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://ch6ursvieip3x" path="res://levels/charlie_wing/rooms/BalancePuzzleRoom.tscn" id="27_frbr6"]
 [ext_resource type="PackedScene" uid="uid://ch7w5hijgyrvc" path="res://levels/charlie_wing/puzzles/BalancePuzzle/BalancePuzzle.tscn" id="28_o8j3b"]
 [ext_resource type="Texture2D" uid="uid://c5cfqq33c32oc" path="res://icon.svg" id="28_qs5eo"]
+[ext_resource type="Texture2D" uid="uid://bgajhjikvaa47" path="res://main/Sprites/Scale.png" id="28_wpkmi"]
 
 [node name="Main" type="Node2D" unique_id=1037393617]
 script = ExtResource("1_53q0u")
@@ -203,9 +204,21 @@ tile_map_data = PackedByteArray("AAAEAAMAAAAJAAEAAAAEAPv/AAAJAAEAAAD4/wMAAAACAAI
 position = Vector2(404.88867, -236.19092)
 puzzle_scene = ExtResource("28_o8j3b")
 
+[node name="Sprite2D" parent="World/BalancePuzzleRoom/SlidingPuzzle1" index="1" unique_id=956446760]
+position = Vector2(7.013201, 27.996696)
+rotation = 3.1415927
+scale = Vector2(2, 2)
+texture = ExtResource("28_wpkmi")
+
 [node name="SlidingPuzzle2" parent="World/BalancePuzzleRoom" index="2" unique_id=1173402860]
 position = Vector2(-420.87964, 255.19847)
 puzzle_scene = ExtResource("28_o8j3b")
+
+[node name="Sprite2D" parent="World/BalancePuzzleRoom/SlidingPuzzle2" index="1" unique_id=956446760]
+position = Vector2(2.0150878, 31.999054)
+rotation = 3.1415927
+scale = Vector2(2, 2)
+texture = ExtResource("28_wpkmi")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1678019845]
 
