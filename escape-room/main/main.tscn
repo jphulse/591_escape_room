@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://k7vkl1c7cfhu" path="res://puzzle_ui/puzzle_ui.tscn" id="3_xwkvk"]
 [ext_resource type="PackedScene" uid="uid://b1smcxeuq6qs" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/SlidingPicturePuzzle1.tscn" id="4_3wy1v"]
 [ext_resource type="PackedScene" uid="uid://k0o1knc8lp0t" path="res://levels/charlie_wing/rooms/SlidingPuzzleRoom.tscn" id="5_kfbq2"]
-[ext_resource type="Script" path="res://levels/charlie_wing/picture_interactable.gd" id="6_4dugh"]
+[ext_resource type="Script" uid="uid://be4iddkkbsp6r" path="res://levels/charlie_wing/picture_interactable.gd" id="6_4dugh"]
 [ext_resource type="PackedScene" uid="uid://c2owxr0q4tj1c" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/SlidingPicturePuzzle2.tscn" id="7_bsumw"]
 [ext_resource type="PackedScene" uid="uid://de4xtpkiyduvg" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/SolvedSlidingPictureScene1.tscn" id="7_na0o7"]
 [ext_resource type="PackedScene" uid="uid://cd667tr1y6iy7" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/SolvedSlidingPictureScene2.tscn" id="8_73k8k"]
@@ -28,7 +28,8 @@
 
 [node name="Main" type="Node2D" unique_id=1037393617]
 script = ExtResource("1_53q0u")
-critical_puzzles = 9
+total_time = 1800
+critical_puzzles = 12
 
 [node name="World" type="Node2D" parent="." unique_id=564951816]
 position = Vector2(16, -3)
