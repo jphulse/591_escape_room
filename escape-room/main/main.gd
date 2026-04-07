@@ -6,6 +6,7 @@ class_name Main extends Node2D
 @onready var puzzle_manager : PuzzleUI = $CanvasLayer/PuzzleUi
 @onready var time_label : Label = %TimeClock
 @onready var always_active : Node = $AlwaysActive
+@onready var audioSystem : AudioStreamPlayer = $AudioStreamPlayer
 
 var part_two_scene : PackedScene = preload("res://main/main-part2.tscn")
 var part_two_inst : StealthWorld = null
@@ -21,6 +22,8 @@ func update_time_label() -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	update_time_label()
+	audioSystem.playCombatTrack(true)
+	audioSystem.volume_db = -12
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -74,6 +77,7 @@ func _start_part_2() -> void:
 	if part_two_inst.has_signal("resetScene"):
 		part_two_inst.resetScene.connect(_start_part_2)
 	_setup_stealth_interactables.call_deferred(part_two_inst)
+	audioSystem.playCombatTrack(false)
 
 func _on_critical_puzzle_solved(_interactable : Interactable) -> void:
 	critical_puzzles -= 1
