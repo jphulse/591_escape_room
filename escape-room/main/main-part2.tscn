@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://by5xw8ui0thfr" path="res://main/Door.tscn" id="11_2smlc"]
 [ext_resource type="PackedScene" uid="uid://bm7si8dt6f3pn" path="res://puzzles/microgames/simon/simon.tscn" id="11_60uiq"]
 [ext_resource type="Script" uid="uid://km601t8ticfy" path="res://main/OpenDoor.gd" id="13_bujpv"]
+[ext_resource type="PackedScene" uid="uid://ckcem601romlw" path="res://puzzles/microgames/dinosaur/dinosaur.tscn" id="13_egbwf"]
 [ext_resource type="Script" uid="uid://ci6ktqemaqrpa" path="res://main/door_group.gd" id="16_42n2x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5rkkr"]
@@ -399,7 +400,7 @@ texture = ExtResource("10_bujpv")
 position = Vector2(1, -114)
 script = ExtResource("8_hqylm")
 linkedDoor = NodePath("../../Door2")
-puzzle_scene = ExtResource("9_60uiq")
+puzzle_scene = ExtResource("13_egbwf")
 
 [node name="CollisionShape2D" parent="Interactables/TestInteractable4" index="0" unique_id=607155606]
 position = Vector2(4, 0)
