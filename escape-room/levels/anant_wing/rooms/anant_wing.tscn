@@ -24,6 +24,7 @@ tile_map_data = PackedByteArray("AAD9//3/AQAJAAEAAAD9//7/AQAJAAEAAAD9////AQAJAAE
 position = Vector2(-1220, -450)
 script = ExtResource("4_3hwot")
 puzzle_scene = ExtResource("4_v6cf6")
+interaction_text = "Press E to interact"
 
 [node name="Sprite2D" parent="LaserPuzzles/LaserPuzzle1" index="1" unique_id=956446760]
 texture = ExtResource("4_nv5oc")
@@ -32,6 +33,7 @@ texture = ExtResource("4_nv5oc")
 position = Vector2(0, -800)
 script = ExtResource("4_3hwot")
 puzzle_scene = ExtResource("4_svpj5")
+interaction_text = "Press E to interact"
 
 [node name="Sprite2D" parent="LaserPuzzles/LaserPuzzle2" index="1" unique_id=956446760]
 texture = ExtResource("4_nv5oc")

@@ -57,7 +57,7 @@ func check_win_condition() -> void:
 			if (jug.current_capacity == 4):
 				count = count + 1
 	if (count == 2):
-		print("DEBUG: Jug puzzle solved!")
+		#print("DEBUG: Jug puzzle solved!")
 		is_solved = true
 		timer.start(admire_time)
 
