@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://do032p2b8idtx" path="res://interactable/critical_interactable.gd" id="4_3hwot"]
 [ext_resource type="Texture2D" uid="uid://clteybg8l5qj5" path="res://levels/anant_wing/puzzles/laser_puzzle/assets/LaserPuzzleIcon.png" id="4_nv5oc"]
 [ext_resource type="PackedScene" uid="uid://q5h0istanlvq" path="res://levels/anant_wing/puzzles/laser_puzzle/laser_puzzle_2.tscn" id="4_svpj5"]
-[ext_resource type="Script" uid="uid://cuagmwq26ovxf" path="res://levels/anant_wing/rooms/interactable.gd" id="5_ea3ei"]
+[ext_resource type="PackedScene" uid="uid://dim041h5jq58v" path="res://levels/anant_wing/puzzles/laser_puzzle/laser_puzzle.tscn" id="4_v6cf6"]
 [ext_resource type="PackedScene" uid="uid://dnii1fubuoovd" path="res://levels/anant_wing/puzzles/lights_out_puzzle/lights_out_puzzle.tscn" id="6_ea3ei"]
 [ext_resource type="Texture2D" uid="uid://bhtpuv6h8vhyi" path="res://levels/anant_wing/puzzles/lights_out_puzzle/assets/LightsOutIcon.png" id="8_mgbst"]
 
@@ -23,7 +23,7 @@ tile_map_data = PackedByteArray("AAD9//3/AQAJAAEAAAD9//7/AQAJAAEAAAD9////AQAJAAE
 [node name="LaserPuzzle1" parent="LaserPuzzles" unique_id=848038532 instance=ExtResource("3_ea3ei")]
 position = Vector2(-1220, -450)
 script = ExtResource("4_3hwot")
-puzzle_scene = null
+puzzle_scene = ExtResource("4_v6cf6")
 
 [node name="Sprite2D" parent="LaserPuzzles/LaserPuzzle1" index="1" unique_id=956446760]
 texture = ExtResource("4_nv5oc")
@@ -40,7 +40,7 @@ texture = ExtResource("4_nv5oc")
 
 [node name="LightsOutPuzzle1" type="Area2D" parent="LightsOutPuzzles" unique_id=374300802]
 position = Vector2(-900, -800)
-script = ExtResource("5_ea3ei")
+script = ExtResource("4_3hwot")
 puzzle_scene = ExtResource("6_ea3ei")
 metadata/_custom_type_script = "uid://b4glxx16mvlcp"
 
@@ -52,7 +52,7 @@ texture = ExtResource("8_mgbst")
 
 [node name="LightsOutPuzzle2" type="Area2D" parent="LightsOutPuzzles" unique_id=1854349286]
 position = Vector2(-449, -800)
-script = ExtResource("5_ea3ei")
+script = ExtResource("4_3hwot")
 puzzle_scene = ExtResource("6_ea3ei")
 metadata/_custom_type_script = "uid://b4glxx16mvlcp"
 

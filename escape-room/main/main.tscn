@@ -15,11 +15,10 @@
 [ext_resource type="PackedScene" uid="uid://wyd1pr4b4q35" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/SolvedSlidingPictureScene3.tscn" id="10_5xyti"]
 [ext_resource type="PackedScene" uid="uid://c1su7or0lwt6m" path="res://levels/anant_wing/rooms/anant_wing.tscn" id="11_fwcvl"]
 [ext_resource type="PackedScene" uid="uid://dho3xa5tbdjoo" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/SolvedSlidingPictureScene4.tscn" id="12_n3o0a"]
-[ext_resource type="PackedScene" uid="uid://dim041h5jq58v" path="res://levels/anant_wing/puzzles/laser_puzzle/laser_puzzle.tscn" id="12_na0o7"]
 [ext_resource type="PackedScene" uid="uid://dpfe7tpm8axqx" path="res://levels/charlie_wing/puzzles/SlidingPicturePuzzle/Keypad.tscn" id="14_s758e"]
 [ext_resource type="PackedScene" uid="uid://btnhh4snuq8lw" path="res://levels/charlie_wing/rooms/PatternPuzzleRoom.tscn" id="17_4hmqs"]
-[ext_resource type="Script" uid="uid://bghrbxiogsbt3" path="res://interactable/test_objects/test_interactable.gd" id="18_d8vpj"]
 [ext_resource type="Texture2D" uid="uid://bhc7kcws3we85" path="res://main/Sprites/paper.png" id="18_piupu"]
+[ext_resource type="Script" uid="uid://do032p2b8idtx" path="res://interactable/critical_interactable.gd" id="18_vapsy"]
 [ext_resource type="Texture2D" uid="uid://b1ae7w3yf3mxx" path="res://main/Sprites/keypad.png" id="19_q0sk7"]
 [ext_resource type="PackedScene" uid="uid://cajnx57quicl7" path="res://levels/anant_wing/rooms/anant_wing_2.tscn" id="19_vapsy"]
 [ext_resource type="Script" path="res://main/water_jug_puzzle_1.gd" id="20_jofbb"]
@@ -31,6 +30,7 @@
 
 [node name="Main" type="Node2D" unique_id=1037393617]
 script = ExtResource("1_53q0u")
+critical_puzzles = 9
 
 [node name="World" type="Node2D" parent="." unique_id=564951816]
 position = Vector2(16, -3)
@@ -121,27 +121,20 @@ texture = ExtResource("19_q0sk7")
 [node name="AnantWing" parent="World" unique_id=1908345394 instance=ExtResource("11_fwcvl")]
 position = Vector2(408, -265)
 
-[node name="LaserPuzzle1" parent="World/AnantWing/LaserPuzzles" parent_id_path=PackedInt32Array(1908345394, 387347940) index="0" unique_id=848038532]
-script = ExtResource("18_d8vpj")
-puzzle_scene = ExtResource("12_na0o7")
-
-[node name="LaserPuzzle2" parent="World/AnantWing/LaserPuzzles" parent_id_path=PackedInt32Array(1908345394, 387347940) index="1" unique_id=1212048395]
-script = ExtResource("20_qs5eo")
-
 [node name="AnantWing2" parent="World" unique_id=1659790861 instance=ExtResource("19_vapsy")]
 position = Vector2(856, -1605)
 
 [node name="WaterJugPuzzle1" parent="World/AnantWing2/WaterJugPuzzles" parent_id_path=PackedInt32Array(1659790861, 387347940) index="0" unique_id=435896580]
-script = ExtResource("20_jofbb")
+script = ExtResource("18_vapsy")
 
 [node name="WaterJugPuzzle2" parent="World/AnantWing2/WaterJugPuzzles" parent_id_path=PackedInt32Array(1659790861, 387347940) index="1" unique_id=402617926]
-script = ExtResource("21_re7it")
+script = ExtResource("18_vapsy")
 
 [node name="MysteryDoorPuzzle1" parent="World/AnantWing2/MysteryDoorPuzzles" parent_id_path=PackedInt32Array(1659790861, 1977836536) index="0" unique_id=1686578213]
-script = ExtResource("22_oagth")
+script = ExtResource("18_vapsy")
 
 [node name="MysteryDoorPuzzle2" parent="World/AnantWing2/MysteryDoorPuzzles" parent_id_path=PackedInt32Array(1659790861, 1977836536) index="1" unique_id=1739203643]
-script = ExtResource("23_n53tw")
+script = ExtResource("18_vapsy")
 
 [node name="SlidingPuzzleRoom2" parent="World" unique_id=1719452555 instance=ExtResource("17_4hmqs")]
 position = Vector2(-1653, 212)
@@ -228,13 +221,21 @@ texture = ExtResource("28_qs5eo")
 [connection signal="interact" from="World/SlidingPuzzleRoom/SlidingPuzzle4" to="." method="_on_interaction"]
 [connection signal="critical_interactable_solved" from="World/SlidingPuzzleRoom/Keypad" to="." method="_on_critical_puzzle_solved"]
 [connection signal="interact" from="World/SlidingPuzzleRoom/Keypad" to="." method="_on_interaction"]
+[connection signal="critical_interactable_solved" from="World/AnantWing/LaserPuzzles/LaserPuzzle1" to="." method="_on_critical_puzzle_solved"]
 [connection signal="interact" from="World/AnantWing/LaserPuzzles/LaserPuzzle1" to="." method="_on_interaction"]
+[connection signal="critical_interactable_solved" from="World/AnantWing/LaserPuzzles/LaserPuzzle2" to="." method="_on_critical_puzzle_solved"]
 [connection signal="interact" from="World/AnantWing/LaserPuzzles/LaserPuzzle2" to="." method="_on_interaction"]
+[connection signal="critical_interactable_solved" from="World/AnantWing/LightsOutPuzzles/LightsOutPuzzle1" to="." method="_on_critical_puzzle_solved"]
 [connection signal="interact" from="World/AnantWing/LightsOutPuzzles/LightsOutPuzzle1" to="." method="_on_interaction"]
+[connection signal="critical_interactable_solved" from="World/AnantWing/LightsOutPuzzles/LightsOutPuzzle2" to="." method="_on_critical_puzzle_solved"]
 [connection signal="interact" from="World/AnantWing/LightsOutPuzzles/LightsOutPuzzle2" to="." method="_on_interaction"]
+[connection signal="critical_interactable_solved" from="World/AnantWing2/WaterJugPuzzles/WaterJugPuzzle1" to="." method="_on_critical_puzzle_solved"]
 [connection signal="interact" from="World/AnantWing2/WaterJugPuzzles/WaterJugPuzzle1" to="." method="_on_interaction"]
+[connection signal="critical_interactable_solved" from="World/AnantWing2/WaterJugPuzzles/WaterJugPuzzle2" to="." method="_on_critical_puzzle_solved"]
 [connection signal="interact" from="World/AnantWing2/WaterJugPuzzles/WaterJugPuzzle2" to="." method="_on_interaction"]
+[connection signal="critical_interactable_solved" from="World/AnantWing2/MysteryDoorPuzzles/MysteryDoorPuzzle1" to="." method="_on_critical_puzzle_solved"]
 [connection signal="interact" from="World/AnantWing2/MysteryDoorPuzzles/MysteryDoorPuzzle1" to="." method="_on_interaction"]
+[connection signal="critical_interactable_solved" from="World/AnantWing2/MysteryDoorPuzzles/MysteryDoorPuzzle2" to="." method="_on_critical_puzzle_solved"]
 [connection signal="interact" from="World/AnantWing2/MysteryDoorPuzzles/MysteryDoorPuzzle2" to="." method="_on_interaction"]
 [connection signal="interact" from="World/SlidingPuzzleRoom2/SlidingPuzzle1" to="." method="_on_interaction"]
 [connection signal="interact" from="World/SlidingPuzzleRoom2/SlidingPuzzle2" to="." method="_on_interaction"]
