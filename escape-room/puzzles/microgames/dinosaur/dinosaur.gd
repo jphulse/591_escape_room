@@ -27,7 +27,7 @@ func update_score_label() -> void:
 		solve()
 	
 	
-# Called when the node enters the scene tree for the first time.
+# Called when the node enters the scene tree for the first time. 
 func _ready() -> void:
 	super._ready()
 	update_score_label()

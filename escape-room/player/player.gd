@@ -1,6 +1,6 @@
 class_name Player extends CharacterBody2D
 
-@export var speed  := 300.0
+@export var speed  := 350.0
 @export var rotation_speed := 10.0
 const JUMP_VELOCITY = -400.0
 var input_enabled := true
